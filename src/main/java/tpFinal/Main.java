@@ -1,4 +1,4 @@
-package org;
+package tpFinal;
 
 public class Main {
     public static void main(String[] args) {
