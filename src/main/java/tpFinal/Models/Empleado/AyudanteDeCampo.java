@@ -8,6 +8,7 @@ public class AyudanteDeCampo extends Usuario {
     private String deporte;
     private String categoria;
 
+    public AyudanteDeCampo(){}
     public AyudanteDeCampo(boolean estadoContable, String plantel, String deporte, String categoria) {
         this.estadoContable = estadoContable;
         this.plantel = plantel;

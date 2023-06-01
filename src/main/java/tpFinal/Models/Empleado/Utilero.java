@@ -28,4 +28,12 @@ public class Utilero extends Usuario {
     public void setDeporte(String deporte) {
         this.deporte = deporte;
     }
+
+    void verEstadoContable(){
+        if(this.estadoContable){
+            System.out.println("Usted a cobrado.");
+        }else{
+            System.out.println("Aun no posee saldo.");
+        }
+    }
 }
