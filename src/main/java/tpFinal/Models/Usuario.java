@@ -1,4 +1,4 @@
-package org.Models;
+package tpFinal.Models;
 
 public abstract class Usuario {
     private String nombre;
