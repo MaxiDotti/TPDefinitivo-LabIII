@@ -1,4 +1,4 @@
-package org.Models;
+package tpFinal.Models;
 
 import java.util.Scanner;
 
