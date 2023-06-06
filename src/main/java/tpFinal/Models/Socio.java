@@ -1,8 +1,9 @@
 package tpFinal.Models;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
-public class Socio extends Usuario{
+public class Socio extends Usuario implements Serializable {
     private boolean estadoContable; /// DEUDOR o AL DIA
 
     public Socio(String nombre, String apellido, String dni, String contrasenia, String telefono, String direccion, boolean estadoContable) {
