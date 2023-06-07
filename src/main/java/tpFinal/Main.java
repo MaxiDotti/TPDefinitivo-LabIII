@@ -1,7 +1,37 @@
 package tpFinal;
 
+import tpFinal.Models.Empleado.PersonalLimpieza;
+import tpFinal.Repositorios.EmpleadosRepository.PersonalLimpiezaRepository;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        List<PersonalLimpieza> limpiezaList = new ArrayList<>();
+        PersonalLimpieza limpieza1 = new PersonalLimpieza("Baños",
+                true,
+                "Jaime",
+                "ana",
+                " asfafd",
+                "asnjodasnf",
+                "asbfijasf",
+                "jbafjosjbfa");
+        PersonalLimpieza limpieza2 = new PersonalLimpieza("Cocina",
+                false,
+                "Pep",
+                "Guardiola",
+                "1234567",
+                "Pepe123",
+                "Pepe123",
+                "Pepe123"
+                );
+        limpiezaList.add(limpieza1);
+        limpiezaList.add(limpieza2);
+
+        PersonalLimpiezaRepository limpiezaRepository = new PersonalLimpiezaRepository();
+
+        limpiezaRepository.agregarLista(limpiezaList);
+        System.out.println(limpiezaRepository.listar());
     }
 }

@@ -7,10 +7,12 @@ public class PersonalLimpieza extends Usuario {
     private boolean estadoContable;
 
     ///CONSTRUCTORES
-    public PersonalLimpieza(String sector, boolean estadoContable) {
+    public PersonalLimpieza(String sector, boolean estadoContable,String nombre, String apellido, String dni, String contrasenia, String telefono, String direccion) {
+        super(nombre, apellido, dni, contrasenia, telefono, direccion);
         this.sector = sector;
         this.estadoContable = estadoContable;
     }
+
 
     public PersonalLimpieza() {
     }
@@ -32,5 +34,14 @@ public class PersonalLimpieza extends Usuario {
 
     public void setEstadoContable(boolean estadoContable) {
         this.estadoContable = estadoContable;
+    }
+
+    @Override
+    public String toString() {
+        return "PersonalLimpieza{" +
+                "sector='" + sector + '\'' +
+                ", estadoContable=" + estadoContable +
+                '}' +
+                super.toString();
     }
 }
