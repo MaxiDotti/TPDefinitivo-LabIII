@@ -36,22 +36,32 @@ public class DirectivoRepository implements IRepository<Directivo>{
 
     @Override
     public List<Directivo> listar() {
-        return null;
+        cargar();
+        return this.directivoList;
     }
 
     @Override
     public void agregar(Directivo objeto) {
-
+        cargar();
+        this.directivoList.add(objeto);
+        guardar();
     }
 
     @Override
     public void agregarLista(List<Directivo> lista) {
+        cargar();
+        this.directivoList.addAll(lista);
+        guardar();
 
     }
 
     @Override
     public void eliminar(String dni) {
-
+        cargar();
+        for (Directivo directivo : this.directivoList)
+            if(directivo.getDni().equals(dni))
+                this.directivoList.remove(directivo);
+        guardar();
     }
 
     @Override
