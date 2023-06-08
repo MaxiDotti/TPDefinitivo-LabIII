@@ -61,7 +61,7 @@ public class JugadorRepository implements IRepository<Jugador> {
         for(Jugador jugador : this.listJugador)
             if (jugador.getDni().equals(dni))
                 listJugador.remove(jugador);
-
+        guardar();
     }
 
     @Override

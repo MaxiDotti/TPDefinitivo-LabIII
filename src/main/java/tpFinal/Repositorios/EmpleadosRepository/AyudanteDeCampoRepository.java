@@ -60,7 +60,7 @@ public class AyudanteDeCampoRepository implements IRepository<AyudanteDeCampo> {
         for (AyudanteDeCampo ayudanteDeCampo : this.ayudanteDeCampoList )
             if (ayudanteDeCampo.getDni().equals(dni))
                 this.ayudanteDeCampoList.remove(ayudanteDeCampo);
-
+        guardar();
     }
 
     @Override

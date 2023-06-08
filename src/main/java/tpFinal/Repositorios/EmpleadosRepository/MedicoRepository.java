@@ -32,7 +32,6 @@ public class MedicoRepository implements IRepository<Medico> {
             mapper.writerWithDefaultPrettyPrinter().writeValue(file, this.listMedico);
         } catch (IOException e) {
             throw new RuntimeException(e);
-
         }
         }
 
@@ -55,7 +54,6 @@ public class MedicoRepository implements IRepository<Medico> {
         this.cargar();
         this.listMedico.addAll(lista);
         this.guardar();
-
     }
 
     @Override
@@ -65,7 +63,8 @@ public class MedicoRepository implements IRepository<Medico> {
             if(medico.getDni().equals(dni)){
                 this.listMedico.remove(medico);
             }
-        }this.guardar();
+        }
+        this.guardar();
     }
 
     @Override
