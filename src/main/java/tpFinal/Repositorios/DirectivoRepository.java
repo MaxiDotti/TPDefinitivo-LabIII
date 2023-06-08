@@ -37,20 +37,20 @@ public class DirectivoRepository implements IRepository<Directivo>{
     @Override
     public List<Directivo> listar() {
         cargar();
-        return this.directivoList;
+        return this.listDirectivo;
     }
 
     @Override
     public void agregar(Directivo objeto) {
         cargar();
-        this.directivoList.add(objeto);
+        this.listDirectivo.add(objeto);
         guardar();
     }
 
     @Override
     public void agregarLista(List<Directivo> lista) {
         cargar();
-        this.directivoList.addAll(lista);
+        this.listDirectivo.addAll(lista);
         guardar();
 
     }
@@ -58,9 +58,9 @@ public class DirectivoRepository implements IRepository<Directivo>{
     @Override
     public void eliminar(String dni) {
         cargar();
-        for (Directivo directivo : this.directivoList)
+        for (Directivo directivo : this.listDirectivo)
             if(directivo.getDni().equals(dni))
-                this.directivoList.remove(directivo);
+                this.listDirectivo.remove(directivo);
         guardar();
     }
 
