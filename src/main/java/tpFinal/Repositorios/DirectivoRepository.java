@@ -13,23 +13,24 @@ import java.util.List;
 public class DirectivoRepository implements IRepository<Directivo>{
     private final File file = new File("src/main/resources/Directivo.json");
     private final ObjectMapper mapper = new ObjectMapper();
-    private List<Directivo> directivoList;
+    private List<Directivo> listDirectivo;
     @Override
     public void cargar() {
         try{
-            CollectionType collectionType = mapper.getTypeFactory().constructCollectionType(List.class, Directivo.class);
-            this.directivoList = mapper.readValue(file, collectionType);
+            CollectionType collectionType = mapper.getTypeFactory().constructCollectionType(List.class, PersonalLimpieza.class);
+            this.listDirectivo = mapper.readValue(file, collectionType);
         }catch (IOException e){
-            this.directivoList = new ArrayList<>();
+            this.listDirectivo = new ArrayList<>();
         }
     }
 
     @Override
     public void guardar() {
-        try {
-            mapper.writerWithDefaultPrettyPrinter().writeValue(file, this.directivoList);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        try{
+            CollectionType collectionType = mapper.getTypeFactory().constructCollectionType(List.class, PersonalLimpieza.class);
+            this.listDirectivo = mapper.readValue(file, collectionType);
+        }catch (IOException e){
+            this.listDirectivo = new ArrayList<>();
         }
     }
 
