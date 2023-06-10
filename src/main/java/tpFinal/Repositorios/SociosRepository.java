@@ -15,6 +15,7 @@ public class SociosRepository implements IRepository<Socio> {
     private List<Socio> listaSocios;
 
 
+
     @Override
     public void cargar() {
         try{
