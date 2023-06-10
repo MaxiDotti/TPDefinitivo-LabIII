@@ -46,8 +46,8 @@ public class SocioService implements ISocioService{
     }
 
     @Override
-    public void verEstadoContable() {
-
+    public boolean verEstadoContable(String dni) {
+        return sociosRepo.estadoContable(dni);
     }
 
     @Override

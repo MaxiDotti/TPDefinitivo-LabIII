@@ -10,6 +10,6 @@ public interface ISocioService {
     boolean buscarSocio(String dni);
     void comprarEntrada();
     void comprarMerchandasing();
-    void verEstadoContable();
+    boolean verEstadoContable(String dni);
     void listarBeneficios();
 }

@@ -136,4 +136,16 @@ public class SociosRepository implements IRepository<Socio> {
         }
         return nuevo;
     }
+
+    public boolean estadoContable(String dni){
+        cargar();
+        for(Socio socio : this.listaSocios){
+            if(socio.getDni() == dni){
+                if (socio.isEstadoContable()) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }
