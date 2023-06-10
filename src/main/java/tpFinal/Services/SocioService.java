@@ -22,8 +22,8 @@ public class SocioService implements ISocioService{
     }
 
     @Override
-    public void eliminar() {
-
+    public void eliminar(String dni) {
+        sociosRepo.eliminar(dni);
     }
 
     @Override

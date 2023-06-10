@@ -6,7 +6,7 @@ public interface ISocioService {
     void listar();
     void agregar(Socio objeto);
     void modificar(String dni);
-    void eliminar();
+    void eliminar(String dni);
     boolean buscarSocio(String dni);
     void comprarEntrada();
     void comprarMerchandasing();
