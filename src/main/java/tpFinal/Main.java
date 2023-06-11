@@ -26,12 +26,5 @@ public class Main {
                 "Pepe123",
                 "Pepe123"
                 );
-        limpiezaList.add(limpieza1);
-        limpiezaList.add(limpieza2);
-
-        PersonalLimpiezaRepository limpiezaRepository = new PersonalLimpiezaRepository();
-
-        limpiezaRepository.agregarLista(limpiezaList);
-        System.out.println(limpiezaRepository.listar());
     }
 }

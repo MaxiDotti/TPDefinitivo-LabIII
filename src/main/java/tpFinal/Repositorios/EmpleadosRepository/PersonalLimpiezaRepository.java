@@ -32,7 +32,6 @@ public class PersonalLimpiezaRepository implements IRepository<PersonalLimpieza>
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
     }
 
     @Override
@@ -59,12 +58,12 @@ public class PersonalLimpiezaRepository implements IRepository<PersonalLimpieza>
 
     @Override
     public void eliminar(String dni) {
-        this.cargar();
+        cargar();
         for(PersonalLimpieza persona : listPersonalLimpieza){
             if(persona.getDni().equals(dni))
                 this.listPersonalLimpieza.remove(persona);
         }
-        this.guardar();
+        guardar();
     }
 
     @Override
