@@ -67,6 +67,6 @@ public class JugadorService implements IJugadorService{
 
     @Override
     public boolean estadoContable(String dni) {
-
+    return false;
     }
 }
