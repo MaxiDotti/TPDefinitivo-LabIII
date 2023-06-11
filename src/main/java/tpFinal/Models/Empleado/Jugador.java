@@ -14,7 +14,8 @@ public class Jugador extends Usuario {
     ///Constructores
 
 
-    public Jugador(String equipo, String categoria, Enum<Deporte> deporte, String posicion, Boolean estadoContable) {
+    public Jugador(String nombre, String apellido, String dni, String contrasenia, String telefono, String direccion, String equipo, String categoria, Enum<Deporte> deporte, String posicion, Boolean estadoContable) {
+        super(nombre, apellido, dni, contrasenia, telefono, direccion);
         this.equipo = equipo;
         this.categoria = categoria;
         this.deporte = deporte;

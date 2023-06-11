@@ -7,12 +7,13 @@ public class PersonalLimpieza extends Usuario {
     private boolean estadoContable;
 
     ///CONSTRUCTORES
-    public PersonalLimpieza(String sector, boolean estadoContable,String nombre, String apellido, String dni, String contrasenia, String telefono, String direccion) {
+
+
+    public PersonalLimpieza(String nombre, String apellido, String dni, String contrasenia, String telefono, String direccion, String sector, boolean estadoContable) {
         super(nombre, apellido, dni, contrasenia, telefono, direccion);
         this.sector = sector;
         this.estadoContable = estadoContable;
     }
-
 
     public PersonalLimpieza() {
     }

@@ -9,7 +9,8 @@ public class DirectorTecnico extends Usuario {
     private String deporte;
     private String categoria;
 
-    public DirectorTecnico(boolean estadoContable, String plantel, String deporte, String categoria) {
+    public DirectorTecnico(String nombre, String apellido, String dni, String contrasenia, String telefono, String direccion, boolean estadoContable, String plantel, String deporte, String categoria) {
+        super(nombre, apellido, dni, contrasenia, telefono, direccion);
         this.estadoContable = estadoContable;
         this.plantel = plantel;
         this.deporte = deporte;
