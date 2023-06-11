@@ -3,7 +3,6 @@ package tpFinal.Repositorios.EmpleadosRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
 import tpFinal.Models.Empleado.PersonalLimpieza;
-import tpFinal.Models.Socio;
 import tpFinal.Repositorios.IRepository;
 
 import java.io.File;
@@ -15,6 +14,7 @@ public class PersonalLimpiezaRepository implements IRepository<PersonalLimpieza>
     private final File file = new File("src/main/resources/personalLimpieza.json");
     private final ObjectMapper mapper = new ObjectMapper();
     private List<PersonalLimpieza> listPersonalLimpieza;
+
     @Override
     public void cargar() {
         try{
@@ -32,6 +32,7 @@ public class PersonalLimpiezaRepository implements IRepository<PersonalLimpieza>
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
     }
 
     @Override
@@ -57,17 +58,25 @@ public class PersonalLimpiezaRepository implements IRepository<PersonalLimpieza>
     }
 
     @Override
-    public void eliminar(String dni) {
-        cargar();
-        for(PersonalLimpieza persona : listPersonalLimpieza){
-            if(persona.getDni().equals(dni))
-                this.listPersonalLimpieza.remove(persona);
-        }
-        guardar();
+    public void eliminar(String dni){
+        this.cargar();
+        this.listPersonalLimpieza.remove(dni);
+        this.guardar();
+    }
+
+    public void eliminarPersonal(PersonalLimpieza personal){
+        this.cargar();
+        this.listPersonalLimpieza.remove(personal);
+        this.guardar();
     }
 
     @Override
     public void modificar(String dni) {
 
+    }
+
+    public List<PersonalLimpieza> getListPersonalLimpieza(){
+        this.cargar();
+        return this.listPersonalLimpieza;
     }
 }
