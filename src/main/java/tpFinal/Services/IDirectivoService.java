@@ -1,5 +1,6 @@
 package tpFinal.Services;
 
+import tpFinal.Models.Empleado.Jugador;
 import tpFinal.Models.Socio;
 
 public interface IDirectivoService {
@@ -9,6 +10,10 @@ public interface IDirectivoService {
     void listarSociosDeudores();
     void listarActividades();
     void listarBeneficios();
+    void agregarJugador(Jugador nuevo);
+    void modificarJugador(String dni);
+    void eliminarJugador(String dni);
+    void listarJugadores();
     void agregarEmpleado();
     void modificarEmpleado();
     void eliminarEmpleado();

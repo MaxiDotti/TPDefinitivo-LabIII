@@ -1,4 +1,5 @@
 package tpFinal.Services;
+import tpFinal.Models.Empleado.Jugador;
 import tpFinal.Models.Socio;
 import tpFinal.Repositorios.DirectivoRepository;
 
@@ -6,7 +7,7 @@ public class DirectivoService implements IDirectivoService{
     DirectivoRepository directivoRepo = new DirectivoRepository();
     SocioService sociosService = new SocioService();
     ///EmpleadoService empleadoService = new EmpleadoService();
-    ///JugadorService jugadorService = new JugadorService();
+    JugadorService jugadorService = new JugadorService();
 
     @Override
     public void listarSocios() {
@@ -35,6 +36,26 @@ public class DirectivoService implements IDirectivoService{
 
     @Override
     public void listarBeneficios() {
+
+    }
+
+    @Override
+    public void agregarJugador(Jugador nuevo) {
+        jugadorService.agregarJugador(nuevo);
+    }
+
+    @Override
+    public void modificarJugador(String dni) {
+        jugadorService.modificarJugador(dni);
+    }
+
+    @Override
+    public void eliminarJugador(String dni) {
+        jugadorService.eliminarJugador(dni);
+    }
+
+    @Override
+    public void listarJugadores() {
 
     }
 
