@@ -13,7 +13,9 @@ public interface IDirectivoService {
     void agregarJugador(Jugador nuevo);
     void modificarJugador(String dni);
     void eliminarJugador(String dni);
-    void listarJugadores();
+    void listarTodosLosJugadores(String deporte);
+    void listarJugadorPorCategoria(String deporte, String categoria);
+    void listarPorPosicionYCategoria(String deporte, String categoria, String posicion);
     void agregarEmpleado();
     void modificarEmpleado();
     void eliminarEmpleado();

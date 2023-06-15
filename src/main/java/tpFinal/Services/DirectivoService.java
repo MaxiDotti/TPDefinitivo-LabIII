@@ -55,8 +55,18 @@ public class DirectivoService implements IDirectivoService{
     }
 
     @Override
-    public void listarJugadores() {
+    public void listarTodosLosJugadores(String deporte) {
+        jugadorService.listarTodosLosJugadores(deporte);
+    }
 
+    @Override
+    public void listarJugadorPorCategoria(String deporte, String categoria) {
+        jugadorService.listarJugadorPorCategoria(deporte, categoria);
+    }
+
+    @Override
+    public void listarPorPosicionYCategoria(String deporte, String categoria, String posicion) {
+        jugadorService.listarPorPosicionYCategoria(deporte, categoria, posicion);
     }
 
     @Override
