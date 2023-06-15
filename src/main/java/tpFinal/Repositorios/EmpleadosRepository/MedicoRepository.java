@@ -1,17 +1,21 @@
 package tpFinal.Repositorios.EmpleadosRepository;
 
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
 import tpFinal.Models.Empleado.Medico;
 import tpFinal.Models.Empleado.PersonalLimpieza;
 import tpFinal.Repositorios.IRepository;
 
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class MedicoRepository implements IRepository<Medico> {
+
 
     private final File file = new File("src/main/resources/Medico.json");
     private final ObjectMapper mapper = new ObjectMapper();
@@ -26,6 +30,7 @@ public class MedicoRepository implements IRepository<Medico> {
         }
     }
 
+
     @Override
     public void guardar() {
         try {
@@ -33,7 +38,9 @@ public class MedicoRepository implements IRepository<Medico> {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        }
+    }
+
+
 
 
     @Override
@@ -42,6 +49,7 @@ public class MedicoRepository implements IRepository<Medico> {
         return this.listMedico;
     }
 
+
     @Override
     public void agregar(Medico objeto) {
         this.cargar();
@@ -49,12 +57,14 @@ public class MedicoRepository implements IRepository<Medico> {
         this.guardar();
     }
 
+
     @Override
     public void agregarLista(List<Medico> lista) {
         this.cargar();
         this.listMedico.addAll(lista);
         this.guardar();
     }
+
 
     @Override
     public void eliminar(String dni) {
@@ -67,8 +77,10 @@ public class MedicoRepository implements IRepository<Medico> {
         this.guardar();
     }
 
+
     @Override
     public void modificar(String dni) {
+
 
     }
 }

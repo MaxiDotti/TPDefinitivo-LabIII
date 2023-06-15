@@ -1,29 +1,34 @@
 package tpFinal.Repositorios.EmpleadosRepository;
 
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
 import tpFinal.Models.Empleado.Jugador;
 import tpFinal.Models.Empleado.PersonalLimpieza;
 import tpFinal.Repositorios.IRepository;
 
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class JugadorRepository implements IRepository<Jugador> {
     private final File file = new File("src/main/resources/Jugador.json");
     private final ObjectMapper mapper = new ObjectMapper();
     private List<Jugador> listJugador;
+
     @Override
     public void cargar() {
-        try{
+        try {
             CollectionType collectionType = mapper.getTypeFactory().constructCollectionType(List.class, Jugador.class);
             this.listJugador = mapper.readValue(file, collectionType);
-        }catch (IOException e){
+        } catch (IOException e) {
             this.listJugador = new ArrayList<>();
         }
     }
+
 
     @Override
     public void guardar() {
@@ -34,11 +39,13 @@ public class JugadorRepository implements IRepository<Jugador> {
         }
     }
 
+
     @Override
     public List<Jugador> listar() {
         this.cargar();
         return this.listJugador;
     }
+
 
     @Override
     public void agregar(Jugador objeto) {
@@ -46,7 +53,9 @@ public class JugadorRepository implements IRepository<Jugador> {
         this.listJugador.add(objeto);
         guardar();
 
+
     }
+
 
     @Override
     public void agregarLista(List<Jugador> lista) {
@@ -54,18 +63,22 @@ public class JugadorRepository implements IRepository<Jugador> {
         this.listJugador.addAll(lista);
         guardar();
 
+
     }
+
 
     @Override
     public void eliminar(String dni) {
-        for(Jugador jugador : this.listJugador)
+        for (Jugador jugador : this.listJugador)
             if (jugador.getDni().equals(dni))
                 listJugador.remove(jugador);
         guardar();
     }
 
+
     @Override
     public void modificar(String dni) {
+
 
     }
 }

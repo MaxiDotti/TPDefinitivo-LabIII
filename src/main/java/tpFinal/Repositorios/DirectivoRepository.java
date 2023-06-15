@@ -1,19 +1,23 @@
 package tpFinal.Repositorios;
 
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
 import tpFinal.Models.Directivo;
 import tpFinal.Models.Empleado.PersonalLimpieza;
+
 
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class DirectivoRepository implements IRepository<Directivo>{
     private final File file = new File("src/main/resources/Directivo.json");
     private final ObjectMapper mapper = new ObjectMapper();
     private List<Directivo> listDirectivo;
+
     @Override
     public void cargar() {
         try{
@@ -23,6 +27,7 @@ public class DirectivoRepository implements IRepository<Directivo>{
             this.listDirectivo = new ArrayList<>();
         }
     }
+
 
     @Override
     public void guardar() {
@@ -34,11 +39,13 @@ public class DirectivoRepository implements IRepository<Directivo>{
         }
     }
 
+
     @Override
     public List<Directivo> listar() {
         cargar();
         return this.listDirectivo;
     }
+
 
     @Override
     public void agregar(Directivo objeto) {
@@ -47,13 +54,16 @@ public class DirectivoRepository implements IRepository<Directivo>{
         guardar();
     }
 
+
     @Override
     public void agregarLista(List<Directivo> lista) {
         cargar();
         this.listDirectivo.addAll(lista);
         guardar();
 
+
     }
+
 
     @Override
     public void eliminar(String dni) {
@@ -64,8 +74,10 @@ public class DirectivoRepository implements IRepository<Directivo>{
         guardar();
     }
 
+
     @Override
     public void modificar(String dni) {
+
 
     }
 }

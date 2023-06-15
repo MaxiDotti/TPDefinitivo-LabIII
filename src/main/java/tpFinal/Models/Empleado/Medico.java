@@ -7,7 +7,8 @@ public class Medico extends Usuario {
     private String especialidad;
     private boolean estadoContable;
 
-    public Medico(String especialidad, boolean estadoContable) {
+    public Medico(String nombre, String apellido, String dni, String contrasenia, String telefono, String direccion, String especialidad, boolean estadoContable) {
+        super(nombre, apellido, dni, contrasenia, telefono, direccion);
         this.especialidad = especialidad;
         this.estadoContable = estadoContable;
     }
