@@ -3,12 +3,14 @@ package tpFinal.Services;
 import tpFinal.Models.Socio;
 import tpFinal.Repositorios.SociosRepository;
 
+import java.util.List;
+
 public class SocioService implements ISocioService{
     SociosRepository sociosRepo = new SociosRepository();
 
     @Override
-    public void listar() {
-        sociosRepo.listar().forEach(System.out::println);
+    public List<Socio> listar() {
+        return sociosRepo.listar();
     }
 
     @Override

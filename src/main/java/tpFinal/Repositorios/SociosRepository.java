@@ -2,7 +2,6 @@ package tpFinal.Repositorios;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
-import tpFinal.Models.Empleado.PersonalLimpieza;
 import tpFinal.Models.Socio;
 
 import java.io.File;
@@ -69,7 +68,7 @@ public class SociosRepository implements IRepository<Socio> {
     public boolean buscarSocio(String dni){ // RETORNA TRUE SI EL SOCIO EXISTE EN EL ARCHIVO
         cargar();
         for(Socio socio : this.listaSocios){
-            if(socio.getDni() == dni){
+            if(socio.getDni().equals(dni)){
                 return true;
             }
         }
@@ -80,7 +79,7 @@ public class SociosRepository implements IRepository<Socio> {
     public void modificar(String dni) {
         cargar();
         for(Socio socio : this.listaSocios){
-            if(socio.getDni() == dni){
+            if(socio.getDni().equals(dni)){
                 Socio modificado = modificarAux();
                 socio.setContrasenia(modificado.getContrasenia());
                 socio.setTelefono(modificado.getTelefono());
@@ -106,7 +105,7 @@ public class SociosRepository implements IRepository<Socio> {
             while(opcion == 1) {
                 System.out.print("INGRESE NUEVAMENTE LA CONTRASEÑA: ");
                 String cambio2 = leer.next();
-                if (cambio == cambio2) {
+                if (cambio.equals(cambio2)) {
                     nuevo.setContrasenia(cambio2);
                     System.out.println("LA CONTRASEÑA FUE MODIFICADA CORRECTAMENTE.");
                     opcion = -1;
@@ -141,7 +140,7 @@ public class SociosRepository implements IRepository<Socio> {
     public boolean estadoContable(String dni){
         cargar();
         for(Socio socio : this.listaSocios){
-            if(socio.getDni() == dni){
+            if(socio.getDni().equals(dni)){
                 if (socio.isEstadoContable()) {
                     return true;
                 }
