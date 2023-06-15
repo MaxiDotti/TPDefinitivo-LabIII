@@ -1,8 +1,10 @@
-[ {
-  "nombre" : "Nombre1",
-  "apellido" : "Apellido1",
-  "dni" : "Dni1",
-  "contrasenia" : "Contrasenia1",
-  "telefono" : "Telefono1",
-  "direccion" : "Direccion1"
-} ]
+[
+  {
+    "nombre": "Nombre1",
+    "apellido": "Apellido1",
+    "dni": "Dni1",
+    "contrasenia": "Contrasenia1",
+    "telefono": "Telefono1",
+    "direccion": "Direccion1"
+  }
+]

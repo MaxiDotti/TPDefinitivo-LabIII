@@ -12,11 +12,9 @@ import java.util.List;
 import java.util.Scanner;
 
 public class SociosRepository implements IRepository<Socio> {
-<<<<<<< HEAD
+
     private final File file = new File("src/main/resources/Socios.json");
-=======
-    private final File file = new File("src/main/resources/Socio.json");
->>>>>>> origin/new-branch
+
     private final ObjectMapper mapper = new ObjectMapper();
     private List<Socio> listaSocios;
 
@@ -62,11 +60,9 @@ public class SociosRepository implements IRepository<Socio> {
     @Override
     public void eliminar(String dni) {
         cargar();
-<<<<<<< HEAD
         for (Socio socio : this.listaSocios)
             if (socio.getDni().equals(dni))
                 this.listaSocios.remove(socio);
-
        guardar();
     }
 
@@ -78,13 +74,6 @@ public class SociosRepository implements IRepository<Socio> {
             }
         }
         return false;
-=======
-        for(Socio persona : listaSocios){
-            if(persona.getDni().equals(dni))
-                this.listaSocios.remove(persona);
-        }
-        guardar();
->>>>>>> origin/new-branch
     }
 
     @Override

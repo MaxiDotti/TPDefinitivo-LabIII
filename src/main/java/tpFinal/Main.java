@@ -9,6 +9,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
+        /*
         TestRepository test = new TestRepository();
 
         //System.out.println("TEST AYUDANTE DE CAMPO");
@@ -27,5 +28,7 @@ public class Main {
         test.testDirectivo();
         //System.out.println("TEST SOCIO");
         //test.testSocio();
+    }*/
+
     }
 }
