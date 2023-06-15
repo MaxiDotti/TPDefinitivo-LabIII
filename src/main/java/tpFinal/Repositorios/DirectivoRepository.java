@@ -5,32 +5,35 @@ import com.fasterxml.jackson.databind.type.CollectionType;
 import tpFinal.Models.Directivo;
 import tpFinal.Models.Empleado.PersonalLimpieza;
 
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DirectivoRepository implements IRepository<Directivo>{
+public class DirectivoRepository implements IRepository<Directivo> {
     private final File file = new File("src/main/resources/Directivo.json");
     private final ObjectMapper mapper = new ObjectMapper();
+
     private List<Directivo> listDirectivo;
+
     @Override
     public void cargar() {
-        try{
+        try {
             CollectionType collectionType = mapper.getTypeFactory().constructCollectionType(List.class, PersonalLimpieza.class);
             this.listDirectivo = mapper.readValue(file, collectionType);
-        }catch (IOException e){
+        } catch (IOException e) {
             this.listDirectivo = new ArrayList<>();
         }
     }
 
     @Override
     public void guardar() {
-        try{
-            CollectionType collectionType = mapper.getTypeFactory().constructCollectionType(List.class, PersonalLimpieza.class);
-            this.listDirectivo = mapper.readValue(file, collectionType);
-        }catch (IOException e){
-            this.listDirectivo = new ArrayList<>();
+        try {
+            mapper.writerWithDefaultPrettyPrinter().writeValue(file, this.listDirectivo);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+
         }
     }
 
@@ -52,15 +55,16 @@ public class DirectivoRepository implements IRepository<Directivo>{
         cargar();
         this.listDirectivo.addAll(lista);
         guardar();
-
     }
 
     @Override
     public void eliminar(String dni) {
         cargar();
-        for (Directivo directivo : this.listDirectivo)
-            if(directivo.getDni().equals(dni))
+
+        for (Directivo directivo : this.listDirectivo) {
+            if (directivo.getDni().equals(dni))
                 this.listDirectivo.remove(directivo);
+        }
         guardar();
     }
 

@@ -2,36 +2,30 @@ package tpFinal;
 
 import tpFinal.Models.Empleado.PersonalLimpieza;
 import tpFinal.Repositorios.EmpleadosRepository.PersonalLimpiezaRepository;
+import tpFinal.Utilities.TestRepository;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        List<PersonalLimpieza> limpiezaList = new ArrayList<>();
-        PersonalLimpieza limpieza1 = new PersonalLimpieza("Baños",
-                true,
-                "Jaime",
-                "ana",
-                " asfafd",
-                "asnjodasnf",
-                "asbfijasf",
-                "jbafjosjbfa");
-        PersonalLimpieza limpieza2 = new PersonalLimpieza("Cocina",
-                false,
-                "Pep",
-                "Guardiola",
-                "1234567",
-                "Pepe123",
-                "Pepe123",
-                "Pepe123"
-                );
-        limpiezaList.add(limpieza1);
-        limpiezaList.add(limpieza2);
+        TestRepository test = new TestRepository();
 
-        PersonalLimpiezaRepository limpiezaRepository = new PersonalLimpiezaRepository();
-
-        limpiezaRepository.agregarLista(limpiezaList);
-        System.out.println(limpiezaRepository.listar());
+        //System.out.println("TEST AYUDANTE DE CAMPO");
+        //test.testAyudanteDeCampo();
+        //System.out.println("TEST DIRECTOR TECNICO");
+        //test.testDirectorTecnico();
+        //System.out.println("TEST JUGADOR");
+        //test.testJugador();
+        System.out.println("TEST MEDICO");
+        test.testMedico();
+        //System.out.println("TEST PERSONAL LIMPIEZA");
+        //test.testPErsonalLimpieza();
+        //System.out.println("TEST UTILERO");
+        //test.testUtilero();
+        System.out.println("TEST DIRECTIVO");
+        test.testDirectivo();
+        //System.out.println("TEST SOCIO");
+        //test.testSocio();
     }
 }

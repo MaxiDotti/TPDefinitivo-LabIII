@@ -2,8 +2,12 @@ package tpFinal.Repositorios.EmpleadosRepository;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
+<<<<<<< HEAD
 import tpFinal.Models.Empleado.AyudanteDeCampo;
+=======
+>>>>>>> origin/new-branch
 import tpFinal.Models.Empleado.DirectorTecnico;
+import tpFinal.Models.Empleado.PersonalLimpieza;
 import tpFinal.Repositorios.IRepository;
 
 import java.io.File;
@@ -37,7 +41,11 @@ public class DirectorTecnicoRepository implements IRepository<DirectorTecnico> {
     @Override
     public List<DirectorTecnico> listar() {
         cargar();
+<<<<<<< HEAD
         return  this.tecnicoList;
+=======
+        return this.tecnicoList;
+>>>>>>> origin/new-branch
     }
 
     @Override
@@ -45,7 +53,10 @@ public class DirectorTecnicoRepository implements IRepository<DirectorTecnico> {
         cargar();
         this.tecnicoList.add(objeto);
         guardar();
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/new-branch
     }
 
     @Override
@@ -58,9 +69,16 @@ public class DirectorTecnicoRepository implements IRepository<DirectorTecnico> {
     @Override
     public void eliminar(String dni) {
         cargar();
+<<<<<<< HEAD
         for (DirectorTecnico tecnico : this.tecnicoList)
             if(tecnico.getDni().equals(dni))
                 this.tecnicoList.remove(tecnico);
+=======
+        for(DirectorTecnico persona : tecnicoList){
+            if(persona.getDni().equals(dni))
+                this.tecnicoList.remove(persona);
+        }
+>>>>>>> origin/new-branch
         guardar();
     }
 
