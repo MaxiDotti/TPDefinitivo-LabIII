@@ -6,7 +6,7 @@ import tpFinal.Utilities.Deporte;
 public class Jugador extends Usuario {
     private String equipo;
     private String categoria;
-    private Enum<Deporte> deporte;
+    private String deporte;
     private String posicion;
     private Boolean estadoContable;
 
@@ -14,7 +14,8 @@ public class Jugador extends Usuario {
     ///Constructores
 
 
-    public Jugador(String equipo, String categoria, Enum<Deporte> deporte, String posicion, Boolean estadoContable) {
+    public Jugador(String nombre, String apellido, String dni, String contrasenia, String telefono, String direccion, String equipo, String categoria, String deporte, String posicion, Boolean estadoContable) {
+        super(nombre, apellido, dni, contrasenia, telefono, direccion);
         this.equipo = equipo;
         this.categoria = categoria;
         this.deporte = deporte;
@@ -44,11 +45,11 @@ public class Jugador extends Usuario {
         this.categoria = categoria;
     }
 
-    public Enum<Deporte> getDeporte() {
+    public String getDeporte() {
         return deporte;
     }
 
-    public void setDeporte(Enum<Deporte> deporte) {
+    public void setDeporte(String deporte) {
         this.deporte = deporte;
     }
 

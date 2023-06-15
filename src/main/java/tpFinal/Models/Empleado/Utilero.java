@@ -8,7 +8,9 @@ public class Utilero extends Usuario {
     private String deporte;
 
     public Utilero(){}
-    public Utilero(boolean estadoContable, String deporte) {
+
+    public Utilero(String nombre, String apellido, String dni, String contrasenia, String telefono, String direccion, boolean estadoContable, String deporte) {
+        super(nombre, apellido, dni, contrasenia, telefono, direccion);
         this.estadoContable = estadoContable;
         this.deporte = deporte;
     }
