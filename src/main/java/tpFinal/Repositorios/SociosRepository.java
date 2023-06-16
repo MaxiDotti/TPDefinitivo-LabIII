@@ -55,17 +55,14 @@ public class SociosRepository implements IRepository<Socio> {
     }
 
     @Override
-    public void eliminar(String dni) {
+    public void eliminar(Socio persona) {
         cargar();
-        for(Socio persona : listaSocios){
-            if(persona.getDni().equals(dni))
-                this.listaSocios.remove(persona);
-        }
+        this.listaSocios.remove(persona);
         guardar();
     }
 
     @Override
-    public void modificar(String dni) {
+    public void modificar(Socio persona) {
 
     }
 }

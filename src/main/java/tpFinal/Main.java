@@ -27,5 +27,5 @@ public class Main {
         test.testDirectivo();
         //System.out.println("TEST SOCIO");
         //test.testSocio();
-    }
+     }
 }

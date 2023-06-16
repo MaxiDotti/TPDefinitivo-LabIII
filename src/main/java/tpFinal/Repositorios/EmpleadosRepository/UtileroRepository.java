@@ -56,17 +56,14 @@ public class UtileroRepository implements IRepository<Utilero> {
     }
 
     @Override
-    public void eliminar(String dni) {
+    public void eliminar(Utilero persona) {
         this.cargar();
-        for(Utilero utilero : listUtilero){
-            if(utilero.getDni().equals(dni))
-                this.listUtilero.remove(utilero);
-        }
+        this.listUtilero.remove(persona);
         this.guardar();
     }
 
     @Override
-    public void modificar(String dni) {
+    public void modificar(Utilero persona) {
 
     }
 }

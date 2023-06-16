@@ -8,6 +8,6 @@ public interface IRepository<T>{
     List<T> listar();
     void agregar(T objeto);
     void agregarLista(List<T> lista);
-    void eliminar(String dni);
-    void modificar(String dni);
+    void eliminar(T dni);
+    void modificar(T dni);
 }

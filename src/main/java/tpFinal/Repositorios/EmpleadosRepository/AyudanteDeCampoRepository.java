@@ -56,17 +56,14 @@ public class AyudanteDeCampoRepository implements IRepository<AyudanteDeCampo> {
     }
 
     @Override
-    public void eliminar(String dni) {
+    public void eliminar(AyudanteDeCampo persona) {
         cargar();
-        for(AyudanteDeCampo persona : campoList){
-            if(persona.getDni().equals(dni))
-                this.campoList.remove(persona);
-        }
+        this.campoList.remove(persona);
         guardar();
     }
 
     @Override
-    public void modificar(String dni) {
+    public void modificar(AyudanteDeCampo dni) {
 
     }
 }

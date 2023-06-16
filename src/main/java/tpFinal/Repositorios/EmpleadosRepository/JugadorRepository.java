@@ -55,17 +55,14 @@ public class JugadorRepository implements IRepository<Jugador> {
     }
 
     @Override
-    public void eliminar(String dni) {
+    public void eliminar(Jugador persona) {
         cargar();
-        for(Jugador persona : jugadorList){
-            if(persona.getDni().equals(dni))
-                this.jugadorList.remove(persona);
-        }
+        this.jugadorList.remove(persona);
         guardar();
     }
 
     @Override
-    public void modificar(String dni) {
+    public void modificar(Jugador persona) {
 
     }
 }

@@ -55,17 +55,14 @@ public class DirectorTecnicoRepository implements IRepository<DirectorTecnico> {
     }
 
     @Override
-    public void eliminar(String dni) {
+    public void eliminar(DirectorTecnico persona) {
         cargar();
-        for(DirectorTecnico persona : tecnicoList){
-            if(persona.getDni().equals(dni))
-                this.tecnicoList.remove(persona);
-        }
+        this.tecnicoList.remove(persona);
         guardar();
     }
 
     @Override
-    public void modificar(String dni) {
+    public void modificar(DirectorTecnico persona) {
 
     }
 }

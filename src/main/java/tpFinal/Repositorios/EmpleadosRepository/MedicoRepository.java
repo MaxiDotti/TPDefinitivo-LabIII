@@ -55,17 +55,14 @@ public class MedicoRepository implements IRepository<Medico> {
     }
 
     @Override
-    public void eliminar(String dni) {
+    public void eliminar(Medico persona) {
         cargar();
-        for(Medico persona : medicoList){
-            if(persona.getDni().equals(dni))
-                this.medicoList.remove(persona);
-        }
+        this.medicoList.remove(persona);
         guardar();
     }
 
     @Override
-    public void modificar(String dni) {
+    public void modificar(Medico persona) {
 
     }
 }

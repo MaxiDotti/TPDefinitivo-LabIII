@@ -58,20 +58,14 @@ public class PersonalLimpiezaRepository implements IRepository<PersonalLimpieza>
     }
 
     @Override
-    public void eliminar(String dni){
+    public void eliminar(PersonalLimpieza persona){
         this.cargar();
-        this.listPersonalLimpieza.remove(dni);
-        this.guardar();
-    }
-
-    public void eliminarPersonal(PersonalLimpieza personal){
-        this.cargar();
-        this.listPersonalLimpieza.remove(personal);
+        this.listPersonalLimpieza.remove(persona);
         this.guardar();
     }
 
     @Override
-    public void modificar(String dni) {
+    public void modificar(PersonalLimpieza persona) {
 
     }
 

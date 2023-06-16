@@ -54,17 +54,14 @@ public class DirectivoRepository implements IRepository<Directivo>{
     }
 
     @Override
-    public void eliminar(String dni) {
+    public void eliminar(Directivo persona) {
         cargar();
-        for(Directivo persona : directivoList){
-            if(persona.getDni().equals(dni))
-                this.directivoList.remove(persona);
-        }
+        this.directivoList.remove(persona);
         guardar();
     }
 
     @Override
-    public void modificar(String dni) {
+    public void modificar(Directivo persona) {
 
     }
 }
