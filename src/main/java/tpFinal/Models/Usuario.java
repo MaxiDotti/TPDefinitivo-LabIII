@@ -94,11 +94,11 @@ public abstract class Usuario {
     public String toString() {
         return "---> Usuario" +
                 "    Nombre: " + nombre +
-                "  Apellido:" + apellido +
+                "  Apellido: " + apellido +
                 "       DNI: " + dni +
                 "Contraseña: " + contrasenia +
                 "  Telefono: " + telefono +
-                " Direccion: " + direccion;
+                " Direccion: " + direccion + "\n";
     }
     //endregion
 }

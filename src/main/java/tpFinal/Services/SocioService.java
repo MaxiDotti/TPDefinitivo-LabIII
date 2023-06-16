@@ -24,17 +24,8 @@ public class SocioService implements ISocioService{
     }
 
     @Override
-    public void eliminar(String dni) {
+    public void eliminar(String dni) throws Exception {
         sociosRepo.eliminar(dni);
-    }
-
-    @Override
-    public boolean buscarSocio(String dni) {
-        if(sociosRepo.buscarSocio(dni)){
-            return true;
-        }else{
-            return false;
-        }
     }
 
     @Override

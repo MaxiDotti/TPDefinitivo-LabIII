@@ -7,5 +7,4 @@ public interface IPersonalLimpiezaService {
     void agregar(PersonalLimpieza objeto);
     void modificar(String dni);
     void eliminar(String dni);
-    PersonalLimpieza buscarPersonal(String dni);
 }

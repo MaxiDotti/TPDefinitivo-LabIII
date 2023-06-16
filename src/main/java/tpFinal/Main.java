@@ -31,9 +31,12 @@ public class Main {
         //System.out.println("TEST SOCIO");
         //test.testSocio();
     }*/
-        SocioService socioService = new SocioService();
-        System.out.println("******************************** Listando socios ********************************\n");
-        System.out.println(socioService.listar());
+
+
+
+
+
+
 
     }
 }

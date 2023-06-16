@@ -17,4 +17,10 @@ public class Socio extends Usuario implements Serializable {
     public void setEstadoContable(boolean estadoContable) {
         this.estadoContable = estadoContable;
     }
+
+    @Override
+    public String toString() {
+        return "Socio{" +
+                "Estado contable: " + estadoContable + super.toString();
+    }
 }
