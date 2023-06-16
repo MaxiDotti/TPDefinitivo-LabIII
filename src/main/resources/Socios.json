@@ -1,7 +1,7 @@
 [ {
   "nombre" : "Nombre1",
   "apellido" : "Apellido1",
-  "dni" : "Dni1",
+  "dni" : "1",
   "contrasenia" : "Contrasenia1",
   "telefono" : "Telefono1",
   "direccion" : "Direccion1",
@@ -9,7 +9,7 @@
 }, {
   "nombre" : "Nombre2",
   "apellido" : "Apellido2",
-  "dni" : "Dni2",
+  "dni" : "2",
   "contrasenia" : "Contrasenia2",
   "telefono" : "Telefono2",
   "direccion" : "Direccion2",
@@ -17,17 +17,9 @@
 }, {
   "nombre" : "Nombre3",
   "apellido" : "Apellido3",
-  "dni" : "Dni3",
+  "dni" : "3",
   "contrasenia" : "Contrasenia3",
   "telefono" : "Telefono3",
   "direccion" : "Direccion3",
-  "estadoContable" : true
-}, {
-  "nombre" : "Nombre4",
-  "apellido" : "Apellido4",
-  "dni" : "Dni4",
-  "contrasenia" : "Contrasenia4",
-  "telefono" : "Telefono4",
-  "direccion" : "Direccion4",
   "estadoContable" : true
 } ]
