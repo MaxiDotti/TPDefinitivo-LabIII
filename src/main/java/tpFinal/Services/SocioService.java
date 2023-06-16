@@ -1,12 +1,17 @@
 package tpFinal.Services;
 
+import tpFinal.Exceptions.FormatoDNINoCompatibleException;
+import tpFinal.Exceptions.ObjetoNoEncontradoException;
 import tpFinal.Models.Socio;
 import tpFinal.Repositorios.SociosRepository;
+import tpFinal.Utilities.Validations;
 
 import java.util.List;
 
 public class SocioService implements ISocioService{
+
     SociosRepository sociosRepo = new SociosRepository();
+    Validations validations = new Validations();
 
     @Override
     public List<Socio> listar() {
@@ -24,8 +29,22 @@ public class SocioService implements ISocioService{
     }
 
     @Override
-    public void eliminar(String dni) throws Exception {
-        sociosRepo.eliminar(dni);
+    public void eliminar(String dni) {
+        try{
+            sociosRepo.cargar();
+            if(validations.validarDni(dni) && buscarSocio(dni) != null){
+                    sociosRepo.eliminar(dni);
+            }
+            sociosRepo.guardar();
+        }catch (ObjetoNoEncontradoException e){
+            System.out.println(e.getMensaje());
+        }catch(FormatoDNINoCompatibleException e){
+            System.out.println(e.getMensaje());
+        }
+    }
+
+    public Socio buscarSocio(String dni) throws ObjetoNoEncontradoException{
+        return sociosRepo.buscarSocio(dni);
     }
 
     @Override
@@ -47,4 +66,5 @@ public class SocioService implements ISocioService{
     public void listarBeneficios() {
 
     }
+
 }

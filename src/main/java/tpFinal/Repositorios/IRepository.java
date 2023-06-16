@@ -1,5 +1,7 @@
 package tpFinal.Repositorios;
 
+import tpFinal.Exceptions.ObjetoNoEncontradoException;
+
 import java.util.List;
 
 public interface IRepository<T>{
@@ -9,6 +11,7 @@ public interface IRepository<T>{
     List<T> listar();
     void agregar(T objeto);
     void agregarLista(List<T> lista);
-    void eliminar(String dni) throws Exception;
+    void eliminar(String dni);
     void modificar(String dni);
+
 }

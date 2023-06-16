@@ -2,7 +2,8 @@ package tpFinal.Repositorios;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
-import tpFinal.Models.Empleado.PersonalLimpieza;
+import tpFinal.Exceptions.FormatoDNINoCompatibleException;
+import tpFinal.Exceptions.ObjetoNoEncontradoException;
 import tpFinal.Models.Socio;
 
 import java.io.File;
@@ -59,17 +60,11 @@ public class SociosRepository implements IRepository<Socio> {
     }
 
     @Override
-    public void eliminar(String dni) throws Exception {
-        this.cargar();
-        if(buscarSocio(dni) != null){
-            this.listaSocios.remove(buscarSocio(dni));
-        }else{
-            throw new Exception();
-        }
-        this.guardar();
+    public void eliminar(String dni){
+        this.listaSocios.remove(buscarSocio(dni));
     }
 
-    public Socio buscarSocio(String dni) {
+    public Socio buscarSocio(String dni){
         for(Socio socio : this.listaSocios){
             if(socio.getDni().equals(dni)){
                 return socio;
