@@ -34,4 +34,76 @@
   "direccion" : "Pepe123",
   "sector" : "Cocina",
   "estadoContable" : false
+}, {
+  "nombre" : "Jaime",
+  "apellido" : "ana",
+  "dni" : " asfafd",
+  "contrasenia" : "asnjodasnf",
+  "telefono" : "asbfijasf",
+  "direccion" : "jbafjosjbfa",
+  "sector" : "Baños",
+  "estadoContable" : true
+}, {
+  "nombre" : "Pep",
+  "apellido" : "Guardiola",
+  "dni" : "1234567",
+  "contrasenia" : "Pepe123",
+  "telefono" : "Pepe123",
+  "direccion" : "Pepe123",
+  "sector" : "Cocina",
+  "estadoContable" : false
+}, {
+  "nombre" : "Jaime",
+  "apellido" : "ana",
+  "dni" : " asfafd",
+  "contrasenia" : "asnjodasnf",
+  "telefono" : "asbfijasf",
+  "direccion" : "jbafjosjbfa",
+  "sector" : "Baños",
+  "estadoContable" : true
+}, {
+  "nombre" : "Pep",
+  "apellido" : "Guardiola",
+  "dni" : "1234567",
+  "contrasenia" : "Pepe123",
+  "telefono" : "Pepe123",
+  "direccion" : "Pepe123",
+  "sector" : "Cocina",
+  "estadoContable" : false
+}, {
+  "nombre" : "Jaime",
+  "apellido" : "ana",
+  "dni" : " asfafd",
+  "contrasenia" : "asnjodasnf",
+  "telefono" : "asbfijasf",
+  "direccion" : "jbafjosjbfa",
+  "sector" : "Baños",
+  "estadoContable" : true
+}, {
+  "nombre" : "Pep",
+  "apellido" : "Guardiola",
+  "dni" : "1234567",
+  "contrasenia" : "Pepe123",
+  "telefono" : "Pepe123",
+  "direccion" : "Pepe123",
+  "sector" : "Cocina",
+  "estadoContable" : false
+}, {
+  "nombre" : "Jaime",
+  "apellido" : "ana",
+  "dni" : " asfafd",
+  "contrasenia" : "asnjodasnf",
+  "telefono" : "asbfijasf",
+  "direccion" : "jbafjosjbfa",
+  "sector" : "Baños",
+  "estadoContable" : true
+}, {
+  "nombre" : "Pep",
+  "apellido" : "Guardiola",
+  "dni" : "1234567",
+  "contrasenia" : "Pepe123",
+  "telefono" : "Pepe123",
+  "direccion" : "Pepe123",
+  "sector" : "Cocina",
+  "estadoContable" : false
 } ]

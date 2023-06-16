@@ -54,7 +54,6 @@ public class PersonalLimpiezaRepository implements IRepository<PersonalLimpieza>
         this.cargar();
         this.listPersonalLimpieza.addAll(lista);
         this.guardar();
-
     }
 
     @Override
