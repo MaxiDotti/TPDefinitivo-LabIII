@@ -96,7 +96,11 @@ public class DirectivoService implements IDirectivoService{
 
     @Override
     public void eliminarSocio(String dni) {
-        sociosService.eliminar(dni);
+        try{
+            sociosService.eliminar(dni);
+        }catch (Exception e){
+            System.out.println("El socio ingresado no existe.");
+        }
     }
 
     @Override

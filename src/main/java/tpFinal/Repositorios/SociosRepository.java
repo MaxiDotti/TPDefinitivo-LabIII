@@ -50,6 +50,7 @@ public class SociosRepository implements IRepository<Socio> {
         guardar();
     }
 
+    // CUAL ES EL SENTIDO?
     @Override
     public void agregarLista(List<Socio> lista) {
         cargar();
@@ -58,29 +59,30 @@ public class SociosRepository implements IRepository<Socio> {
     }
 
     @Override
-    public void eliminar(String dni) {
-        cargar();
-        for (Socio socio : this.listaSocios)
-            if (socio.getDni().equals(dni))
-                this.listaSocios.remove(socio);
-       guardar();
+    public void eliminar(String dni) throws Exception {
+        this.cargar();
+        if(buscarSocio(dni) != null){
+            this.listaSocios.remove(buscarSocio(dni));
+        }else{
+            throw new Exception();
+        }
+        this.guardar();
     }
 
-    public boolean buscarSocio(String dni){ // RETORNA TRUE SI EL SOCIO EXISTE EN EL ARCHIVO
-        cargar();
+    public Socio buscarSocio(String dni) {
         for(Socio socio : this.listaSocios){
-            if(socio.getDni() == dni){
-                return true;
+            if(socio.getDni().equals(dni)){
+                return socio;
             }
         }
-        return false;
+        return null;
     }
 
     @Override
     public void modificar(String dni) {
         cargar();
         for(Socio socio : this.listaSocios){
-            if(socio.getDni() == dni){
+            if(socio.getDni().equals(dni)){
                 Socio modificado = modificarAux();
                 socio.setContrasenia(modificado.getContrasenia());
                 socio.setTelefono(modificado.getTelefono());
@@ -106,7 +108,7 @@ public class SociosRepository implements IRepository<Socio> {
             while(opcion == 1) {
                 System.out.print("INGRESE NUEVAMENTE LA CONTRASEÑA: ");
                 String cambio2 = leer.next();
-                if (cambio == cambio2) {
+                if (cambio.equals(cambio2)) {
                     nuevo.setContrasenia(cambio2);
                     System.out.println("LA CONTRASEÑA FUE MODIFICADA CORRECTAMENTE.");
                     opcion = -1;
@@ -141,7 +143,7 @@ public class SociosRepository implements IRepository<Socio> {
     public boolean estadoContable(String dni){
         cargar();
         for(Socio socio : this.listaSocios){
-            if(socio.getDni() == dni){
+            if(socio.getDni().equals(dni)){
                 if (socio.isEstadoContable()) {
                     return true;
                 }

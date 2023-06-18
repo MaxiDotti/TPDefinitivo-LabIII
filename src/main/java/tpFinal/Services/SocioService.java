@@ -3,12 +3,14 @@ package tpFinal.Services;
 import tpFinal.Models.Socio;
 import tpFinal.Repositorios.SociosRepository;
 
+import java.util.List;
+
 public class SocioService implements ISocioService{
     SociosRepository sociosRepo = new SociosRepository();
 
     @Override
-    public void listar() {
-        sociosRepo.listar().forEach(System.out::println);
+    public List<Socio> listar() {
+        return sociosRepo.listar();
     }
 
     @Override
@@ -22,17 +24,8 @@ public class SocioService implements ISocioService{
     }
 
     @Override
-    public void eliminar(String dni) {
+    public void eliminar(String dni) throws Exception {
         sociosRepo.eliminar(dni);
-    }
-
-    @Override
-    public boolean buscarSocio(String dni) {
-        if(sociosRepo.buscarSocio(dni)){
-            return true;
-        }else{
-            return false;
-        }
     }
 
     @Override

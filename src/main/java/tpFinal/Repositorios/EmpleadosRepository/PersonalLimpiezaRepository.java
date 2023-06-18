@@ -69,13 +69,24 @@ public class PersonalLimpiezaRepository implements IRepository<PersonalLimpieza>
 
 
     @Override
-    public void eliminar(String dni) {
+    public void eliminar(String dni) throws Exception {
         this.cargar();
-        for(PersonalLimpieza persona : listPersonalLimpieza){
-            if(persona.getDni().equals(dni))
-                this.listPersonalLimpieza.remove(persona);
+        if(buscarPersonal(dni) != null){
+            this.listPersonalLimpieza.remove(buscarPersonal(dni));
+        }else{
+            throw new Exception();
         }
         this.guardar();
+    }
+
+    public PersonalLimpieza buscarPersonal(String dni) {
+        List<PersonalLimpieza> personalLimpiezas = listar();
+        for(PersonalLimpieza personal : personalLimpiezas){
+            if(personal.getDni().equals(dni)){
+                return personal;
+            }
+        }
+        return null;
     }
 
 
