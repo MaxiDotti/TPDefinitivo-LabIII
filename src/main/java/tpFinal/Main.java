@@ -35,11 +35,9 @@ public class Main {
     }*/
 
         SocioService socioService = new SocioService();
-        socioService.eliminar("4");
+        Socio nuevo = new Socio("Maximo", "Dotti", "38210372", "Modi", "Modi", "Modi", true);
+        socioService.modificar(nuevo);
         System.out.println(socioService.listar());
-        //SociosRepository socioRepo = new SociosRepository();
-        //socioRepo.eliminar("4");
-        //System.out.println(socioRepo.buscarSocio("4"));
 
 
     }

@@ -8,7 +8,7 @@ import java.util.List;
 public interface ISocioService {
     List<Socio> listar();
     void agregar(Socio objeto);
-    void modificar(String dni);
+    void modificar(Socio objeto);
     void eliminar(String dni);
     void comprarEntrada();
     void comprarMerchandasing();

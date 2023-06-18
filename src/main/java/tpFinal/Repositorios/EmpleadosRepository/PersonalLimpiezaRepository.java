@@ -73,6 +73,11 @@ public class PersonalLimpiezaRepository implements IRepository<PersonalLimpieza>
         this.guardar();
     }
 
+    @Override
+    public void modificar(PersonalLimpieza objeto) {
+
+    }
+
     public PersonalLimpieza buscarPersonal(String dni) {
         List<PersonalLimpieza> personalLimpiezas = listar();
         for(PersonalLimpieza personal : personalLimpiezas){
@@ -83,10 +88,4 @@ public class PersonalLimpiezaRepository implements IRepository<PersonalLimpieza>
         return null;
     }
 
-
-    @Override
-    public void modificar(String dni) {
-
-
-    }
 }

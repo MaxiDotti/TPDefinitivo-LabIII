@@ -31,8 +31,8 @@ public class PersonalLimpiezaService implements IPersonalLimpiezaService {
     }
 
     @Override
-    public void modificar(String dni) {
-        personalLimpiezaRepository.modificar(dni);
+    public void modificar(PersonalLimpieza objeto) {
+        personalLimpiezaRepository.modificar(objeto);
     }
 
     @Override

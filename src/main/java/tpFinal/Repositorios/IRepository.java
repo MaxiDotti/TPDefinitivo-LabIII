@@ -12,6 +12,6 @@ public interface IRepository<T>{
     void agregar(T objeto);
     void agregarLista(List<T> lista);
     void eliminar(String dni);
-    void modificar(String dni);
+    void modificar(T objeto);
 
 }

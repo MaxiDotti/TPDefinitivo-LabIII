@@ -66,7 +66,8 @@ public class UtileroRepository implements IRepository<Utilero> {
     }
 
     @Override
-    public void modificar(String dni) {
+    public void modificar(Utilero objeto) {
 
     }
+
 }

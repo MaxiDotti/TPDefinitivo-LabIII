@@ -3,6 +3,7 @@ package tpFinal.Utilities;
 import tpFinal.Exceptions.FormatoDNINoCompatibleException;
 import tpFinal.Exceptions.FormatoUsuarioNoCompatibleException;
 import tpFinal.Models.Empleado.PersonalLimpieza;
+import tpFinal.Models.Socio;
 
 public class Validations extends Exception{
 
@@ -21,6 +22,16 @@ public class Validations extends Exception{
             throw new FormatoDNINoCompatibleException();
         }
         if(!validateTelefono(personalLimpieza.getTelefono()) || !validateNombre(personalLimpieza.getNombre()) || !validateApellido(personalLimpieza.getApellido())){
+            throw new FormatoUsuarioNoCompatibleException();
+        }
+        return true;
+    }
+
+    public boolean validarSocio(Socio socio) throws FormatoDNINoCompatibleException, FormatoUsuarioNoCompatibleException {
+        if(!validateDni(socio.getDni())){
+            throw new FormatoDNINoCompatibleException();
+        }
+        if(!validateTelefono(socio.getTelefono()) || !validateNombre(socio.getNombre()) || !validateApellido(socio.getApellido())){
             throw new FormatoUsuarioNoCompatibleException();
         }
         return true;

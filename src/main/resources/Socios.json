@@ -22,4 +22,12 @@
   "telefono" : "Telefono3",
   "direccion" : "Direccion3",
   "estadoContable" : true
+}, {
+  "nombre" : "Maximo",
+  "apellido" : "Dotti",
+  "dni" : "38210372",
+  "contrasenia" : "Modi",
+  "telefono" : "Modi",
+  "direccion" : "Modi",
+  "estadoContable" : true
 } ]

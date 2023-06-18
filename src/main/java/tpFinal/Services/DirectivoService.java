@@ -45,11 +45,6 @@ public class DirectivoService implements IDirectivoService{
     }
 
     @Override
-    public void modificarJugador(String dni) {
-        jugadorService.modificarJugador(dni);
-    }
-
-    @Override
     public void eliminarJugador(String dni) {
         jugadorService.eliminarJugador(dni);
     }
@@ -79,10 +74,6 @@ public class DirectivoService implements IDirectivoService{
         sociosService.agregar(nuevo);
     }
 
-    @Override
-    public void modificarSocio(String dni) {
-        sociosService.modificar(dni);
-    }
 
     @Override
     public void eliminarSocio(String dni) {

@@ -40,15 +40,12 @@ public class SociosRepository implements IRepository<Socio> {
 
     @Override
     public List<Socio> listar() {
-        cargar();
         return this.listaSocios;
     }
 
     @Override
     public void agregar(Socio objeto) {
-        cargar();
         this.listaSocios.add(objeto);
-        guardar();
     }
 
     // CUAL ES EL SENTIDO?
@@ -74,18 +71,31 @@ public class SociosRepository implements IRepository<Socio> {
     }
 
     @Override
-    public void modificar(String dni) {
+    public void modificar(Socio objeto) {
+        for(Socio socio : this.listaSocios){
+            if(socio.getDni().equals(objeto.getDni())){
+                socio.setContrasenia(objeto.getContrasenia());
+                socio.setTelefono(objeto.getTelefono());
+                socio.setDireccion(objeto.getDireccion());
+            }
+        }
+    }
+
+    public boolean estadoContable(String dni){
         cargar();
         for(Socio socio : this.listaSocios){
             if(socio.getDni().equals(dni)){
-                Socio modificado = modificarAux();
-                socio.setContrasenia(modificado.getContrasenia());
-                socio.setTelefono(modificado.getTelefono());
-                socio.setDireccion(modificado.getDireccion());
+                if (socio.isEstadoContable()) {
+                    return true;
+                }
             }
         }
-        guardar();
+        return false;
     }
+}
+
+/* CODIGO DE MODIFICACION PARA EL MENU
+
 
     public Socio modificarAux(){
         Socio nuevo = new Socio();
@@ -134,16 +144,4 @@ public class SociosRepository implements IRepository<Socio> {
         }
         return nuevo;
     }
-
-    public boolean estadoContable(String dni){
-        cargar();
-        for(Socio socio : this.listaSocios){
-            if(socio.getDni().equals(dni)){
-                if (socio.isEstadoContable()) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-}
+*/
