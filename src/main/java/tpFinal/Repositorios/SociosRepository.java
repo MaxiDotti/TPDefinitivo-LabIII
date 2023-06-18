@@ -2,7 +2,8 @@ package tpFinal.Repositorios;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
-import tpFinal.Models.Empleado.PersonalLimpieza;
+import tpFinal.Exceptions.FormatoDNINoCompatibleException;
+import tpFinal.Exceptions.ObjetoNoEncontradoException;
 import tpFinal.Models.Socio;
 
 import java.io.File;
@@ -39,15 +40,12 @@ public class SociosRepository implements IRepository<Socio> {
 
     @Override
     public List<Socio> listar() {
-        cargar();
         return this.listaSocios;
     }
 
     @Override
     public void agregar(Socio objeto) {
-        cargar();
         this.listaSocios.add(objeto);
-        guardar();
     }
 
     // CUAL ES EL SENTIDO?
@@ -59,17 +57,11 @@ public class SociosRepository implements IRepository<Socio> {
     }
 
     @Override
-    public void eliminar(String dni) throws Exception {
-        this.cargar();
-        if(buscarSocio(dni) != null){
-            this.listaSocios.remove(buscarSocio(dni));
-        }else{
-            throw new Exception();
-        }
-        this.guardar();
+    public void eliminar(String dni){
+        this.listaSocios.remove(buscarSocio(dni));
     }
 
-    public Socio buscarSocio(String dni) {
+    public Socio buscarSocio(String dni){
         for(Socio socio : this.listaSocios){
             if(socio.getDni().equals(dni)){
                 return socio;
@@ -79,18 +71,31 @@ public class SociosRepository implements IRepository<Socio> {
     }
 
     @Override
-    public void modificar(String dni) {
+    public void modificar(Socio objeto) {
+        for(Socio socio : this.listaSocios){
+            if(socio.getDni().equals(objeto.getDni())){
+                socio.setContrasenia(objeto.getContrasenia());
+                socio.setTelefono(objeto.getTelefono());
+                socio.setDireccion(objeto.getDireccion());
+            }
+        }
+    }
+
+    public boolean estadoContable(String dni){
         cargar();
         for(Socio socio : this.listaSocios){
             if(socio.getDni().equals(dni)){
-                Socio modificado = modificarAux();
-                socio.setContrasenia(modificado.getContrasenia());
-                socio.setTelefono(modificado.getTelefono());
-                socio.setDireccion(modificado.getDireccion());
+                if (socio.isEstadoContable()) {
+                    return true;
+                }
             }
         }
-        guardar();
+        return false;
     }
+}
+
+/* CODIGO DE MODIFICACION PARA EL MENU
+
 
     public Socio modificarAux(){
         Socio nuevo = new Socio();
@@ -139,16 +144,4 @@ public class SociosRepository implements IRepository<Socio> {
         }
         return nuevo;
     }
-
-    public boolean estadoContable(String dni){
-        cargar();
-        for(Socio socio : this.listaSocios){
-            if(socio.getDni().equals(dni)){
-                if (socio.isEstadoContable()) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-}
+*/

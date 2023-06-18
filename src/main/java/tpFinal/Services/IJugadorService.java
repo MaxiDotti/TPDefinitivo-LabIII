@@ -7,7 +7,7 @@ public interface IJugadorService {
     void listarTodosLosJugadores(String deporte); // SE DEBE SELECCIONAR DEPORTE
     void listarPorPosicionYCategoria(String deporte, String categoria, String posicion); // SE DEBE SELECCIONAR DEPORTE
     void agregarJugador(Jugador nuevo); // SOLO UTILIZA ADMIN O DIRECTIVO
-    void modificarJugador(String dni); // SOLO UTILIZA ADMIN O DIRECTIVO
+    void modificarJugador(Jugador objeto); // SOLO UTILIZA ADMIN O DIRECTIVO
     void eliminarJugador(String dni); // SOLO UTILIZA ADMIN O DIRECTIVO
     void cambiarCategoria();
     void cambiarDeporte();

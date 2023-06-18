@@ -1,9 +1,14 @@
 package tpFinal.Services;
-import tpFinal.Models.Empleado.PersonalLimpieza;
-import tpFinal.Models.Usuario;
-import tpFinal.Repositorios.EmpleadosRepository.PersonalLimpiezaRepository;
 
-public class PersonalLimpiezaService implements IPersonalLimpiezaService{
+import tpFinal.Exceptions.FormatoDNINoCompatibleException;
+import tpFinal.Exceptions.FormatoUsuarioNoCompatibleException;
+import tpFinal.Models.Empleado.PersonalLimpieza;
+import tpFinal.Repositorios.EmpleadosRepository.PersonalLimpiezaRepository;
+import tpFinal.Utilities.Validations;
+
+public class PersonalLimpiezaService implements IPersonalLimpiezaService {
+
+    Validations validations;
 
     PersonalLimpiezaRepository personalLimpiezaRepository = new PersonalLimpiezaRepository();
 
@@ -14,29 +19,32 @@ public class PersonalLimpiezaService implements IPersonalLimpiezaService{
 
     @Override
     public void agregar(PersonalLimpieza objeto) {
-        if(validateFields(objeto)){
-            if((personalLimpiezaRepository.buscarPersonal(objeto.getDni())) == null){
-                personalLimpiezaRepository.agregar(objeto);
-            } else {
-                System.out.println("El Usuario con dni " + objeto.getDni() + " ya existe");
-            }
+        try {
+            validations.validarPersonalLimpieza(objeto);
+            personalLimpiezaRepository.agregar(objeto);
+        } catch (FormatoDNINoCompatibleException e) {
+            System.out.println(e.getMensaje());
+        }
+        catch (FormatoUsuarioNoCompatibleException e){
+            System.out.println(e.getMensaje());
         }
     }
 
     @Override
-    public void modificar(String dni) {
-        personalLimpiezaRepository.modificar(dni);
+    public void modificar(PersonalLimpieza objeto) {
+        personalLimpiezaRepository.modificar(objeto);
     }
 
     @Override
     public void eliminar(String dni) {
-        try{
+        try {
             personalLimpiezaRepository.eliminar(dni);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("No se encuentra el Personal en el archivo.");
         }
     }
 
+    /* Reemplazado por la clase "Validations" ¡¡REVISAR EN CASO DE DUDAS!!
     private boolean validateFields(Usuario personal){
         boolean validFields = true;
         if(!validateDni(personal.getDni())){
@@ -56,21 +64,6 @@ public class PersonalLimpiezaService implements IPersonalLimpiezaService{
             validFields = false;
         }
         return validFields;
-    }
+    }*/
 
-    private boolean validateDni(String dni){
-        return dni.matches("[0-9]+");
-    }
-
-    private boolean validateTelefono(String telefono){
-        return telefono.matches("[0-9]+");
-    }
-
-    private boolean validateNombre(String nombre){
-        return nombre.matches("[a-zA-Z]+");
-    }
-
-    private boolean validateApellido(String apellido){
-        return apellido.matches("[a-zA-Z]+");
-    }
 }

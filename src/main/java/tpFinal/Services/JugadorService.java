@@ -41,8 +41,8 @@ public class JugadorService implements IJugadorService{
     }
 
     @Override
-    public void modificarJugador(String dni) {
-        jugadorRepo.modificar(dni);
+    public void modificarJugador(Jugador objeto) {
+        jugadorRepo.modificar(objeto);
     }
 
     @Override

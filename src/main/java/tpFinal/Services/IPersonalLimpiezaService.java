@@ -5,6 +5,6 @@ import tpFinal.Models.Empleado.PersonalLimpieza;
 public interface IPersonalLimpiezaService {
     void listar();
     void agregar(PersonalLimpieza objeto);
-    void modificar(String dni);
+    void modificar(PersonalLimpieza objeto);
     void eliminar(String dni);
 }

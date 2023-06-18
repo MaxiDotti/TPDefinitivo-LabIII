@@ -53,8 +53,6 @@ public class PersonalLimpiezaRepository implements IRepository<PersonalLimpieza>
         this.cargar();
         this.listPersonalLimpieza.add(objeto);
         this.guardar();
-
-
     }
 
 
@@ -69,14 +67,15 @@ public class PersonalLimpiezaRepository implements IRepository<PersonalLimpieza>
 
 
     @Override
-    public void eliminar(String dni) throws Exception {
+    public void eliminar(String dni) {
         this.cargar();
-        if(buscarPersonal(dni) != null){
-            this.listPersonalLimpieza.remove(buscarPersonal(dni));
-        }else{
-            throw new Exception();
-        }
+        this.listPersonalLimpieza.remove(buscarPersonal(dni));
         this.guardar();
+    }
+
+    @Override
+    public void modificar(PersonalLimpieza objeto) {
+
     }
 
     public PersonalLimpieza buscarPersonal(String dni) {
@@ -89,10 +88,4 @@ public class PersonalLimpiezaRepository implements IRepository<PersonalLimpieza>
         return null;
     }
 
-
-    @Override
-    public void modificar(String dni) {
-
-
-    }
 }

@@ -75,10 +75,9 @@ public class JugadorRepository implements IRepository<Jugador> {
         guardar();
     }
 
-
     @Override
-    public void modificar(String dni) {
-
+    public void modificar(Jugador objeto) {
 
     }
+
 }

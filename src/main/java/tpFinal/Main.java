@@ -3,11 +3,13 @@ package tpFinal;
 import tpFinal.Models.Empleado.PersonalLimpieza;
 import tpFinal.Models.Socio;
 import tpFinal.Repositorios.EmpleadosRepository.PersonalLimpiezaRepository;
+import tpFinal.Repositorios.SociosRepository;
 import tpFinal.Services.SocioService;
 import tpFinal.Utilities.TestRepository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -32,10 +34,10 @@ public class Main {
         //test.testSocio();
     }*/
 
-
-
-
-
+        SocioService socioService = new SocioService();
+        Socio nuevo = new Socio("Maximo", "Dotti", "38210372", "Modi", "Modi", "Modi", true);
+        socioService.modificar(nuevo);
+        System.out.println(socioService.listar());
 
 
     }

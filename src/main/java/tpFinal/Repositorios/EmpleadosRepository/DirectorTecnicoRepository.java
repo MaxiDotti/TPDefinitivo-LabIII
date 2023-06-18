@@ -73,10 +73,9 @@ public class DirectorTecnicoRepository implements IRepository<DirectorTecnico> {
         guardar();
     }
 
-
     @Override
-    public void modificar(String dni) {
-
+    public void modificar(DirectorTecnico objeto) {
 
     }
+
 }

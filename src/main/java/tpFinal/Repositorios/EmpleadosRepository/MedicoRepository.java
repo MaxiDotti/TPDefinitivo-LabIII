@@ -77,10 +77,9 @@ public class MedicoRepository implements IRepository<Medico> {
         this.guardar();
     }
 
-
     @Override
-    public void modificar(String dni) {
-
+    public void modificar(Medico objeto) {
 
     }
+
 }

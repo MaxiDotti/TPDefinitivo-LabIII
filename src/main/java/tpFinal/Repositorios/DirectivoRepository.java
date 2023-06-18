@@ -74,10 +74,9 @@ public class DirectivoRepository implements IRepository<Directivo>{
         guardar();
     }
 
-
     @Override
-    public void modificar(String dni) {
-
+    public void modificar(Directivo objeto) {
 
     }
+
 }

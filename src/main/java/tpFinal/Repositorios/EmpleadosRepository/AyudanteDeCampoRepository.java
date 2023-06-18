@@ -71,10 +71,9 @@ public class AyudanteDeCampoRepository implements IRepository<AyudanteDeCampo> {
         guardar();
     }
 
-
     @Override
-    public void modificar(String dni) {
-
+    public void modificar(AyudanteDeCampo objeto) {
 
     }
+
 }
