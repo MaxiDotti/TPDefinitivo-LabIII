@@ -1,97 +1,87 @@
 package tpFinal.Services;
-import tpFinal.Models.Empleado.Jugador;
-import tpFinal.Models.Socio;
+import tpFinal.Exceptions.FormatoDNINoCompatibleException;
+import tpFinal.Exceptions.FormatoUsuarioNoCompatibleException;
+import tpFinal.Exceptions.ObjetoEncontradoException;
+import tpFinal.Exceptions.ObjetoNoEncontradoException;
+import tpFinal.Models.Directivo;
 import tpFinal.Repositorios.DirectivoRepository;
+import tpFinal.Utilities.Validations;
+
+import java.util.List;
 
 public class DirectivoService implements IDirectivoService{
-    DirectivoRepository directivoRepo = new DirectivoRepository();
-    SocioService sociosService = new SocioService();
-    ///EmpleadoService empleadoService = new EmpleadoService();
-    JugadorService jugadorService = new JugadorService();
+    DirectivoRepository directivoRepository = new DirectivoRepository();
+    Validations validations = new Validations();
 
     @Override
-    public void listarSocios() {
-        sociosService.listar();
+    public List<Directivo> listar() {
+        directivoRepository.cargar();
+        return directivoRepository.listar();
     }
 
     @Override
-    public void listarTodosLosEmpleados() {
-
-    }
-
-    @Override
-    public void listarEmpleadosSegmentado() {
-
-    }
-
-    @Override
-    public void listarSociosDeudores() {
-
-    }
-
-    @Override
-    public void listarActividades() {
-
-    }
-
-    @Override
-    public void listarBeneficios() {
-
-    }
-
-    @Override
-    public void agregarJugador(Jugador nuevo) {
-        jugadorService.agregarJugador(nuevo);
-    }
-
-    @Override
-    public void eliminarJugador(String dni) {
-        jugadorService.eliminarJugador(dni);
-    }
-
-    @Override
-    public void listarTodosLosJugadores(String deporte) {
-        jugadorService.listarTodosLosJugadores(deporte);
-    }
-
-    @Override
-    public void listarJugadorPorCategoria(String deporte, String categoria) {
-        jugadorService.listarJugadorPorCategoria(deporte, categoria);
-    }
-
-    @Override
-    public void listarPorPosicionYCategoria(String deporte, String categoria, String posicion) {
-        jugadorService.listarPorPosicionYCategoria(deporte, categoria, posicion);
-    }
-
-    @Override
-    public void agregarEmpleado() {
-
-    }
-
-    @Override
-    public void modificarEmpleado() {
-
-    }
-
-    @Override
-    public void eliminarEmpleado() {
-
-    }
-
-    @Override
-    public void agregarSocio(Socio nuevo) {
-        sociosService.agregar(nuevo);
-    }
-
-
-    @Override
-    public void eliminarSocio(String dni) {
-        try{
-            sociosService.eliminar(dni);
-        }catch (Exception e){
-            System.out.println("El socio ingresado no existe.");
+    public void agregar(Directivo objeto) {
+        try {
+            validations.validarDirectivo(objeto);
+            directivoRepository.cargar();
+            if(buscarDirectivo2(objeto.getDni())){
+                directivoRepository.agregar(objeto);
+            }
+            directivoRepository.guardar();
+        } catch (FormatoDNINoCompatibleException e) {
+            System.out.println(e.getMensaje());
+        } catch (FormatoUsuarioNoCompatibleException e){
+            System.out.println(e.getMensaje());
+        } catch (ObjetoEncontradoException e){
+            System.out.println(e.getMensaje());
         }
+    }
+
+    // Se puede modificar CONTRASEÑA, TELEFONO O DIRECCION.
+    @Override
+    public void modificar(Directivo objeto) {
+        try{
+            directivoRepository.cargar();
+            if(validations.validarDni(objeto.getDni()) && buscarDirectivo(objeto.getDni())){
+                directivoRepository.modificar(objeto);
+            }
+            directivoRepository.guardar();
+        }catch (ObjetoNoEncontradoException e){
+            System.out.println(e.getMensaje());
+        }catch(FormatoDNINoCompatibleException e){
+            System.out.println(e.getMensaje());
+        }
+    }
+
+    @Override
+    public void eliminar(String dni) {
+        try{
+            directivoRepository.cargar();
+            if(validations.validarDni(dni) && buscarDirectivo(dni)){
+                directivoRepository.eliminar(dni);
+            }
+            directivoRepository.guardar();
+        }catch (ObjetoNoEncontradoException e){
+            System.out.println(e.getMensaje());
+        }catch(FormatoDNINoCompatibleException e){
+            System.out.println(e.getMensaje());
+        }
+    }
+
+    public boolean buscarDirectivo(String dni) throws ObjetoNoEncontradoException {
+        if(directivoRepository.buscarDirectivo(dni) == null){
+            throw new ObjetoNoEncontradoException();
+        }
+        return true;
+    }
+
+    // buscarDirectivo y buscarDirectivo2 no se pueden unificar ya hay casos que vamos a necesitar que si lo encuentra o no,
+    // no arroje ninguna excepcion. Por ej: en el metodo eliminar o agregar.
+    public boolean buscarDirectivo2(String dni) throws ObjetoEncontradoException{
+        if(directivoRepository.buscarDirectivo(dni) != null){
+            throw new ObjetoEncontradoException();
+        }
+        return true;
     }
 
     @Override

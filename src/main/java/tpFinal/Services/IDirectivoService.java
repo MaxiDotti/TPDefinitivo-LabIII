@@ -1,25 +1,16 @@
 package tpFinal.Services;
 
+import tpFinal.Models.Directivo;
 import tpFinal.Models.Empleado.Jugador;
 import tpFinal.Models.Socio;
 
+import java.util.List;
+
 public interface IDirectivoService {
-    void listarSocios();
-    void listarTodosLosEmpleados();
-    void listarEmpleadosSegmentado();
-    void listarSociosDeudores();
-    void listarActividades();
-    void listarBeneficios();
-    void agregarJugador(Jugador nuevo);
-    void eliminarJugador(String dni);
-    void listarTodosLosJugadores(String deporte);
-    void listarJugadorPorCategoria(String deporte, String categoria);
-    void listarPorPosicionYCategoria(String deporte, String categoria, String posicion);
-    void agregarEmpleado();
-    void modificarEmpleado();
-    void eliminarEmpleado();
-    void agregarSocio(Socio nuevo);
-    void eliminarSocio(String dni);
+    List<Directivo> listar();
+    void agregar(Directivo objeto);
+    void modificar(Directivo objeto);
+    void eliminar(String dni);
     void agregarBeneficio();
     void modificarBeneficio();
     void eliminarBeneficio();

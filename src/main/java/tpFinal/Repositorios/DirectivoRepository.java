@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
 import tpFinal.Models.Directivo;
 import tpFinal.Models.Empleado.PersonalLimpieza;
+import tpFinal.Models.Socio;
 
 
 import java.io.File;
@@ -21,62 +22,62 @@ public class DirectivoRepository implements IRepository<Directivo>{
     @Override
     public void cargar() {
         try{
-            CollectionType collectionType = mapper.getTypeFactory().constructCollectionType(List.class, PersonalLimpieza.class);
+            CollectionType collectionType = mapper.getTypeFactory().constructCollectionType(List.class, Directivo.class);
             this.listDirectivo = mapper.readValue(file, collectionType);
         }catch (IOException e){
             this.listDirectivo = new ArrayList<>();
         }
     }
-
 
     @Override
     public void guardar() {
         try{
-            CollectionType collectionType = mapper.getTypeFactory().constructCollectionType(List.class, PersonalLimpieza.class);
-            this.listDirectivo = mapper.readValue(file, collectionType);
+            mapper.writerWithDefaultPrettyPrinter().writeValue(file, this.listDirectivo);
         }catch (IOException e){
-            this.listDirectivo = new ArrayList<>();
+            throw new RuntimeException(e);
         }
     }
 
-
     @Override
     public List<Directivo> listar() {
-        cargar();
         return this.listDirectivo;
     }
 
-
     @Override
     public void agregar(Directivo objeto) {
-        cargar();
         this.listDirectivo.add(objeto);
-        guardar();
     }
-
 
     @Override
     public void agregarLista(List<Directivo> lista) {
         cargar();
         this.listDirectivo.addAll(lista);
         guardar();
-
-
     }
-
 
     @Override
     public void eliminar(String dni) {
-        cargar();
-        for (Directivo directivo : this.listDirectivo)
-            if(directivo.getDni().equals(dni))
-                this.listDirectivo.remove(directivo);
-        guardar();
+        this.listDirectivo.remove(buscarDirectivo(dni));
     }
 
     @Override
     public void modificar(Directivo objeto) {
+        for(Directivo directivo : this.listDirectivo){
+            if(directivo.getDni().equals(objeto.getDni())){
+                directivo.setContrasenia(objeto.getContrasenia());
+                directivo.setTelefono(objeto.getTelefono());
+                directivo.setDireccion(objeto.getDireccion());
+            }
+        }
+    }
 
+    public Directivo buscarDirectivo(String dni){
+        for(Directivo directivo : this.listDirectivo){
+            if(directivo.getDni().equals(dni)){
+                return directivo;
+            }
+        }
+        return null;
     }
 
 }

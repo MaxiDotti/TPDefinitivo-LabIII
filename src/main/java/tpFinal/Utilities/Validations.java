@@ -2,6 +2,7 @@ package tpFinal.Utilities;
 
 import tpFinal.Exceptions.FormatoDNINoCompatibleException;
 import tpFinal.Exceptions.FormatoUsuarioNoCompatibleException;
+import tpFinal.Models.Directivo;
 import tpFinal.Models.Empleado.PersonalLimpieza;
 import tpFinal.Models.Socio;
 
@@ -32,6 +33,16 @@ public class Validations extends Exception{
             throw new FormatoDNINoCompatibleException();
         }
         if(!validateTelefono(socio.getTelefono()) || !validateNombre(socio.getNombre()) || !validateApellido(socio.getApellido())){
+            throw new FormatoUsuarioNoCompatibleException();
+        }
+        return true;
+    }
+
+    public boolean validarDirectivo(Directivo directivo) throws FormatoDNINoCompatibleException, FormatoUsuarioNoCompatibleException {
+        if(!validateDni(directivo.getDni())){
+            throw new FormatoDNINoCompatibleException();
+        }
+        if(!validateTelefono(directivo.getTelefono()) || !validateNombre(directivo.getNombre()) || !validateApellido(directivo.getApellido())){
             throw new FormatoUsuarioNoCompatibleException();
         }
         return true;
