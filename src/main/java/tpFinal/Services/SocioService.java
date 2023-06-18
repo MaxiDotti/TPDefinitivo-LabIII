@@ -10,32 +10,32 @@ import java.util.List;
 
 public class SocioService implements ISocioService{
 
-    SociosRepository sociosRepo = new SociosRepository();
+    SociosRepository sociosRepository = new SociosRepository();
     Validations validations = new Validations();
 
     @Override
     public List<Socio> listar() {
-        return sociosRepo.listar();
+        return sociosRepository.listar();
     }
 
     @Override
     public void agregar(Socio objeto) {
-        sociosRepo.agregar(objeto);
+        sociosRepository.agregar(objeto);
     }
 
     @Override
     public void modificar(String dni) {
-        sociosRepo.modificar(dni);
+        sociosRepository.modificar(dni);
     }
 
     @Override
     public void eliminar(String dni) {
         try{
-            sociosRepo.cargar();
+            sociosRepository.cargar();
             if(validations.validarDni(dni) && buscarSocio(dni) != null){
-                    sociosRepo.eliminar(dni);
+                    sociosRepository.eliminar(dni);
             }
-            sociosRepo.guardar();
+            sociosRepository.guardar();
         }catch (ObjetoNoEncontradoException e){
             System.out.println(e.getMensaje());
         }catch(FormatoDNINoCompatibleException e){
@@ -44,7 +44,7 @@ public class SocioService implements ISocioService{
     }
 
     public Socio buscarSocio(String dni) throws ObjetoNoEncontradoException{
-        return sociosRepo.buscarSocio(dni);
+        return sociosRepository.buscarSocio(dni);
     }
 
     @Override
@@ -59,7 +59,7 @@ public class SocioService implements ISocioService{
 
     @Override
     public boolean verEstadoContable(String dni) {
-        return sociosRepo.estadoContable(dni);
+        return sociosRepository.estadoContable(dni);
     }
 
     @Override
