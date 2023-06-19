@@ -57,4 +57,14 @@ public class AyudanteDeCampo extends Usuario {
             System.out.println("Aun no posee saldo.");
         }
     }
+
+    @Override
+    public String toString() {
+        return  super.toString() +
+                "Estado contable: " + estadoContable + "\n" +
+                "        Plantel: " + plantel + "\n" +
+                "        Deporte: " + deporte + "\n" +
+                "      Categoria: " + categoria + "\n" +
+                "------------------------------------";
+    }
 }

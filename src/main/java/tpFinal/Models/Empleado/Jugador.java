@@ -10,9 +10,7 @@ public class Jugador extends Usuario {
     private String posicion;
     private Boolean estadoContable;
 
-
     ///Constructores
-
 
     public Jugador(String nombre, String apellido, String dni, String contrasenia, String telefono, String direccion, String equipo, String categoria, String deporte, String posicion, Boolean estadoContable) {
         super(nombre, apellido, dni, contrasenia, telefono, direccion);
@@ -69,5 +67,14 @@ public class Jugador extends Usuario {
         this.estadoContable = estadoContable;
     }
 
-
+    @Override
+    public String toString() {
+        return  super.toString() +
+                "         Equipo: " + equipo + "\n" +
+                "      Categoria: " + categoria + "\n" +
+                "        Deporte: " + deporte + "\n" +
+                "       Posicion: " + posicion + "\n" +
+                "Estado contable: " + estadoContable + "\n" +
+                "------------------------------------";
+    }
 }

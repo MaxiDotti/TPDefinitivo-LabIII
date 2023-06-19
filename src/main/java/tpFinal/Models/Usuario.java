@@ -20,7 +20,6 @@ public abstract class Usuario {
         this.telefono = telefono;
         this.direccion = direccion;
     }
-    //endregion
 
     //region Getter y Setter
     public String getNombre() {
@@ -92,12 +91,12 @@ public abstract class Usuario {
     //region toString
     @Override
     public String toString() {
-        return "---> Usuario" +
-                "    Nombre: " + nombre +
-                "  Apellido: " + apellido +
-                "       DNI: " + dni +
-                "Contraseña: " + contrasenia +
-                "  Telefono: " + telefono +
+        return  "------------------------------------" +
+                "    Nombre: " + nombre + "\n"+
+                "  Apellido: " + apellido + "\n" +
+                "       DNI: " + dni + "\n" +
+                "Contraseña: " + contrasenia + "\n" +
+                "  Telefono: " + telefono + "\n" +
                 " Direccion: " + direccion + "\n";
     }
     //endregion

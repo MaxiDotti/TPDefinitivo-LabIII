@@ -5,7 +5,9 @@ import tpFinal.Exceptions.FormatoUsuarioNoCompatibleException;
 import tpFinal.Models.Directivo;
 import tpFinal.Models.Empleado.Jugador;
 import tpFinal.Models.Empleado.PersonalLimpieza;
+import tpFinal.Models.Empleado.Utilero;
 import tpFinal.Models.Socio;
+import tpFinal.Services.UtileroService;
 
 public class Validations extends Exception{
 
@@ -28,6 +30,17 @@ public class Validations extends Exception{
         }
         return true;
     }
+
+    public boolean validarUtilero(Utilero utilero) throws FormatoDNINoCompatibleException, FormatoUsuarioNoCompatibleException {
+        if(!validateDni(utilero.getDni())){
+            throw new FormatoDNINoCompatibleException();
+        }
+        if(!validateTelefono(utilero.getTelefono()) || !validateNombre(utilero.getNombre()) || !validateApellido(utilero.getApellido())){
+            throw new FormatoUsuarioNoCompatibleException();
+        }
+        return true;
+    }
+
 
     public boolean validarSocio(Socio socio) throws FormatoDNINoCompatibleException, FormatoUsuarioNoCompatibleException {
         if(!validateDni(socio.getDni())){
