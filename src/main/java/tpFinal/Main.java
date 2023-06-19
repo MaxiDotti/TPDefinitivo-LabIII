@@ -1,6 +1,7 @@
 package tpFinal;
 import tpFinal.Models.Directivo;
 import tpFinal.Models.Empleado.*;
+import tpFinal.Repositorios.BeneficioRepository;
 import tpFinal.Services.*;
 import tpFinal.Services.DirectivoService;
 import tpFinal.Utilities.Deporte;
@@ -8,6 +9,7 @@ import tpFinal.Utilities.Deporte;
 public class Main {
     public static void main(String[] args) {
 
+        BeneficioRepository beneficioRepository = new BeneficioRepository();
        /* TestRepository test = new TestRepository();
 
         //System.out.println("TEST AYUDANTE DE CAMPO");
@@ -28,13 +30,18 @@ public class Main {
         //test.testSocio();
     }*/
 
-        MedicoService medicoService = new MedicoService();
+        /*MedicoService medicoService = new MedicoService();
 
         Medico dr = new Medico("ALBERTO", "MIGUENS", "1", "1414", "1414", "MODI 1", "Psicologo", true);
         Medico dr2 = new Medico("OSVALDO", "SPICHINO", "2", "2", "2", "MEDICO 2", "TRAUMATOLOGO", true);
 
         medicoService.agregar(dr2);
-        System.out.println(medicoService.listar());
+        System.out.println(medicoService.listar());*/
+
+        SocioService socioService = new SocioService();
+        socioService.listar();
+        beneficioRepository.cargar();
+        beneficioRepository.listar();
 
     }
 }
