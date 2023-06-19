@@ -78,4 +78,9 @@ public class DirectorTecnicoRepository implements IRepository<DirectorTecnico> {
 
     }
 
+    @Override
+    public DirectorTecnico buscar(String dni) {
+        return null;
+    }
+
 }

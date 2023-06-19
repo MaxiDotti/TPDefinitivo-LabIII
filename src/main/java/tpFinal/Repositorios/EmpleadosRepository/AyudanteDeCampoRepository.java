@@ -76,4 +76,9 @@ public class AyudanteDeCampoRepository implements IRepository<AyudanteDeCampo> {
 
     }
 
+    @Override
+    public AyudanteDeCampo buscar(String dni) {
+        return null;
+    }
+
 }

@@ -71,6 +71,11 @@ public class DirectivoRepository implements IRepository<Directivo>{
         }
     }
 
+    @Override
+    public Directivo buscar(String dni) {
+        return null;
+    }
+
     public Directivo buscarDirectivo(String dni){
         for(Directivo directivo : this.listDirectivo){
             if(directivo.getDni().equals(dni)){

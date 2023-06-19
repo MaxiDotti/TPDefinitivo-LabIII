@@ -1,6 +1,8 @@
 package tpFinal;
 import tpFinal.Models.Directivo;
+import tpFinal.Models.Empleado.Jugador;
 import tpFinal.Services.DirectivoService;
+import tpFinal.Services.JugadorService;
 
 public class Main {
     public static void main(String[] args) {
@@ -25,11 +27,10 @@ public class Main {
         //test.testSocio();
     }*/
 
-        DirectivoService direService = new DirectivoService();
-        Directivo nuevo = new Directivo("Maximo", "Dotti", "38210372", "MODI", "MODI1", "MODI2");
-        direService.modificar(nuevo);
-        System.out.println(direService.listar());
-
+        JugadorService jugadorService = new JugadorService();
+        Jugador nuevo = new Jugador("Maximo", "Dotti", "38210372", "asd", "2235111", "Calle 123", "asd", "Primera", "Futbol", "Mediocampista", true);
+        jugadorService.agregar(nuevo);
+        System.out.println(jugadorService.listar());
 
     }
 }

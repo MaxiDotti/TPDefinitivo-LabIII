@@ -78,6 +78,11 @@ public class PersonalLimpiezaRepository implements IRepository<PersonalLimpieza>
 
     }
 
+    @Override
+    public PersonalLimpieza buscar(String dni) {
+        return null;
+    }
+
     public PersonalLimpieza buscarPersonal(String dni) {
         List<PersonalLimpieza> personalLimpiezas = listar();
         for(PersonalLimpieza personal : personalLimpiezas){

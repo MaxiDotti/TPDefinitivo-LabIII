@@ -1,0 +1,13 @@
+[ {
+  "nombre" : "Maximo",
+  "apellido" : "Dotti",
+  "dni" : "38210372",
+  "contrasenia" : "asd",
+  "telefono" : "2235111",
+  "direccion" : "Calle 123",
+  "equipo" : "asd",
+  "categoria" : "Primera",
+  "deporte" : "Futbol",
+  "posicion" : "Mediocampista",
+  "estadoContable" : true
+} ]

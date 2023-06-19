@@ -82,4 +82,9 @@ public class MedicoRepository implements IRepository<Medico> {
 
     }
 
+    @Override
+    public Medico buscar(String dni) {
+        return null;
+    }
+
 }

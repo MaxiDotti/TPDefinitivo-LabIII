@@ -68,4 +68,6 @@ public class Jugador extends Usuario {
     public void setEstadoContable(Boolean estadoContable) {
         this.estadoContable = estadoContable;
     }
+
+
 }

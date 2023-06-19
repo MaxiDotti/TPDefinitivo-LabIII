@@ -13,5 +13,6 @@ public interface IRepository<T>{
     void agregarLista(List<T> lista);
     void eliminar(String dni);
     void modificar(T objeto);
+    T buscar(String dni);
 
 }

@@ -70,4 +70,9 @@ public class UtileroRepository implements IRepository<Utilero> {
 
     }
 
+    @Override
+    public Utilero buscar(String dni) {
+        return null;
+    }
+
 }

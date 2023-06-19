@@ -81,6 +81,11 @@ public class SociosRepository implements IRepository<Socio> {
         }
     }
 
+    @Override
+    public Socio buscar(String dni) {
+        return null;
+    }
+
     public boolean estadoContable(String dni){
         cargar();
         for(Socio socio : this.listaSocios){
