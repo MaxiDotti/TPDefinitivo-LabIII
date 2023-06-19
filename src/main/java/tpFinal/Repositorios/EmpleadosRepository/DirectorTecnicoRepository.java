@@ -1,18 +1,12 @@
 package tpFinal.Repositorios.EmpleadosRepository;
-
-
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
-import tpFinal.Models.Empleado.AyudanteDeCampo;
 import tpFinal.Models.Empleado.DirectorTecnico;
 import tpFinal.Repositorios.IRepository;
-
-
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
 
 public class DirectorTecnicoRepository implements IRepository<DirectorTecnico> {
     private final File file = new File("src/main/resources/DirectorTecnico.json");
@@ -28,7 +22,6 @@ public class DirectorTecnicoRepository implements IRepository<DirectorTecnico> {
         }
     }
 
-
     @Override
     public void guardar() {
         try {
@@ -38,23 +31,15 @@ public class DirectorTecnicoRepository implements IRepository<DirectorTecnico> {
         }
     }
 
-
     @Override
     public List<DirectorTecnico> listar() {
-        cargar();
         return this.tecnicoList;
     }
 
-
     @Override
     public void agregar(DirectorTecnico objeto) {
-        cargar();
         this.tecnicoList.add(objeto);
-        guardar();
-
-
     }
-
 
     @Override
     public void agregarLista(List<DirectorTecnico> lista) {
@@ -63,23 +48,31 @@ public class DirectorTecnicoRepository implements IRepository<DirectorTecnico> {
         guardar();
     }
 
-
     @Override
     public void eliminar(String dni) {
-        cargar();
-        for (DirectorTecnico tecnico : this.tecnicoList)
-            if(tecnico.getDni().equals(dni))
-                this.tecnicoList.remove(tecnico);
-        guardar();
+        this.tecnicoList.remove(buscar(dni));
     }
 
     @Override
     public void modificar(DirectorTecnico objeto) {
-
+        for(DirectorTecnico directorTecnico : this.tecnicoList){
+            if(directorTecnico.getDni().equals(objeto.getDni())){
+                directorTecnico.setContrasenia(objeto.getContrasenia());
+                directorTecnico.setTelefono(objeto.getTelefono());
+                directorTecnico.setDireccion(objeto.getDireccion());
+                directorTecnico.setDeporte(objeto.getDeporte());
+                directorTecnico.setCategoria(objeto.getCategoria());
+            }
+        }
     }
 
     @Override
     public DirectorTecnico buscar(String dni) {
+        for(DirectorTecnico directorTecnico : this.tecnicoList){
+            if(directorTecnico.getDni().equals(dni)){
+                return directorTecnico;
+            }
+        }
         return null;
     }
 

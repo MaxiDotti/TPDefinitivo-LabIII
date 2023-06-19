@@ -1,10 +1,7 @@
 package tpFinal;
 import tpFinal.Models.Directivo;
-import tpFinal.Models.Empleado.AyudanteDeCampo;
-import tpFinal.Models.Empleado.Jugador;
-import tpFinal.Models.Empleado.PersonalLimpieza;
+import tpFinal.Models.Empleado.*;
 import tpFinal.Services.*;
-import tpFinal.Models.Empleado.Utilero;
 import tpFinal.Services.DirectivoService;
 import tpFinal.Utilities.Deporte;
 
@@ -31,13 +28,11 @@ public class Main {
         //test.testSocio();
     }*/
 
-        AyudanteDeCampoService ayudanteService = new AyudanteDeCampoService();
+        DirectorTecnicoService dtService = new DirectorTecnicoService();
+        DirectorTecnico dt = new DirectorTecnico("MARCELO", "GALLARDO", "1", "1", "1", "DT 1", true, "River Plate", "Futbol", "Primera");
+        DirectorTecnico dt2 = new DirectorTecnico("MATIAS", "ALMEYDA", "2", "2424", "2424", "MODIFICACION 2", true, "River Plate", "Volley", "Tercera");
 
-        AyudanteDeCampo ayudante = new AyudanteDeCampo("AYUDANTEUNO", "AYUDANTEUNO", "1", "MODIFICACION", "1414", "MODIFICACION", true, "MODIFICACION", "Futbol", "Cuarta");
-        AyudanteDeCampo ayudante2 = new AyudanteDeCampo("AYUDANTEDOS", "AYUDANTEDOS", "2", "AYUDANTEDOS", "2", "AYUDANTEDOS", true, "AYUDANTEDOS", "Handball", "Primera");
-
-        ayudanteService.eliminar("2");
-        System.out.println(ayudanteService.listar());
-
+        dtService.eliminar("2");
+        System.out.println(dtService.listar());
     }
 }

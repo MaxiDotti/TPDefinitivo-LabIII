@@ -1,0 +1,12 @@
+[ {
+  "nombre" : "MARCELO",
+  "apellido" : "GALLARDO",
+  "dni" : "1",
+  "contrasenia" : "1",
+  "telefono" : "1",
+  "direccion" : "DT 1",
+  "estadoContable" : true,
+  "plantel" : "River Plate",
+  "deporte" : "Futbol",
+  "categoria" : "Primera"
+} ]

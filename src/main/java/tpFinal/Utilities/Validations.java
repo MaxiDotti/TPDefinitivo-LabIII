@@ -3,10 +3,7 @@ package tpFinal.Utilities;
 import tpFinal.Exceptions.FormatoDNINoCompatibleException;
 import tpFinal.Exceptions.FormatoUsuarioNoCompatibleException;
 import tpFinal.Models.Directivo;
-import tpFinal.Models.Empleado.AyudanteDeCampo;
-import tpFinal.Models.Empleado.Jugador;
-import tpFinal.Models.Empleado.PersonalLimpieza;
-import tpFinal.Models.Empleado.Utilero;
+import tpFinal.Models.Empleado.*;
 import tpFinal.Models.Socio;
 import tpFinal.Services.UtileroService;
 
@@ -78,6 +75,16 @@ public class Validations extends Exception{
             throw new FormatoDNINoCompatibleException();
         }
         if(!validateTelefono(ayudanteDeCampo.getTelefono()) || !validateNombre(ayudanteDeCampo.getNombre()) || !validateApellido(ayudanteDeCampo.getApellido())){
+            throw new FormatoUsuarioNoCompatibleException();
+        }
+        return true;
+    }
+
+    public boolean validarDirectorTecnico(DirectorTecnico directorTecnico) throws FormatoDNINoCompatibleException, FormatoUsuarioNoCompatibleException {
+        if(!validateDni(directorTecnico.getDni())){
+            throw new FormatoDNINoCompatibleException();
+        }
+        if(!validateTelefono(directorTecnico.getTelefono()) || !validateNombre(directorTecnico.getNombre()) || !validateApellido(directorTecnico.getApellido())){
             throw new FormatoUsuarioNoCompatibleException();
         }
         return true;
