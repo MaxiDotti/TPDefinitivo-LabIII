@@ -10,4 +10,16 @@
   "deporte" : "Futbol",
   "posicion" : "Mediocampista",
   "estadoContable" : true
+}, {
+  "nombre" : "Ariel",
+  "apellido" : "Ortega",
+  "dni" : "2",
+  "contrasenia" : "Jugador",
+  "telefono" : "2424",
+  "direccion" : "Calle 123",
+  "equipo" : "asd",
+  "categoria" : "Elite",
+  "deporte" : "Natacion",
+  "posicion" : "Nadador",
+  "estadoContable" : true
 } ]

@@ -13,9 +13,6 @@ public interface IJugadorService {
     boolean buscarJugador2(String dni) throws ObjetoEncontradoException;
     void listarJugadorPorCategoria(String deporte, String categoria);
     void listarPorPosicionYCategoria(String deporte, String categoria, String posicion);
-    void cambiarCategoria();
-    void cambiarDeporte();
-    void cambiarPosicion();
     boolean estadoContable(String dni);
 
 }

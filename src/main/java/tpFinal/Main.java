@@ -1,14 +1,12 @@
 package tpFinal;
 import tpFinal.Models.Directivo;
-<<<<<<< HEAD
 import tpFinal.Models.Empleado.Jugador;
 import tpFinal.Services.DirectivoService;
 import tpFinal.Services.JugadorService;
-=======
 import tpFinal.Models.Empleado.Utilero;
 import tpFinal.Services.DirectivoService;
 import tpFinal.Services.UtileroService;
->>>>>>> origin/develop
+import tpFinal.Utilities.Deporte;
 
 public class Main {
     public static void main(String[] args) {
@@ -34,8 +32,10 @@ public class Main {
     }*/
 
         JugadorService jugadorService = new JugadorService();
-        Jugador nuevo = new Jugador("Maximo", "Dotti", "38210372", "asd", "2235111", "Calle 123", "asd", "Primera", "Futbol", "Mediocampista", true);
-        jugadorService.agregar(nuevo);
+        Jugador nuevo = new Jugador("Ariel", "Ortega", "2", "Jugador", "2424", "Calle 123", "asd", "Elite", "Natacion", "Nadador", true);
+        Jugador nuevo2 = new Jugador("Martin", "Demichelis", "3", "3434", "3434", "Calle 123", "asd", "Primera", "Futbol", "Mediocampista", true);
+
+        jugadorService.eliminar("3");
         System.out.println(jugadorService.listar());
 
 

@@ -61,6 +61,9 @@ public class JugadorRepository implements IRepository<Jugador> {
                 jugador.setContrasenia(objeto.getContrasenia());
                 jugador.setTelefono(objeto.getTelefono());
                 jugador.setDireccion(objeto.getDireccion());
+                jugador.setPosicion(objeto.getPosicion());
+                jugador.setCategoria(objeto.getCategoria());
+                jugador.setDeporte(objeto.getDeporte());
             }
         }
     }

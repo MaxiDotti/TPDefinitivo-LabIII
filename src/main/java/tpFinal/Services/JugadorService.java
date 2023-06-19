@@ -56,7 +56,7 @@ public class JugadorService implements IJugadorService{
         }
     }
 
-    // Se puede modificar CONTRASEÑA, TELEFONO O DIRECCION.
+    // Se puede modificar CONTRASEÑA, TELEFONO, DIRECCION, POSICION, CATEGORIA y DEPORTE.
     @Override
     public void modificar(Jugador objeto) {
         try{
@@ -94,7 +94,7 @@ public class JugadorService implements IJugadorService{
         return true;
     }
 
-    // buscarSocio y buscarSocio2 no se pueden unificar ya hay casos que vamos a necesitar que si lo encuentra o no,
+    // buscarJugador y buscarJugador2 no se pueden unificar ya hay casos que vamos a necesitar que si lo encuentra o no,
     // no arroje ninguna excepcion. Por ej: en el metodo eliminar o agregar.
     @Override
     public boolean buscarJugador2(String dni) throws ObjetoEncontradoException {
@@ -102,21 +102,6 @@ public class JugadorService implements IJugadorService{
             throw new ObjetoEncontradoException();
         }
         return true;
-    }
-
-    @Override
-    public void cambiarCategoria() {
-
-    }
-
-    @Override
-    public void cambiarDeporte() {
-
-    }
-
-    @Override
-    public void cambiarPosicion() {
-
     }
 
     @Override
