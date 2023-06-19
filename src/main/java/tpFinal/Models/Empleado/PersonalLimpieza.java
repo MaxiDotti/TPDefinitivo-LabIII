@@ -40,8 +40,8 @@ public class PersonalLimpieza extends Usuario {
     @Override
     public String toString() {
         return  super.toString() +
-                "sector='" + sector + "\n" +
-                ", estadoContable=" + estadoContable + "\n" +
+                "         Sector: " + sector + "\n" +
+                "Estado contable: " + estadoContable + "\n" +
                 "------------------------------------";
     }
 }

@@ -1,11 +1,10 @@
 package tpFinal;
 import tpFinal.Models.Directivo;
 import tpFinal.Models.Empleado.Jugador;
-import tpFinal.Services.DirectivoService;
-import tpFinal.Services.JugadorService;
+import tpFinal.Models.Empleado.PersonalLimpieza;
+import tpFinal.Services.*;
 import tpFinal.Models.Empleado.Utilero;
 import tpFinal.Services.DirectivoService;
-import tpFinal.Services.UtileroService;
 import tpFinal.Utilities.Deporte;
 
 public class Main {
@@ -31,13 +30,13 @@ public class Main {
         //test.testSocio();
     }*/
 
-        JugadorService jugadorService = new JugadorService();
-        Jugador nuevo = new Jugador("Ariel", "Ortega", "2", "Jugador", "2424", "Calle 123", "asd", "Elite", "Natacion", "Nadador", true);
-        Jugador nuevo2 = new Jugador("Martin", "Demichelis", "3", "3434", "3434", "Calle 123", "asd", "Primera", "Futbol", "Mediocampista", true);
+        PersonalLimpiezaService personalService = new PersonalLimpiezaService();
 
-        jugadorService.eliminar("3");
-        System.out.println(jugadorService.listar());
+        PersonalLimpieza personal = new PersonalLimpieza("PersonalUNO", "PersonalUNO", "1", "ModificarUNO", "1414", "Modificar 123", "Duchas", true);
+        PersonalLimpieza personal2 = new PersonalLimpieza("PersonalDOS", "PersonalDOS", "2", "PersonalDOS", "2", "PersonalDOS", "Campo de Juego", true);
 
+        personalService.eliminar("2");
+        System.out.println(personalService.listar());
 
     }
 }

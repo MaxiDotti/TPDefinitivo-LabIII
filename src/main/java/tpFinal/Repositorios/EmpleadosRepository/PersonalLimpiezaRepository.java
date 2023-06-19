@@ -19,6 +19,7 @@ public class PersonalLimpiezaRepository implements IRepository<PersonalLimpieza>
     private final ObjectMapper mapper = new ObjectMapper();
     private List<PersonalLimpieza> listPersonalLimpieza;
     @Override
+
     public void cargar() {
         try{
             CollectionType collectionType = mapper.getTypeFactory().constructCollectionType(List.class, PersonalLimpieza.class);
@@ -27,7 +28,6 @@ public class PersonalLimpiezaRepository implements IRepository<PersonalLimpieza>
             this.listPersonalLimpieza = new ArrayList<>();
         }
     }
-
 
     @Override
     public void guardar() {
@@ -40,57 +40,47 @@ public class PersonalLimpiezaRepository implements IRepository<PersonalLimpieza>
 
     }
 
-
     @Override
     public List<PersonalLimpieza> listar() {
-        cargar();
         return this.listPersonalLimpieza;
     }
 
-
     @Override
     public void agregar(PersonalLimpieza objeto) {
-        this.cargar();
         this.listPersonalLimpieza.add(objeto);
-        this.guardar();
     }
-
 
     @Override
     public void agregarLista(List<PersonalLimpieza> lista) {
         this.cargar();
         this.listPersonalLimpieza.addAll(lista);
         this.guardar();
-
-
     }
-
 
     @Override
     public void eliminar(String dni) {
-        this.cargar();
-        this.listPersonalLimpieza.remove(buscarPersonal(dni));
-        this.guardar();
+        this.listPersonalLimpieza.remove(buscar(dni));
     }
 
     @Override
     public void modificar(PersonalLimpieza objeto) {
-
+        for(PersonalLimpieza personalLimpieza : this.listPersonalLimpieza){
+            if(personalLimpieza.getDni().equals(objeto.getDni())){
+                personalLimpieza.setContrasenia(objeto.getContrasenia());
+                personalLimpieza.setTelefono(objeto.getTelefono());
+                personalLimpieza.setDireccion(objeto.getDireccion());
+                personalLimpieza.setSector(objeto.getSector());
+            }
+        }
     }
 
     @Override
     public PersonalLimpieza buscar(String dni) {
-        return null;
-    }
-
-    public PersonalLimpieza buscarPersonal(String dni) {
-        List<PersonalLimpieza> personalLimpiezas = listar();
-        for(PersonalLimpieza personal : personalLimpiezas){
-            if(personal.getDni().equals(dni)){
-                return personal;
+        for(PersonalLimpieza personalLimpieza : this.listPersonalLimpieza){
+            if(personalLimpieza.getDni().equals(dni)){
+                return personalLimpieza;
             }
         }
         return null;
     }
-
 }

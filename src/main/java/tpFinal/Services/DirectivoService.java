@@ -69,7 +69,7 @@ public class DirectivoService implements IDirectivoService{
     }
 
     public boolean buscarDirectivo(String dni) throws ObjetoNoEncontradoException {
-        if(directivoRepository.buscarDirectivo(dni) == null){
+        if(directivoRepository.buscar(dni) == null){
             throw new ObjetoNoEncontradoException();
         }
         return true;
@@ -78,7 +78,7 @@ public class DirectivoService implements IDirectivoService{
     // buscarDirectivo y buscarDirectivo2 no se pueden unificar ya hay casos que vamos a necesitar que si lo encuentra o no,
     // no arroje ninguna excepcion. Por ej: en el metodo eliminar o agregar.
     public boolean buscarDirectivo2(String dni) throws ObjetoEncontradoException{
-        if(directivoRepository.buscarDirectivo(dni) != null){
+        if(directivoRepository.buscar(dni) != null){
             throw new ObjetoEncontradoException();
         }
         return true;

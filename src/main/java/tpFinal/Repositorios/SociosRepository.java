@@ -58,16 +58,7 @@ public class SociosRepository implements IRepository<Socio> {
 
     @Override
     public void eliminar(String dni){
-        this.listaSocios.remove(buscarSocio(dni));
-    }
-
-    public Socio buscarSocio(String dni){
-        for(Socio socio : this.listaSocios){
-            if(socio.getDni().equals(dni)){
-                return socio;
-            }
-        }
-        return null;
+        this.listaSocios.remove(buscar(dni));
     }
 
     @Override
@@ -83,6 +74,11 @@ public class SociosRepository implements IRepository<Socio> {
 
     @Override
     public Socio buscar(String dni) {
+        for(Socio socio : this.listaSocios){
+            if(socio.getDni().equals(dni)){
+                return socio;
+            }
+        }
         return null;
     }
 

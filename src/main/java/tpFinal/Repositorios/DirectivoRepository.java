@@ -57,7 +57,7 @@ public class DirectivoRepository implements IRepository<Directivo>{
 
     @Override
     public void eliminar(String dni) {
-        this.listDirectivo.remove(buscarDirectivo(dni));
+        this.listDirectivo.remove(buscar(dni));
     }
 
     @Override
@@ -73,12 +73,8 @@ public class DirectivoRepository implements IRepository<Directivo>{
 
     @Override
     public Directivo buscar(String dni) {
-        return null;
-    }
-
-    public Directivo buscarDirectivo(String dni){
-        for(Directivo directivo : this.listDirectivo){
-            if(directivo.getDni().equals(dni)){
+        for (Directivo directivo : this.listDirectivo) {
+            if (directivo.getDni().equals(dni)) {
                 return directivo;
             }
         }

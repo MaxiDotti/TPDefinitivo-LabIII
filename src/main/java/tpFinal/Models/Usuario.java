@@ -91,13 +91,13 @@ public abstract class Usuario {
     //region toString
     @Override
     public String toString() {
-        return  "------------------------------------" + "\n" +
-                "       Nombre: " + nombre + "\n" +
-                "     Apellido: " + apellido + "\n" +
-                "          DNI: " + dni + "\n" +
-                "   Contraseña: " + contrasenia + "\n" +
-                "     Telefono: " + telefono + "\n" +
-                "    Direccion: " + direccion + "\n";
+        return  "\n" + "------------------------------------" + "\n" +
+                "         Nombre: " + nombre + "\n" +
+                "       Apellido: " + apellido + "\n" +
+                "            DNI: " + dni + "\n" +
+                "     Contraseña: " + contrasenia + "\n" +
+                "       Telefono: " + telefono + "\n" +
+                "      Direccion: " + direccion + "\n";
     }
     //endregion
 }

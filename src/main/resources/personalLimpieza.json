@@ -1,0 +1,10 @@
+[ {
+  "nombre" : "PersonalUNO",
+  "apellido" : "PersonalUNO",
+  "dni" : "1",
+  "contrasenia" : "ModificarUNO",
+  "telefono" : "1414",
+  "direccion" : "Modificar 123",
+  "sector" : "Duchas",
+  "estadoContable" : true
+} ]

@@ -71,7 +71,7 @@ public class SocioService implements ISocioService{
     }
 
     public boolean buscarSocio(String dni) throws ObjetoNoEncontradoException{
-        if(sociosRepository.buscarSocio(dni) == null){
+        if(sociosRepository.buscar(dni) == null){
             throw new ObjetoNoEncontradoException();
         }
         return true;
@@ -80,7 +80,7 @@ public class SocioService implements ISocioService{
     // buscarSocio y buscarSocio2 no se pueden unificar ya hay casos que vamos a necesitar que si lo encuentra o no,
     // no arroje ninguna excepcion. Por ej: en el metodo eliminar o agregar.
     public boolean buscarSocio2(String dni) throws ObjetoEncontradoException{
-        if(sociosRepository.buscarSocio(dni) != null){
+        if(sociosRepository.buscar(dni) != null){
             throw new ObjetoEncontradoException();
         }
         return true;
