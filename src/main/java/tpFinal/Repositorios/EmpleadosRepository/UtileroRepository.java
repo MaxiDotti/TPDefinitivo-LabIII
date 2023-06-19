@@ -2,6 +2,7 @@ package tpFinal.Repositorios.EmpleadosRepository;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
+import tpFinal.Models.Empleado.AyudanteDeCampo;
 import tpFinal.Models.Empleado.PersonalLimpieza;
 import tpFinal.Models.Empleado.Utilero;
 import tpFinal.Repositorios.IRepository;
@@ -55,30 +56,35 @@ public class UtileroRepository implements IRepository<Utilero> {
         this.guardar();
     }
 
+
     @Override
     public void eliminar(String dni) {
         this.cargar();
-        this.listUtilero.remove(buscarPersonal(dni));
+        this.listUtilero.remove(buscar(dni));
         this.guardar();
     }
 
     @Override
     public void modificar(Utilero objeto) {
-
+        for(Utilero utilero : this.listUtilero){
+            if(utilero.getDni().equals(objeto.getDni())){
+                utilero.setContrasenia(objeto.getContrasenia());
+                utilero.setTelefono(objeto.getTelefono());
+                utilero.setDireccion(objeto.getDireccion());
+                utilero.setDeporte(objeto.getDeporte());
+            }
+        }
     }
 
     @Override
     public Utilero buscar(String dni) {
-        return null;
-    }
-
-    public Utilero buscarPersonal(String dni) {
-        List<Utilero> personalUtilero = listar();
-        for(Utilero personal : personalUtilero){
-            if(personal.getDni().equals(dni)){
-                return personal;
+        for(Utilero utilero : this.listUtilero){
+            if(utilero.getDni().equals(dni)){
+                return utilero;
             }
         }
         return null;
     }
+
+
 }

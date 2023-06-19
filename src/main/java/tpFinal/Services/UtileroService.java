@@ -17,7 +17,6 @@ public class UtileroService implements IUtileroService{
     UtileroRepository utileroRepository = new UtileroRepository();
     @Override
     public List<Utilero> listar() {
-        utileroRepository.cargar();
         return utileroRepository.listar();
     }
 

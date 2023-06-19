@@ -1,6 +1,7 @@
 package tpFinal;
 import tpFinal.Models.Directivo;
 import tpFinal.Models.Empleado.*;
+import tpFinal.Repositorios.EmpleadosRepository.UtileroRepository;
 import tpFinal.Services.*;
 import tpFinal.Services.DirectivoService;
 import tpFinal.Utilities.Deporte;
@@ -40,7 +41,8 @@ public class Main {
 
         Utilero test= new Utilero("Juan","Carlos","123","preba21","124","csl12",true,"Basquet");
         utileroService.agregar(test);
-        System.out.println(utileroService.listar());
+        UtileroRepository test2 = new UtileroRepository();
+        System.out.println(test2.listar());
 
     }
 }
