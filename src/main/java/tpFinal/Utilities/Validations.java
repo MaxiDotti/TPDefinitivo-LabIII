@@ -90,6 +90,16 @@ public class Validations extends Exception{
         return true;
     }
 
+    public boolean validarMedico(Medico medico) throws FormatoDNINoCompatibleException, FormatoUsuarioNoCompatibleException {
+        if(!validateDni(medico.getDni())){
+            throw new FormatoDNINoCompatibleException();
+        }
+        if(!validateTelefono(medico.getTelefono()) || !validateNombre(medico.getNombre()) || !validateApellido(medico.getApellido())){
+            throw new FormatoUsuarioNoCompatibleException();
+        }
+        return true;
+    }
+
     //EN CASO DE QUE LA VALIDACIÓN DEL DNI FALLE, ARROJAMOS EXCEPCIÓN
     public boolean validarDni(String dni) throws FormatoDNINoCompatibleException {
         if(!validateDni(dni)){

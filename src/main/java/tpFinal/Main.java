@@ -28,11 +28,14 @@ public class Main {
         //test.testSocio();
     }*/
 
-        DirectorTecnicoService dtService = new DirectorTecnicoService();
-        DirectorTecnico dt = new DirectorTecnico("MARCELO", "GALLARDO", "1", "1", "1", "DT 1", true, "River Plate", "Futbol", "Primera");
-        DirectorTecnico dt2 = new DirectorTecnico("MATIAS", "ALMEYDA", "2", "2424", "2424", "MODIFICACION 2", true, "River Plate", "Volley", "Tercera");
+        MedicoService medicoService = new MedicoService();
 
-        dtService.eliminar("2");
-        System.out.println(dtService.listar());
+        Medico dr = new Medico("ALBERTO", "MIGUENS", "1", "1", "1", "MEDICO 1", "TRAUMATOLOGO", true);
+        Medico dr2 = new Medico("OSVALDO", "SPICHINO", "2", "2", "2", "MEDICO 2", "TRAUMATOLOGO", true);
+
+        medicoService.agregar(dr);
+        medicoService.agregar(dr2);
+        System.out.println(medicoService.listar());
+
     }
 }
