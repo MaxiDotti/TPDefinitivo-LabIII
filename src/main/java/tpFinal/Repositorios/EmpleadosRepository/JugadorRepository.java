@@ -62,8 +62,6 @@ public class JugadorRepository implements IRepository<Jugador> {
         cargar();
         this.listJugador.addAll(lista);
         guardar();
-
-
     }
 
 
