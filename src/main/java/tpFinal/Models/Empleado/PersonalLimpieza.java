@@ -39,10 +39,9 @@ public class PersonalLimpieza extends Usuario {
 
     @Override
     public String toString() {
-        return "PersonalLimpieza{" +
-                "sector='" + sector + '\'' +
-                ", estadoContable=" + estadoContable +
-                '}' +
-                super.toString();
+        return  super.toString() +
+                "sector='" + sector + "\n" +
+                ", estadoContable=" + estadoContable + "\n" +
+                "------------------------------------";
     }
 }

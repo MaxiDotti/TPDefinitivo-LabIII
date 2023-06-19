@@ -38,4 +38,12 @@ public class Utilero extends Usuario {
             System.out.println("Aun no posee saldo.");
         }
     }
+
+    @Override
+    public String toString() {
+        return  super.toString() +
+                "Estado contable: " + estadoContable + "\n" +
+                "        Deporte: " + deporte + "\n" +
+                "------------------------------------";
+    }
 }
