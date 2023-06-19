@@ -62,10 +62,10 @@ public class DirectorTecnico extends Usuario {
     @Override
     public String toString() {
         return  super.toString() +
-                "estadoContable=" + estadoContable +
-                ", plantel='" + plantel + '\'' +
-                ", deporte='" + deporte + '\'' +
-                ", categoria='" + categoria + '\'' +
+                "Estado contable: " + estadoContable + "\n" +
+                "        Plantel: " + plantel +  "\n" +
+                "        Deporte: " + deporte +  "\n" +
+                "      Categoria: " + categoria +  "\n" +
                 "------------------------------------";
     }
 }
