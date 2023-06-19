@@ -1,0 +1,10 @@
+[ {
+  "nombre" : "CarlosUtilero",
+  "apellido" : "Gomez",
+  "dni" : "53125",
+  "contrasenia" : "Prueba..Gratuitia",
+  "telefono" : "5124",
+  "direccion" : "Calle Falsa 1413",
+  "sector" : "Basquet",
+  "estadoContable" : true
+} ]
