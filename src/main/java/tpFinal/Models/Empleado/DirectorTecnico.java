@@ -66,6 +66,6 @@ public class DirectorTecnico extends Usuario {
                 ", plantel='" + plantel + '\'' +
                 ", deporte='" + deporte + '\'' +
                 ", categoria='" + categoria + '\'' +
-                "------------------------------------"
+                "------------------------------------";
     }
 }
