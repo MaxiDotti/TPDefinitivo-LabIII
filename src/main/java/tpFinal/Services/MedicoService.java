@@ -36,6 +36,7 @@ public class MedicoService implements IMedicoService{
         }
     }
 
+    // SE PUEDE MODIFICAR CONTRASEÑA, TELEFONO, DIRECCION y ESPECIALIDAD.
     @Override
     public void modificar(Medico objeto) {
         try{

@@ -1,4 +1,13 @@
 [ {
+  "nombre" : "ALBERTO",
+  "apellido" : "MIGUENS",
+  "dni" : "1",
+  "contrasenia" : "1414",
+  "telefono" : "1414",
+  "direccion" : "MODI 1",
+  "especialidad" : "Psicologo",
+  "estadoContable" : true
+}, {
   "nombre" : "OSVALDO",
   "apellido" : "SPICHINO",
   "dni" : "2",

@@ -30,10 +30,9 @@ public class Main {
 
         MedicoService medicoService = new MedicoService();
 
-        Medico dr = new Medico("ALBERTO", "MIGUENS", "1", "1", "1", "MEDICO 1", "TRAUMATOLOGO", true);
+        Medico dr = new Medico("ALBERTO", "MIGUENS", "1", "1414", "1414", "MODI 1", "Psicologo", true);
         Medico dr2 = new Medico("OSVALDO", "SPICHINO", "2", "2", "2", "MEDICO 2", "TRAUMATOLOGO", true);
 
-        medicoService.agregar(dr);
         medicoService.agregar(dr2);
         System.out.println(medicoService.listar());
 

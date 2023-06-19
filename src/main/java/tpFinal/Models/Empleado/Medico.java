@@ -13,6 +13,8 @@ public class Medico extends Usuario {
         this.estadoContable = estadoContable;
     }
 
+    public Medico(){}
+
     public String getEspecialidad() {
         return especialidad;
     }
@@ -40,8 +42,8 @@ public class Medico extends Usuario {
     @Override
     public String toString() {
         return  super.toString() +
-                "especialidad='" + especialidad + '\'' +
-                ", estadoContable=" + estadoContable +
+                "   Especialidad: " + especialidad + "\n" +
+                "Estado contable: " + estadoContable + "\n" +
                 "------------------------------------";
     }
 }
