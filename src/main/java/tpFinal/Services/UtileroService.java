@@ -71,11 +71,10 @@ public class UtileroService implements IUtileroService{
         return true;
     }
 
-    public boolean buscarPersonal2(String dni) throws ObjetoEncontradoException{
-        if(utileroRepository.buscar(dni) != null){
+    public boolean buscarPersonal2(String dni) throws ObjetoEncontradoException {
+        if(utileroRepository.buscar(dni) == null){
             throw new ObjetoEncontradoException();
         }
         return true;
     }
-
 }
