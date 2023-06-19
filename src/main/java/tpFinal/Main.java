@@ -1,5 +1,6 @@
 package tpFinal;
 import tpFinal.Models.Directivo;
+import tpFinal.Models.Empleado.AyudanteDeCampo;
 import tpFinal.Models.Empleado.Jugador;
 import tpFinal.Models.Empleado.PersonalLimpieza;
 import tpFinal.Services.*;
@@ -30,13 +31,13 @@ public class Main {
         //test.testSocio();
     }*/
 
-        PersonalLimpiezaService personalService = new PersonalLimpiezaService();
+        AyudanteDeCampoService ayudanteService = new AyudanteDeCampoService();
 
-        PersonalLimpieza personal = new PersonalLimpieza("PersonalUNO", "PersonalUNO", "1", "ModificarUNO", "1414", "Modificar 123", "Duchas", true);
-        PersonalLimpieza personal2 = new PersonalLimpieza("PersonalDOS", "PersonalDOS", "2", "PersonalDOS", "2", "PersonalDOS", "Campo de Juego", true);
+        AyudanteDeCampo ayudante = new AyudanteDeCampo("AYUDANTEUNO", "AYUDANTEUNO", "1", "MODIFICACION", "1414", "MODIFICACION", true, "MODIFICACION", "Futbol", "Cuarta");
+        AyudanteDeCampo ayudante2 = new AyudanteDeCampo("AYUDANTEDOS", "AYUDANTEDOS", "2", "AYUDANTEDOS", "2", "AYUDANTEDOS", true, "AYUDANTEDOS", "Handball", "Primera");
 
-        personalService.eliminar("2");
-        System.out.println(personalService.listar());
+        ayudanteService.eliminar("2");
+        System.out.println(ayudanteService.listar());
 
     }
 }

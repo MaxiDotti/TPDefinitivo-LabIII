@@ -1,0 +1,12 @@
+[ {
+  "nombre" : "AYUDANTEUNO",
+  "apellido" : "AYUDANTEUNO",
+  "dni" : "1",
+  "contrasenia" : "MODIFICACION",
+  "telefono" : "1414",
+  "direccion" : "MODIFICACION",
+  "estadoContable" : true,
+  "plantel" : "AYUDANTEUNO",
+  "deporte" : "Futbol",
+  "categoria" : "Cuarta"
+} ]

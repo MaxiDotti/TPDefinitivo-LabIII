@@ -1,17 +1,12 @@
 package tpFinal.Repositorios.EmpleadosRepository;
-
-
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
 import tpFinal.Models.Empleado.AyudanteDeCampo;
 import tpFinal.Repositorios.IRepository;
-
-
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
 
 public class AyudanteDeCampoRepository implements IRepository<AyudanteDeCampo> {
     private final File file = new File("src/main/resources/AyudanteDeCampo.json");
@@ -28,7 +23,6 @@ public class AyudanteDeCampoRepository implements IRepository<AyudanteDeCampo> {
         }
     }
 
-
     @Override
     public void guardar() {
         try {
@@ -38,21 +32,15 @@ public class AyudanteDeCampoRepository implements IRepository<AyudanteDeCampo> {
         }
     }
 
-
     @Override
     public List<AyudanteDeCampo> listar() {
-        cargar();
         return this.ayudanteDeCampoList;
     }
 
-
     @Override
     public void agregar(AyudanteDeCampo objeto) {
-        cargar();
         this.ayudanteDeCampoList.add(objeto);
-        guardar();
     }
-
 
     @Override
     public void agregarLista(List<AyudanteDeCampo> lista) {
@@ -61,23 +49,31 @@ public class AyudanteDeCampoRepository implements IRepository<AyudanteDeCampo> {
         guardar();
     }
 
-
     @Override
     public void eliminar(String dni) {
-        cargar();
-        for (AyudanteDeCampo ayudanteDeCampo : this.ayudanteDeCampoList )
-            if (ayudanteDeCampo.getDni().equals(dni))
-                this.ayudanteDeCampoList.remove(ayudanteDeCampo);
-        guardar();
+        this.ayudanteDeCampoList.remove(buscar(dni));
     }
 
     @Override
     public void modificar(AyudanteDeCampo objeto) {
-
+        for(AyudanteDeCampo ayudanteDeCampo : this.ayudanteDeCampoList){
+            if(ayudanteDeCampo.getDni().equals(objeto.getDni())){
+                ayudanteDeCampo.setContrasenia(objeto.getContrasenia());
+                ayudanteDeCampo.setTelefono(objeto.getTelefono());
+                ayudanteDeCampo.setDireccion(objeto.getDireccion());
+                ayudanteDeCampo.setDeporte(objeto.getDeporte());
+                ayudanteDeCampo.setCategoria(objeto.getCategoria());
+            }
+        }
     }
 
     @Override
     public AyudanteDeCampo buscar(String dni) {
+        for(AyudanteDeCampo ayudanteDeCampo : this.ayudanteDeCampoList){
+            if(ayudanteDeCampo.getDni().equals(dni)){
+                return ayudanteDeCampo;
+            }
+        }
         return null;
     }
 
