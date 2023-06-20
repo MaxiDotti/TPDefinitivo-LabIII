@@ -3,7 +3,9 @@ import tpFinal.Exceptions.FormatoDNINoCompatibleException;
 import tpFinal.Exceptions.FormatoUsuarioNoCompatibleException;
 import tpFinal.Exceptions.ObjetoEncontradoException;
 import tpFinal.Exceptions.ObjetoNoEncontradoException;
+import tpFinal.Models.Beneficio;
 import tpFinal.Models.Directivo;
+import tpFinal.Repositorios.BeneficioRepository;
 import tpFinal.Repositorios.DirectivoRepository;
 import tpFinal.Utilities.Validations;
 

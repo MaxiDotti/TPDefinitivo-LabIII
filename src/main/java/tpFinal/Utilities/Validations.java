@@ -31,6 +31,7 @@ public class Validations extends Exception{
         return true;
     }
 
+
     public boolean validarUtilero(Utilero utilero) throws FormatoDNINoCompatibleException, FormatoUsuarioNoCompatibleException {
         if(!validateDni(utilero.getDni())){
             throw new FormatoDNINoCompatibleException();

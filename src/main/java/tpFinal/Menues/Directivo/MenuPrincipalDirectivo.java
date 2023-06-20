@@ -32,7 +32,7 @@ public class MenuPrincipalDirectivo {
             switch (opcion) {
                 case 1:
                     System.out.println("***INFORMACION DE USUARIO***\n\n");
-                    directivoLogeado.toString();
+                    //directivoLogeado.toString();
                     break;
                 case 2:
                     System.out.println("***GESTION DE SOCIOS***\n");

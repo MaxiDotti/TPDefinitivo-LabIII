@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
 import tpFinal.Models.Empleado.PersonalLimpieza;
 import tpFinal.Models.Empleado.Utilero;
+import tpFinal.Models.Socio;
 import tpFinal.Repositorios.IRepository;
 
 import java.io.File;
@@ -64,11 +65,22 @@ public class UtileroRepository implements IRepository<Utilero> {
 
     @Override
     public void modificar(Utilero objeto) {
-
+        for(Utilero utilero : this.listUtilero){
+            if(utilero.getDni().equals(objeto.getDni())){
+                utilero.setContrasenia(objeto.getContrasenia());
+                utilero.setTelefono(objeto.getTelefono());
+                utilero.setDireccion(objeto.getDireccion());
+            }
+        }
     }
 
     @Override
     public Utilero buscar(String dni) {
+        for(Utilero utilero : this.listUtilero){
+            if(utilero.getDni().equals(dni)){
+                return utilero;
+            }
+        }
         return null;
     }
 
