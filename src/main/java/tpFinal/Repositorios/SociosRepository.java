@@ -2,15 +2,14 @@ package tpFinal.Repositorios;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
-import tpFinal.Exceptions.FormatoDNINoCompatibleException;
-import tpFinal.Exceptions.ObjetoNoEncontradoException;
+
 import tpFinal.Models.Socio;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
+
 
 public class SociosRepository implements IRepository<Socio> {
 
