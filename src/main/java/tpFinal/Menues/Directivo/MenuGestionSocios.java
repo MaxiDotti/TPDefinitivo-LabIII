@@ -1,6 +1,7 @@
 package tpFinal.Menues.Directivo;
 
 import tpFinal.Exceptions.ObjetoNoEncontradoException;
+import tpFinal.Models.Directivo;
 import tpFinal.Models.Socio;
 import tpFinal.Repositorios.SociosRepository;
 import tpFinal.Services.*;
@@ -8,7 +9,7 @@ import tpFinal.Services.*;
 import java.util.Scanner;
 
 public class MenuGestionSocios {
-    public void menuGestionDeSocios() {
+    public void menuGestionDeSocios(Directivo directivoLogeado) {
         Scanner sn = new Scanner(System.in);
         MenuPrincipalDirectivo menuPrincipalDirectivo = new MenuPrincipalDirectivo();
 
@@ -83,7 +84,7 @@ public class MenuGestionSocios {
                     }
                     break;
                 case 4:
-                    menuPrincipalDirectivo.menuPrincipalDirectivo();
+                    menuPrincipalDirectivo.menuPrincipalDirectivo(directivoLogeado);
                     break;
                 case 0:
                     salir = true;

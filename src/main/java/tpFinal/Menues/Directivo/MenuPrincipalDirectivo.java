@@ -1,5 +1,6 @@
 package tpFinal.Menues.Directivo;
 
+import tpFinal.Models.Directivo;
 import tpFinal.Repositorios.SociosRepository;
 import tpFinal.Services.*;
 
@@ -7,7 +8,7 @@ import java.util.Scanner;
 
 public class MenuPrincipalDirectivo {
 
-    public void menuPrincipalDirectivo(){
+    public void menuPrincipalDirectivo(Directivo directivoLogeado){
 
         Scanner sn = new Scanner(System.in);
 
@@ -36,7 +37,8 @@ public class MenuPrincipalDirectivo {
                     break;
                 case 2:
                     System.out.println("***GESTION DE SOCIOS***\n");
-                    socioService.listar();
+                    MenuGestionSocios menuGestionSocios = new MenuGestionSocios();
+                    menuGestionSocios.menuGestionDeSocios(directivoLogeado);
                     break;
                 case 3:
                     System.out.println("***GESTION DE EMPLEADOS***\n\n");

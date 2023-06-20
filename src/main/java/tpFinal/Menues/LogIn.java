@@ -1,9 +1,13 @@
 package tpFinal.Menues;
 
 import tpFinal.Exceptions.ObjetoNoEncontradoException;
+import tpFinal.Menues.Directivo.MenuPrincipalDirectivo;
 import tpFinal.Menues.Socio.MenuPrincipalSocio;
+import tpFinal.Models.Directivo;
 import tpFinal.Models.Socio;
+import tpFinal.Repositorios.DirectivoRepository;
 import tpFinal.Repositorios.SociosRepository;
+import tpFinal.Services.DirectivoService;
 import tpFinal.Services.SocioService;
 
 import java.util.Scanner;
@@ -19,9 +23,14 @@ public class LogIn {
         String dni;
         String contrasenia;
 
+        DirectivoService directivoService = new DirectivoService();
+        DirectivoRepository directivoRepository = new DirectivoRepository();
+
         SocioService socioService = new SocioService();
         SociosRepository sociosRepository = new SociosRepository();
+
         MenuPrincipalSocio menuPrincipalSocio = new MenuPrincipalSocio();
+        MenuPrincipalDirectivo menuPrincipalDirectivo = new MenuPrincipalDirectivo();
 
         while (!salir) {
             System.out.println("BIENVENIDO AL CLUB SOCIAL Y DEPORTIVO\n\n\n");
@@ -35,9 +44,15 @@ public class LogIn {
                     System.out.println("Por favor ingrese contrasenia\n\n");
                     contrasenia = sn.nextLine();
                     try {
+                        //Nos fijamos si los datos de logeo corresponden a un Socio
                         if(socioService.buscarSocio(dni)){
                             Socio socioLogeado = sociosRepository.buscar(dni);
                             menuPrincipalSocio.menuPrincipalSocio(socioLogeado);
+                        }
+                        //Nos fijamos si los datos de logeo corresponden a un Directivo
+                        if(directivoService.buscarDirectivo(dni)){
+                            Directivo directivoLogeado = directivoRepository.buscar(dni);
+                            menuPrincipalDirectivo.menuPrincipalDirectivo(directivoLogeado);
                         }
                     } catch (ObjetoNoEncontradoException e) {
                         System.out.println("Usuario y/o contrasenia incorrectos.\n\n");
