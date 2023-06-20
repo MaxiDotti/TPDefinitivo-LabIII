@@ -8,17 +8,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProductoRepository implements IRepository<Producto>{
-    private final File file = new File("src/main/resources/Productos.json");
+    private final File file = new File("src/main/resources/Producto.json");
 
     private final ObjectMapper mapper = new ObjectMapper();
     private List<Producto> listaProductos;
-
     @Override
     public void cargar() {
-        try{
+        try {
             CollectionType collectionType = mapper.getTypeFactory().constructCollectionType(List.class, Producto.class);
             this.listaProductos = mapper.readValue(file, collectionType);
-        }catch (IOException e){
+        } catch (IOException e) {
             this.listaProductos = new ArrayList<>();
         }
     }
@@ -76,12 +75,12 @@ public class ProductoRepository implements IRepository<Producto>{
         return null;
     }
 
-    public boolean buscarProducto(Producto objeto){
+    public Producto buscarProducto(Producto objeto){
         for(Producto producto : this.listaProductos){
             if(producto.equals(objeto)){
-                return false;
+                return producto;
             }
         }
-        return true;
+        return null;
     }
 }

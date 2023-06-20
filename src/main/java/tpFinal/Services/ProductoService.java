@@ -69,7 +69,7 @@ public class ProductoService implements IProductoService{
     }
 
     public boolean buscarProducto2(Producto objeto) throws ProductoEncontradoException {
-        if(!productoRepository.buscarProducto(objeto)){
+        if(productoRepository.buscarProducto(objeto) != null){
             throw new ProductoEncontradoException();
         }
         return true;

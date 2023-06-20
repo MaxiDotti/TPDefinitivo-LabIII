@@ -6,6 +6,7 @@ import tpFinal.Repositorios.EmpleadosRepository.UtileroRepository;
 import tpFinal.Repositorios.ProductoRepository;
 import tpFinal.Services.*;
 import tpFinal.Services.DirectivoService;
+import tpFinal.Utilities.CategoriaProducto;
 import tpFinal.Utilities.Deporte;
 
 public class Main {
@@ -33,9 +34,13 @@ public class Main {
 
         ProductoService productoService = new ProductoService();
 
-        Producto prod1 = new Producto("1", "REMERA", "Casaca", 6700f, Producto.Categoria.INDUMENTARIA);
-        ///productoService.agregar(prod1);
+        Producto prod = new Producto("1", "REMERA", "REMERA", 6000f, CategoriaProducto.INDUMENTARIA);
+        Producto prod2 = new Producto("2", "MEDIA", "MEDIA", 1600f, CategoriaProducto.INDUMENTARIA);
+
+        productoService.agregar(prod);
+        productoService.agregar(prod2);
         System.out.println(productoService.listar());
+
 
     }
 }
