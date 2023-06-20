@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface IUtileroService {
 
-   void listar();
+   List<Utilero> listar();
     void agregar(Utilero objeto);
     void modificar(Utilero objeto);
     void eliminar(String dni);

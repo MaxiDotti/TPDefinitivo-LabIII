@@ -1,4 +1,5 @@
 package tpFinal;
+import tpFinal.Menues.Iniciador;
 import tpFinal.Models.Directivo;
 import tpFinal.Models.Empleado.*;
 import tpFinal.Repositorios.BeneficioRepository;
@@ -9,39 +10,8 @@ import tpFinal.Utilities.Deporte;
 public class Main {
     public static void main(String[] args) {
 
-        BeneficioRepository beneficioRepository = new BeneficioRepository();
-       /* TestRepository test = new TestRepository();
-
-        //System.out.println("TEST AYUDANTE DE CAMPO");
-        //test.testAyudanteDeCampo();
-        //System.out.println("TEST DIRECTOR TECNICO");
-        //test.testDirectorTecnico();
-        //System.out.println("TEST JUGADOR");
-        //test.testJugador();
-        //System.out.println("TEST MEDICO");
-        //test.testMedico();
-        //System.out.println("TEST PERSONAL LIMPIEZA");
-        //test.testPErsonalLimpieza();
-       // System.out.println("TEST UTILERO");
-        //test.testUtilero();
-       // System.out.println("TEST DIRECTIVO");
-        //test.testDirectivo();
-        //System.out.println("TEST SOCIO");
-        //test.testSocio();
-    }*/
-
-        /*MedicoService medicoService = new MedicoService();
-
-        Medico dr = new Medico("ALBERTO", "MIGUENS", "1", "1414", "1414", "MODI 1", "Psicologo", true);
-        Medico dr2 = new Medico("OSVALDO", "SPICHINO", "2", "2", "2", "MEDICO 2", "TRAUMATOLOGO", true);
-
-        medicoService.agregar(dr2);
-        System.out.println(medicoService.listar());*/
-
-        SocioService socioService = new SocioService();
-        socioService.listar();
-        beneficioRepository.cargar();
-        beneficioRepository.listar();
+        Iniciador iniciador = new Iniciador();
+        iniciador.comenzar();
 
     }
 }
