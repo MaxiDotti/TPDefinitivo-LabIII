@@ -1,0 +1,13 @@
+[ {
+  "id" : "2",
+  "categoria" : "205",
+  "fecha" : "7/10/2023",
+  "deporte" : "Tenis",
+  "rival" : "Roger Federer"
+}, {
+  "id" : "5",
+  "categoria" : "1234",
+  "fecha" : "6/11/2023",
+  "deporte" : "Basquet",
+  "rival" : "Lakers"
+} ]
