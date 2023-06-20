@@ -1,4 +1,5 @@
 package tpFinal;
+
 import tpFinal.Models.Directivo;
 import tpFinal.Models.Empleado.*;
 import tpFinal.Repositorios.EmpleadosRepository.UtileroRepository;
@@ -6,9 +7,14 @@ import tpFinal.Services.*;
 import tpFinal.Services.DirectivoService;
 import tpFinal.Utilities.Deporte;
 
+
+
+import tpFinal.Models.Partido;
+import tpFinal.Services.PartidoService;
+
+
 public class Main {
     public static void main(String[] args) {
-
        /* TestRepository test = new TestRepository();
 
         //System.out.println("TEST AYUDANTE DE CAMPO");

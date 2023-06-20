@@ -2,8 +2,10 @@ package tpFinal.Services;
 
 import tpFinal.Exceptions.FormatoDNINoCompatibleException;
 import tpFinal.Exceptions.FormatoUsuarioNoCompatibleException;
+
 import tpFinal.Exceptions.ObjetoEncontradoException;
 import tpFinal.Exceptions.ObjetoNoEncontradoException;
+
 import tpFinal.Models.Empleado.Utilero;
 import tpFinal.Repositorios.EmpleadosRepository.UtileroRepository;
 import tpFinal.Utilities.Validations;
@@ -17,7 +19,7 @@ public class UtileroService implements IUtileroService{
     UtileroRepository utileroRepository = new UtileroRepository();
     @Override
     public List<Utilero> listar() {
-        return utileroRepository.listar();
+       return this.utileroRepository.listar();
     }
 
     @Override

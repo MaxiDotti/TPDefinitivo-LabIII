@@ -13,6 +13,7 @@ import java.util.List;
 public class SocioService implements ISocioService{
 
     SociosRepository sociosRepository = new SociosRepository();
+    BeneficioService beneficioService = new BeneficioService();
     Validations validations = new Validations();
 
     @Override
@@ -103,7 +104,7 @@ public class SocioService implements ISocioService{
 
     @Override
     public void listarBeneficios() {
-
+        beneficioService.listar();
     }
 
 }
