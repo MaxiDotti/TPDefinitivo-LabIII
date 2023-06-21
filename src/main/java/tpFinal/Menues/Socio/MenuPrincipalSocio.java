@@ -29,6 +29,7 @@ public class MenuPrincipalSocio {
                     "3- Ver estado contable\n" +
                     "4-Tienda\n" +
                     "5-Beneficios\n" +
+                    "6-Volver al MENU PRINCIPAL\n" +
                     "0- Salir\n");
             opcion = sn.nextInt();
             switch (opcion) {
