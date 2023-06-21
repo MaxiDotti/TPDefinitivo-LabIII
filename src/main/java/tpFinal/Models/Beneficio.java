@@ -24,6 +24,9 @@ public final class Beneficio {
         this.fechaDeUtilidad = fechaDeUtilidad;
     }
 
+    public Beneficio() {
+    }
+
     public String getProveedor() {
         return proveedor;
     }
