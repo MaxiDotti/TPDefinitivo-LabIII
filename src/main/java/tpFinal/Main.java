@@ -1,4 +1,5 @@
 package tpFinal;
+import tpFinal.Menues.Iniciador;
 import tpFinal.Models.Directivo;
 import tpFinal.Models.Empleado.*;
 import tpFinal.Models.Producto;
@@ -33,15 +34,17 @@ public class Main {
         //test.testSocio();
     }*/
 
-        ProductoService productoService = new ProductoService();
+        /*ProductoService productoService = new ProductoService();
 
         Producto prod = new Producto("1", "REMERA", "REMERA", 6000f, CategoriaProducto.INDUMENTARIA);
         Producto prod2 = new Producto("2", "MEDIA", "MEDIA", 1600f, CategoriaProducto.INDUMENTARIA);
 
         productoService.agregar(prod);
         productoService.agregar(prod2);
-        System.out.println(productoService.listar());
+        System.out.println(productoService.listar());*/
 
+        Iniciador iniciador = new Iniciador();
+        iniciador.comenzar();
 
     }
 }

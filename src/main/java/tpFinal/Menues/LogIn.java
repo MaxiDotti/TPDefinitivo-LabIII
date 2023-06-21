@@ -33,8 +33,8 @@ public class LogIn {
         MenuPrincipalDirectivo menuPrincipalDirectivo = new MenuPrincipalDirectivo();
 
         while (!salir) {
-            System.out.println("BIENVENIDO AL CLUB SOCIAL Y DEPORTIVO\n\n\n");
-            System.out.println("1- Loguearse\n2- Recuperar contraseña\n0- Salir\n");
+            System.out.println("BIENVENIDO A EXCELSIOR CLUB DEPORTIVO Imperium\"\n\n\n");
+            System.out.println("1- Loguearse\n2- Recuperar contraseña\n3-Volver al menu principal\n0- Salir\n");
             opcion = sn.nextInt();
             switch (opcion) {
                 case 1:
