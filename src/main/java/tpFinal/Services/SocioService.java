@@ -14,6 +14,8 @@ public class SocioService implements ISocioService{
 
     SociosRepository sociosRepository = new SociosRepository();
     BeneficioService beneficioService = new BeneficioService();
+    ProductoService productoService = new ProductoService();
+    PartidoService partidoService = new PartidoService();
     Validations validations = new Validations();
 
     @Override
@@ -89,12 +91,12 @@ public class SocioService implements ISocioService{
 
     @Override
     public void comprarEntrada() {
-
+        partidoService.listar();
     }
 
     @Override
     public void comprarMerchandasing() {
-
+        productoService.listar();
     }
 
     @Override
