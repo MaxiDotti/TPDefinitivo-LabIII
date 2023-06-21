@@ -34,7 +34,9 @@ public class LogIn {
 
         while (!salir) {
             System.out.println("BIENVENIDO AL CLUB SOCIAL Y DEPORTIVO\n\n\n");
-            System.out.println("1- Loguearse\n2- Recuperar contraseña\n0- Salir\n");
+            System.out.println("1- Loguearse\n" +
+                    "2- Recuperar contraseña\n" +
+                    "0- Salir\n");
             opcion = sn.nextInt();
             switch (opcion) {
                 case 1:
@@ -46,13 +48,19 @@ public class LogIn {
                     try {
                         //Nos fijamos si los datos de logeo corresponden a un Socio
                         if(socioService.buscarSocio(dni)){
-                            Socio socioLogeado = sociosRepository.buscar(dni);
-                            menuPrincipalSocio.menuPrincipalSocio(socioLogeado);
+                            Socio socio = sociosRepository.buscar(dni);
+                            if(socio.getContrasenia().equals(contrasenia)){
+                                Socio socioLogeado = sociosRepository.buscar(dni);
+                                menuPrincipalSocio.menuPrincipalSocio(socioLogeado);
+                            }
                         }
                         //Nos fijamos si los datos de logeo corresponden a un Directivo
                         if(directivoService.buscarDirectivo(dni)){
-                            Directivo directivoLogeado = directivoRepository.buscar(dni);
-                            menuPrincipalDirectivo.menuPrincipalDirectivo(directivoLogeado);
+                            Directivo directivo = directivoRepository.buscar(dni);
+                            if(directivo.getContrasenia().equals(contrasenia)){
+                                Directivo directivoLogeado = directivoRepository.buscar(dni);
+                                menuPrincipalDirectivo.menuPrincipalDirectivo(directivoLogeado);
+                            }
                         }
                     } catch (ObjetoNoEncontradoException e) {
                         System.out.println("Usuario y/o contrasenia incorrectos.\n\n");
@@ -65,8 +73,32 @@ public class LogIn {
                     System.out.println("Por favor ingrese contrasenia\n\n");
                     contrasenia = sn.nextLine();
                     if(sociosRepository.buscar(dni) != null){
-                        System.out.println(sociosRepository.buscar(dni).getNombre()+", un administrador se contactará con usted para reestablecer su contraseña, gracias");
-                    }else{
+                        Socio socio = sociosRepository.buscar(dni);
+                        if(socio.getContrasenia().equals(contrasenia)){
+                            System.out.println("Ingresar nueva contrasenia");
+                            String nuevaContrasenia = sn.nextLine();
+                            System.out.println("Repita la contrasenia");
+                            String validarContrasenia = sn.nextLine();
+                            if(nuevaContrasenia.equals(validarContrasenia)){
+                                if (socioService.cambiarContrasenia(nuevaContrasenia,dni))
+                                    System.out.println("Contrasenia cambiada correctamente.");
+                            }
+                        }
+                    } else if (directivoRepository.buscar(dni) != null) {
+                        if(directivoRepository.buscar(dni) != null){
+                            Directivo directivo = directivoRepository.buscar(dni);
+                            if(directivo.getContrasenia().equals(contrasenia)){
+                                System.out.println("Ingresar nueva contrasenia");
+                                String nuevaContrasenia = sn.nextLine();
+                                System.out.println("Repita la contrasenia");
+                                String validarContrasenia = sn.nextLine();
+                                if(nuevaContrasenia.equals(validarContrasenia)){
+                                    if (directivoService.cambiarContrasenia(nuevaContrasenia,dni))
+                                        System.out.println("Contrasenia cambiada correctamente.");
+                                }
+                            }
+                        }
+                    } else{
                         System.out.println("DNI no valido.");
                     }
                     break;

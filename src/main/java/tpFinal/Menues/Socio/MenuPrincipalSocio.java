@@ -24,7 +24,12 @@ public class MenuPrincipalSocio {
 
         while (!salir) {
             System.out.println("*****MENU PRINCIPAL SOCIO******\n\n\n");
-            System.out.println("1- Ver información personal\n2- Adquirir entrada\n3- Ver estado contable\n4-Tienda\n5- \n5-Beneficios0- Salir\n");
+            System.out.println("1- Ver información personal\n" +
+                    "2- Adquirir entrada\n" +
+                    "3- Ver estado contable\n" +
+                    "4-Tienda\n" +
+                    "5-Beneficios\n" +
+                    "0- Salir\n");
             opcion = sn.nextInt();
             switch (opcion) {
                 case 1:

@@ -86,7 +86,6 @@ public class SocioService implements ISocioService{
         }
         return true;
     }
-
     @Override
     public void comprarEntrada() {
 
@@ -105,6 +104,10 @@ public class SocioService implements ISocioService{
     @Override
     public void listarBeneficios() {
         beneficioService.listar();
+    }
+
+    public boolean cambiarContrasenia(String dni, String contrasenia){
+        return sociosRepository.recuperarContrasenia(contrasenia,dni);
     }
 
 }

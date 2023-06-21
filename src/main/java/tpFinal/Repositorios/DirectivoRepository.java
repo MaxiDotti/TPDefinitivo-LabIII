@@ -81,4 +81,15 @@ public class DirectivoRepository implements IRepository<Directivo>{
         return null;
     }
 
+    public boolean recuperarContrasenia(String nuevaContrasenia, String dni){
+        boolean validador = false;
+        for (Directivo directivo : this.listDirectivo){
+            if(directivo.getDni().equals(dni)){
+                directivo.setContrasenia(nuevaContrasenia);
+                validador = true;
+            }
+        }
+        return  validador;
+    }
+
 }

@@ -92,6 +92,17 @@ public class SociosRepository implements IRepository<Socio> {
         }
         return false;
     }
+
+    public boolean recuperarContrasenia(String nuevaContrasenia, String dni){
+        boolean validador = false;
+        for (Socio socio : this.listaSocios){
+            if(socio.getDni().equals(dni)){
+                socio.setContrasenia(nuevaContrasenia);
+                validador = true;
+            }
+        }
+        return  validador;
+    }
 }
 
 /* CODIGO DE MODIFICACION PARA EL MENU

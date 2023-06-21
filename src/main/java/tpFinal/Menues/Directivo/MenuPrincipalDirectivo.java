@@ -28,7 +28,11 @@ public class MenuPrincipalDirectivo {
 
         while (!salir) {
             System.out.println("*****MENU PRINCIPAL DIRECTIVO******\n\n\n");
-            System.out.println("1- Ver información de usuario\n2- Gestion de Socios\n3- Gestión de Empleados\n4- Gestion de Beneficios\n0- Salir\n");
+            System.out.println("1- Ver información de usuario\n" +
+                    "2- Gestion de Socios\n" +
+                    "3- Gestión de Empleados\n" +
+                    "4- Gestion de Beneficios\n" +
+                    "0- Salir\n");
             opcion = sn.nextInt();
             switch (opcion) {
                 case 1:

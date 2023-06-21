@@ -100,4 +100,8 @@ public class DirectivoService implements IDirectivoService{
     public void eliminarBeneficio() {
 
     }
+
+    public boolean cambiarContrasenia(String dni, String contrasenia){
+        return directivoRepository.recuperarContrasenia(contrasenia,dni);
+    }
 }
