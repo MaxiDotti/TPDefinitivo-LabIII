@@ -37,33 +37,33 @@ public class LogIn {
             System.out.println("1- Loguearse\n" +
                     "2- Recuperar contraseña\n" +
                     "0- Salir\n");
+
+            System.out.print("OPCION: ");
             opcion = sn.nextInt();
+            sn.nextLine();
             switch (opcion) {
                 case 1:
                     System.out.println("***MENU DE LOGUEO***\n\n");
-                    System.out.println("Ingrese DNI\n");
+                    System.out.print("Ingrese DNI: ");
                     dni = sn.nextLine();
-                    System.out.println("Por favor ingrese contrasenia\n\n");
+                    System.out.print("Ingrese contraseña: ");
                     contrasenia = sn.nextLine();
-                    try {
-                        //Nos fijamos si los datos de logeo corresponden a un Socio
-                        if(socioService.buscarSocio(dni)){
-                            Socio socio = sociosRepository.buscar(dni);
-                            if(socio.getContrasenia().equals(contrasenia)){
-                                Socio socioLogeado = sociosRepository.buscar(dni);
-                                menuPrincipalSocio.menuPrincipalSocio(socioLogeado);
-                            }
+
+                    //Nos fijamos si los datos de logeo corresponden a un Socio
+                    if(sociosRepository.buscarSocio(dni) != null){
+                        Socio socioLogueado = sociosRepository.buscarSocio(dni);
+                        if(socioLogueado.getContrasenia().equals(contrasenia)){
+                            menuPrincipalSocio.menuPrincipalSocio(socioLogueado);
                         }
-                        //Nos fijamos si los datos de logeo corresponden a un Directivo
-                        if(directivoService.buscarDirectivo(dni)){
-                            Directivo directivo = directivoRepository.buscar(dni);
-                            if(directivo.getContrasenia().equals(contrasenia)){
-                                Directivo directivoLogeado = directivoRepository.buscar(dni);
-                                menuPrincipalDirectivo.menuPrincipalDirectivo(directivoLogeado);
-                            }
+                    }
+                    //Nos fijamos si los datos de logeo corresponden a un Directivo
+                    if(directivoRepository.buscarDirectivo(dni) != null){
+                        Directivo directivo = directivoRepository.buscarDirectivo(dni);
+                        if(directivo.getContrasenia().equals(contrasenia)){
+                            menuPrincipalDirectivo.menuPrincipalDirectivo(directivo);
                         }
-                    } catch (ObjetoNoEncontradoException e) {
-                        System.out.println("Usuario y/o contrasenia incorrectos.\n\n");
+                    }else{
+                        System.out.println("Los datos ingresados son incorrectos.");
                     }
                     break;
                 case 2:
@@ -72,8 +72,8 @@ public class LogIn {
                     dni = sn.nextLine();
                     System.out.println("Por favor ingrese contrasenia\n\n");
                     contrasenia = sn.nextLine();
-                    if(sociosRepository.buscar(dni) != null){
-                        Socio socio = sociosRepository.buscar(dni);
+                    if(sociosRepository.buscarSocio(dni) != null){
+                        Socio socio = sociosRepository.buscarSocio(dni);
                         if(socio.getContrasenia().equals(contrasenia)){
                             System.out.println("Ingresar nueva contrasenia");
                             String nuevaContrasenia = sn.nextLine();

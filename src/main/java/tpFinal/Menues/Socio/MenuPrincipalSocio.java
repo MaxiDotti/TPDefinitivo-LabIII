@@ -4,6 +4,7 @@ import tpFinal.Exceptions.ObjetoNoEncontradoException;
 import tpFinal.Models.Socio;
 import tpFinal.Repositorios.SociosRepository;
 import tpFinal.Services.BeneficioService;
+import tpFinal.Services.PartidoService;
 import tpFinal.Services.SocioService;
 
 import java.util.Scanner;
@@ -19,25 +20,27 @@ public class MenuPrincipalSocio {
 
         SocioService socioService = new SocioService();
         SociosRepository sociosRepository = new SociosRepository();
-
+        PartidoService partidoService = new PartidoService();
         BeneficioService beneficioService = new BeneficioService();
+
 
         while (!salir) {
             System.out.println("*****MENU PRINCIPAL SOCIO******\n\n\n");
             System.out.println("1- Ver información personal\n" +
-                    "2- Adquirir entrada\n" +
+                    "2- Visualizar próximos partidos \n" +
                     "3- Ver estado contable\n" +
-                    "4-Tienda\n" +
-                    "5-Beneficios\n" +
+                    "4- Visualizar tienda del club\n" +
+                    "5- Beneficios para el socio\n" +
                     "0- Salir\n");
             opcion = sn.nextInt();
             switch (opcion) {
                 case 1:
                     System.out.println("***INFORMACION PERSONAL***\n\n");
-                    socioLogeado.toString();
+                    System.out.println(socioLogeado);
+                    System.out.println("\n------------------------------------");
                     break;
                 case 2:
-                    //en este caso tenemos que definir qué hacemos con el tema de las entradas.
+                    System.out.println(partidoService.listar());
                     break;
                 case 3:
                     System.out.println("***ESTADO CONTABLE***\n\n");

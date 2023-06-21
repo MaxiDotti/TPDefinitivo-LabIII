@@ -81,6 +81,17 @@ public class SociosRepository implements IRepository<Socio> {
         return null;
     }
 
+    // SOLO LO UTILIZAMOS PARA EL MENU
+    public Socio buscarSocio(String dni) {
+        cargar();
+        for(Socio socio : this.listaSocios){
+            if(socio.getDni().equals(dni)){
+                return socio;
+            }
+        }
+        return null;
+    }
+
     public boolean estadoContable(String dni){
         cargar();
         for(Socio socio : this.listaSocios){

@@ -81,6 +81,17 @@ public class DirectivoRepository implements IRepository<Directivo>{
         return null;
     }
 
+    // SOLO LO UTILIZAMOS PARA EL MENU
+    public Directivo buscarDirectivo(String dni) {
+        cargar();
+        for (Directivo directivo : this.listDirectivo) {
+            if (directivo.getDni().equals(dni)) {
+                return directivo;
+            }
+        }
+        return null;
+    }
+
     public boolean recuperarContrasenia(String nuevaContrasenia, String dni){
         boolean validador = false;
         for (Directivo directivo : this.listDirectivo){

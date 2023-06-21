@@ -95,7 +95,7 @@ public abstract class Usuario {
                 "         Nombre: " + nombre + "\n" +
                 "       Apellido: " + apellido + "\n" +
                 "            DNI: " + dni + "\n" +
-                "     Contraseña: " + contrasenia + "\n" +
+
                 "       Telefono: " + telefono + "\n" +
                 "      Direccion: " + direccion + "\n";
     }
