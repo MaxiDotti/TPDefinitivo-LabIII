@@ -1,7 +1,9 @@
 package tpFinal.Utilities;
 
+import tpFinal.Exceptions.BeneficioNuloException;
 import tpFinal.Exceptions.FormatoDNINoCompatibleException;
 import tpFinal.Exceptions.FormatoUsuarioNoCompatibleException;
+import tpFinal.Models.Beneficio;
 import tpFinal.Models.Directivo;
 import tpFinal.Models.Empleado.*;
 import tpFinal.Models.Producto;
@@ -130,6 +132,14 @@ public class Validations extends Exception{
 
     public boolean validateApellido(String apellido) {
         return apellido.matches("[a-zA-Z]+");
+    }
+
+    //Corroboramos que el beneficio no sea nulo
+    public boolean validarBeneficio(Beneficio beneficio) throws BeneficioNuloException {
+        if (beneficio != null){
+            throw new BeneficioNuloException();
+        }
+        return true;
     }
 
 }

@@ -1,0 +1,16 @@
+[
+  {
+    "id" : "1",
+    "proveedor" : "Coca-Cola",
+    "categoria" : "Gastronomía",
+    "tipoDeDescuento" : "15%OFF en línea Coca Cola",
+    "fechaDeUtilidad" : "De Lunes a Viernes"
+  },
+  {
+    "id" : "2",
+    "proveedor" : "Nike",
+    "categoria" : "Indumentaria",
+    "tipoDeDescuento" : "10%OFF en medias",
+    "fechaDeUtilidad" : "Durante todo el mes de Mayo"
+  }
+]

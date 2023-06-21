@@ -9,8 +9,15 @@ import tpFinal.Services.DirectivoService;
 import tpFinal.Utilities.CategoriaProducto;
 import tpFinal.Utilities.Deporte;
 
+
+
+import tpFinal.Models.Partido;
+import tpFinal.Services.PartidoService;
+
+
 public class Main {
     public static void main(String[] args) {
+
 
        /* TestRepository test = new TestRepository();
 
@@ -40,6 +47,14 @@ public class Main {
         productoService.agregar(prod);
         productoService.agregar(prod2);
         System.out.println(productoService.listar());
+
+
+        PartidoService partidoService = new PartidoService();
+        Partido nuevoPartido = new Partido("1234", "6/11/2023", "Basquet", "Lakers", "5");
+        //partidoService.agregar(nuevoPartido);
+        //partidoService.eliminar("1");
+        partidoService.modificar(nuevoPartido);
+        System.out.println(partidoService.listar());
 
 
     }
