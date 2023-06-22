@@ -97,5 +97,16 @@ public class UtileroRepository implements IRepository<Utilero> {
         return null;
     }
 
+    // SOLO LO UTILIZAMOS PARA EL MENU
+    public Utilero buscarUtilero(String dni) {
+        cargar();
+        for(Utilero utilero : this.listUtilero){
+            if(utilero.getDni().equals(dni)){
+                return utilero;
+            }
+        }
+        return null;
+    }
+
 
 }
