@@ -2,9 +2,9 @@
   "nombre" : "Pedro",
   "apellido" : "Perez",
   "dni" : "1",
-  "contrasenia" : "pedroperez",
-  "telefono" : "321345",
-  "direccion" : "Guido 1432",
+  "contrasenia" : "pedronuevo",
+  "telefono" : "111111",
+  "direccion" : "pedronuevo",
   "estadoContable" : true
 }, {
   "nombre" : "Juan",
