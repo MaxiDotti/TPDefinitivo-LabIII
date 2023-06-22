@@ -1,34 +1,34 @@
 [ {
-  "nombre" : "prueba",
-  "apellido" : "prueba",
-  "dni" : "12345",
-  "contrasenia" : "prueba",
-  "telefono" : "12345",
-  "direccion" : "prueba",
-  "estadoContable" : true,
-  "plantel" : null,
-  "deporte" : null,
-  "categoria" : null
-}, {
-  "nombre" : "asd",
-  "apellido" : "asd",
-  "dni" : "45352",
+  "nombre" : "Juan",
+  "apellido" : "Gonzalez",
+  "dni" : "178945",
   "contrasenia" : "asd",
-  "telefono" : "1111",
-  "direccion" : "polo",
+  "telefono" : "2235666717",
+  "direccion" : "Av Luro 7145",
   "estadoContable" : true,
-  "plantel" : "asd",
-  "deporte" : "asd",
-  "categoria" : "asd"
+  "plantel" : "Futbol Femenino",
+  "deporte" : "Futbol",
+  "categoria" : "Primera"
 }, {
-  "nombre" : "PRUEBA",
-  "apellido" : "PRUEBA",
-  "dni" : "34",
+  "nombre" : "Nicolas",
+  "apellido" : "Tagliafico",
+  "dni" : "2145784",
   "contrasenia" : "asd",
-  "telefono" : "1234",
-  "direccion" : "asd 123",
+  "telefono" : "1145789865",
+  "direccion" : "Calle Falsa 123",
   "estadoContable" : true,
   "plantel" : "Futbol Masculino",
   "deporte" : "Futbol",
+  "categoria" : "Tercera"
+}, {
+  "nombre" : "Alberto",
+  "apellido" : "Acosta",
+  "dni" : "34444555",
+  "contrasenia" : "asd",
+  "telefono" : "1234123",
+  "direccion" : "Libertador 7954",
+  "estadoContable" : true,
+  "plantel" : "Handball Masculino",
+  "deporte" : "Handball",
   "categoria" : "Primera"
 } ]

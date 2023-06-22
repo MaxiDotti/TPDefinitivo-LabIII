@@ -1,1 +1,23 @@
-[ ]
+[ {
+  "nombre" : "Marcelo",
+  "apellido" : "Gallardo",
+  "dni" : "25091218",
+  "contrasenia" : "asd",
+  "telefono" : "1145457878",
+  "direccion" : "Alcorta y Udaondo",
+  "estadoContable" : true,
+  "plantel" : "Futbol Masculino",
+  "deporte" : "Futbol",
+  "categoria" : "Primera"
+}, {
+  "nombre" : "Lionel",
+  "apellido" : "Scaloni",
+  "dni" : "29181222",
+  "contrasenia" : "asd",
+  "telefono" : "1123235658",
+  "direccion" : "Diagonal Qatar 183",
+  "estadoContable" : true,
+  "plantel" : "Futbol Masculino",
+  "deporte" : "Futbol",
+  "categoria" : "Primera"
+} ]

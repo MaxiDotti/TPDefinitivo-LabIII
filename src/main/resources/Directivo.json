@@ -1,15 +1,29 @@
 [ {
-  "nombre" : "Nombre1",
-  "apellido" : "Apellido1",
-  "dni" : "Dni1",
+  "nombre" : "Gianni",
+  "apellido" : "Ricciardi",
+  "dni" : "1",
   "contrasenia" : "Contrasenia1",
   "telefono" : "Telefono1",
-  "direccion" : "Direccion1"
+  "direccion" : "Calle 764"
 }, {
   "nombre" : "Maximo",
   "apellido" : "Dotti",
-  "dni" : "14",
+  "dni" : "2",
   "contrasenia" : "asd",
-  "telefono" : "MODI1",
-  "direccion" : "MODI2"
-} ]
+  "telefono" : "2235478",
+  "direccion" : "Calle 567"
+}, {
+  "nombre" : "Tomas",
+  "apellido" : "Onetto",
+  "dni" : "3",
+  "contrasenia" : "asd",
+  "telefono" : "223547",
+  "direccion" : "Calle 789"
+} , {
+  "nombre" : "Juan",
+  "apellido" : "Badra",
+  "dni" : "4",
+  "contrasenia" : "asd",
+  "telefono" : "223587",
+  "direccion" : "Calle 456"
+}  ]
