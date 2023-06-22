@@ -3,6 +3,7 @@ package tpFinal.Repositorios.EmpleadosRepository;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
+import tpFinal.Models.Empleado.Medico;
 import tpFinal.Models.Empleado.PersonalLimpieza;
 import tpFinal.Models.Socio;
 import tpFinal.Repositorios.IRepository;
@@ -76,6 +77,17 @@ public class PersonalLimpiezaRepository implements IRepository<PersonalLimpieza>
 
     @Override
     public PersonalLimpieza buscar(String dni) {
+        for(PersonalLimpieza personalLimpieza : this.listPersonalLimpieza){
+            if(personalLimpieza.getDni().equals(dni)){
+                return personalLimpieza;
+            }
+        }
+        return null;
+    }
+
+    // SOLO LO UTILIZAMOS PARA EL MENU
+    public PersonalLimpieza buscarPersonalLimpieza(String dni) {
+        cargar();
         for(PersonalLimpieza personalLimpieza : this.listPersonalLimpieza){
             if(personalLimpieza.getDni().equals(dni)){
                 return personalLimpieza;
