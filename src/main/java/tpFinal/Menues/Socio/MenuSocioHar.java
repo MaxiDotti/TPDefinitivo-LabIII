@@ -10,56 +10,64 @@ import java.util.Scanner;
 
 public class MenuSocioHar {
 
-    public void menuPrincipalSocio(Socio socioLogeado) throws ObjetoNoEncontradoException, ObjetoEncontradoException {
+    public boolean menuPrincipalSocio(Socio socioLogeado) throws ObjetoNoEncontradoException, ObjetoEncontradoException {
 
         SocioService socioService = new SocioService();
-        socioService.agregar(socioLogeado);
         SociosRepository sociosRepository = new SociosRepository();
-
+        mostrarSocio();
         Scanner scanner = new Scanner(System.in);
         int opcion;
 
         do {
-            mostrarMenu();
+            mostrarSocio();
             System.out.print("Ingrese el número de opción que desea realizar: ");
             opcion = scanner.nextInt();
 
+            System.out.println("===== Menú del Socio =====");
+            System.out.println("1. Ver información del Socio");
+            scanner.nextLine();
+            mostrarSocio();
+            System.out.println("2. Actualizar información del Socio");
+            scanner.nextLine();
+            System.out.println("3. Eliminar Socio");
+            scanner.nextLine();
+            System.out.println("4. Salir");
+            scanner.nextLine();
+            System.out.print("Ingrese una opción: ");
+            try {
+                opcion = scanner.nextInt();
+            } catch (Throwable e) {
+                System.out.println("Caracter invalido, debe ingresar un numero");
+                scanner.nextLine();
+            }
+
+
             switch (opcion) {
                 case 1:
-                    System.out.println("Información personal:");
-                    System.out.println("Nombre: Juan Pérez");
-                    System.out.println("Apellido: Pérez");
-                    System.out.println("Edad: 35 años");
-                    System.out.println("Dirección: Calle Falsa 123");
-                    System.out.println("Teléfono: 555-1234");
-                    System.out.println("DNI: 4578218");
-                    System.out.println("Contraseña : LSas1.@ad312");
-                    socioLogeado.toString();
+                    System.out.println("AGREGAR SOCIO");
+                    sociosRepository.guardar();
+                    mostrarSocio();
                     break;
                 case 2:
-                    System.out.println("Agregar socio:");
-                    sociosRepository.guardar();
-                    break;
-                case 3:
                     System.out.println("Eliminar Socio:");
-                    socioService.buscarSocio(socioLogeado.getDni());
                     socioService.eliminar(socioLogeado.getDni());
                     break;
-                case 4:
+                case 3:
                     System.out.println("Modificar Socio:");
                     socioService.buscarSocio2(socioLogeado.getDni());
                     socioService.modificar(socioLogeado);
-                    socioService.cambiarContrasenia(socioLogeado.getContrasenia(),socioLogeado.getDni());
+                    socioService.cambiarContrasenia(socioLogeado.getContrasenia(), socioLogeado.getDni());
                     break;
-                case 5:
+                case 4:
                     System.out.println("***ESTADO CONTABLE***\n\n");
-                    if(socioLogeado.isEstadoContable()){
+                    if (socioLogeado.isEstadoContable()) {
                         System.out.println("Estado contable: AL DIA\n");
-                    }else{
+                    } else {
                         System.out.println("Estado contable: EN DEUDA\n");
                     }
+                    mostrarSocio();
                     break;
-                case 6:
+                case 5:
                     System.out.println("----SALIR----");
                     scanner.nextLine();
                     break;
@@ -69,16 +77,23 @@ public class MenuSocioHar {
                     break;
             }
         } while (opcion != 4);
+        return false;
     }
 
-    public static void mostrarMenu() {
-        System.out.println("*****MENU GESTION DE SOCIOS******\n\n\n");
-        System.out.println("1- Agregar Socio" +
-                "\n2-Eliminar Socio\n3- Modificacion de Socio" +
-                "\n4- ESTADO CONTABLE\n0- Salir\n");
+
+    public static void mostrarSocio() {
+        System.out.println("Información personal:");
+        System.out.println("Nombre: Juan");
+        System.out.println("Apellido: Pérez");
+        System.out.println("Edad: 35 años");
+        System.out.println("Dirección: Calle Falsa 123");
+        System.out.println("Teléfono: 555-1234");
+        System.out.println("DNI: 4578218");
+        System.out.println("Contraseña : LSas1.@ad312");
     }
 
-}
+
+    }
 
 
 

@@ -7,6 +7,7 @@ import tpFinal.Models.Directivo;
 import tpFinal.Models.Empleado.*;
 import tpFinal.Models.Socio;
 import tpFinal.Repositorios.BeneficioRepository;
+import tpFinal.Repositorios.SociosRepository;
 import tpFinal.Services.*;
 import tpFinal.Services.DirectivoService;
 import tpFinal.Utilities.Deporte;
@@ -17,7 +18,8 @@ public class Main {
        /* Iniciador iniciador = new Iniciador();
         iniciador.comenzar();*/
         MenuSocioHar menuPrincipalSocio = new MenuSocioHar();
-        menuPrincipalSocio.menuPrincipalSocio(new Socio());
+        //menuPrincipalSocio.menuPrincipalSocio(new Socio());
+        MenuSocioHar.mostrarSocio();
 
     }
 }
