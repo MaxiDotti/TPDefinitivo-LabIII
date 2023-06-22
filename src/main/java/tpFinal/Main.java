@@ -19,21 +19,10 @@ import tpFinal.Services.PartidoService;
 
 public class Main {
     public static void main(String[] args) {
-        /*Iniciador iniciador = new Iniciador();
-        iniciador.comenzar();*/
+        Iniciador iniciador = new Iniciador();
+        iniciador.comenzar();
 
-        Directivo directivo = new Directivo();
 
-        //MenuGestionAyudanteDeCampo menuGestionAyudanteDeCampo = new MenuGestionAyudanteDeCampo();
-        //menuGestionAyudanteDeCampo.menuGestionAyudanteDeCampo(directivo);
 
-        //MenuGestionDirectorTecnico menuGestionDirectorTecnico = new MenuGestionDirectorTecnico();
-        //menuGestionDirectorTecnico.menuGestionDirectorTecnico(directivo);
-
-        //MenuGestionJugador menuGestionJugador = new MenuGestionJugador();
-        //menuGestionJugador.menuGestionJugador(directivo);
-
-        MenuGestionMedico menuGestionMedico = new MenuGestionMedico();
-        menuGestionMedico.menuGestionMedico(directivo);
     }
 }

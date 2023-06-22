@@ -2,6 +2,7 @@ package tpFinal.Menues.Directivo;
 
 import tpFinal.Exceptions.ObjetoNoEncontradoException;
 import tpFinal.Menues.Directivo.GestionEmpleados.MenuGestionAyudanteDeCampo;
+import tpFinal.Menues.Directivo.GestionEmpleados.MenuGestionJugador;
 import tpFinal.Models.Directivo;
 import tpFinal.Models.Socio;
 import tpFinal.Repositorios.SociosRepository;
@@ -39,7 +40,8 @@ public class MenuGestionEmpleados {
 
                     break;
                 case 3:
-
+                    MenuGestionJugador menuGestionJugador = new MenuGestionJugador();
+                    menuGestionJugador.menuGestionJugador(directivoLogeado);
                     break;
                 case 4:
 

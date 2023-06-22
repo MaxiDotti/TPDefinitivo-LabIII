@@ -1,5 +1,6 @@
 package tpFinal.Menues.Directivo;
 
+import tpFinal.Menues.Directivo.GestionEmpleados.MenuGestionAyudanteDeCampo;
 import tpFinal.Models.Directivo;
 import tpFinal.Repositorios.SociosRepository;
 import tpFinal.Services.*;
@@ -15,16 +16,7 @@ public class MenuPrincipalDirectivo {
         boolean salir = false;
         int opcion;
 
-        SocioService socioService = new SocioService();
-        SociosRepository sociosRepository = new SociosRepository();
-
-        AyudanteDeCampoService ayudanteDeCampoService = new AyudanteDeCampoService();
-        JugadorService jugadorService = new JugadorService();
-        MedicoService medicoService = new MedicoService();
-        PersonalLimpiezaService personalLimpiezaService = new PersonalLimpiezaService();
-        UtileroService utileroService = new UtileroService();
-
-        BeneficioService beneficioService = new BeneficioService();
+        MenuGestionAyudanteDeCampo menuGestionAyudanteDeCampo = new MenuGestionAyudanteDeCampo();
 
         while (!salir) {
             System.out.println("*****MENU PRINCIPAL DIRECTIVO******\n\n\n");
@@ -46,12 +38,8 @@ public class MenuPrincipalDirectivo {
                     break;
                 case 3:
                     System.out.println("***GESTION DE EMPLEADOS***\n\n");
-
-                    /*System.out.println("Listado de ayudantes de campo: "+ayudanteDeCampoService.listar()+
-                            "\nListado de Jugadores: "+jugadorService.listar()+"\n"+"Listado de Medicos: \n"+medicoService.listar()+
-                            "\nListado de personal de limpieza: \n"+personalLimpiezaService.listar()+
-                            "\nListado de utileros: "+utileroService.listar());*/
-                    //menu que va para el gestor de empleados
+                    MenuGestionEmpleados menuGestionEmpleados = new MenuGestionEmpleados();
+                    menuGestionEmpleados.menuGestionDeEmpleados(directivoLogeado);
                     break;
                 case 4:
                     System.out.println("GESTION DE BENEFICIOS\n\n");

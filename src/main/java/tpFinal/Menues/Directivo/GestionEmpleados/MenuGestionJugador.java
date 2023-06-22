@@ -14,6 +14,7 @@ public class MenuGestionJugador {
 
         boolean salir = false;
         int opcion;
+        String dni;
 
         Jugador jugadorAModificar = new Jugador();
         JugadorService jugadorService = new JugadorService();
@@ -22,7 +23,7 @@ public class MenuGestionJugador {
         MenuPrincipalDirectivo menuPrincipalDirectivo = new MenuPrincipalDirectivo();
 
         while (!salir) {
-            System.out.println("*****MENU GESTION DE DIRECTOR TECNICO******\n\n");
+            System.out.println("*****MENU GESTION DE JUGADOR******\n\n");
             System.out.println("1- Alta\n2- Baja\n3- Modificacion\n4- Listar Jugadores\n5- Atras\n0- Salir\n\nOPCION: ");
             opcion = sn.nextInt();
             sn.nextLine();
@@ -56,9 +57,10 @@ public class MenuGestionJugador {
                     break;
                 case 2:
                     System.out.println("***BAJA***\n");
-                    System.out.println("Ingrese el DNI: \n");
-                    if (jugadorRepository.buscarJugador(sn.nextLine()) != null){
-                        jugadorService.eliminar(sn.nextLine());
+                    System.out.print("Ingrese el DNI: ");
+                    dni = sn.nextLine();
+                    if (jugadorRepository.buscarJugador(dni) != null){
+                        jugadorService.eliminar(dni);
                         System.out.println("Jugador eliminado.");
                     }else{
                         System.out.println("El DNI ingresado no existe en la base de datos.");
@@ -68,7 +70,7 @@ public class MenuGestionJugador {
                     System.out.println("***MODIFICACION***\n");
                     //SE PUEDE MODIFICAR CONTRASEÑA, TELEFONO, DIRECCION, DEPORTE y CATEGORIA
                     System.out.print("Ingrese el DNI del jugador: ");
-                    String dni = sn.nextLine();
+                    dni = sn.nextLine();
                     if(jugadorRepository.buscarJugador(dni) != null){
                         jugadorAModificar = jugadorRepository.buscarJugador(dni);
 
