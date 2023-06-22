@@ -1,31 +1,16 @@
 package tpFinal.Models;
 
-public class AdministradorDelSistema {
-    private String dni;
-    private String contrasenia;
+import java.io.Serializable;
+
+public class AdministradorDelSistema extends Usuario implements Serializable{
     private String codigoSecreto;
 
-    public AdministradorDelSistema(String dni, String contrasenia, String codigoSecreto) {
-        this.dni = dni;
-        this.contrasenia = contrasenia;
+    public AdministradorDelSistema(String nombre, String apellido, String dni, String contrasenia, String telefono, String direccion, String codigoSecreto) {
+        super(nombre, apellido, dni, contrasenia, telefono, direccion);
         this.codigoSecreto = codigoSecreto;
     }
 
-    public String getDni() {
-        return dni;
-    }
-
-    public void setDni(String dni) {
-        this.dni = dni;
-    }
-
-    public String getContrasenia() {
-        return contrasenia;
-    }
-
-    public void setContrasenia(String contrasenia) {
-        this.contrasenia = contrasenia;
-    }
+    public AdministradorDelSistema(){}
 
     public String getCodigoSecreto() {
         return codigoSecreto;
@@ -36,11 +21,23 @@ public class AdministradorDelSistema {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof AdministradorDelSistema that)) return false;
+        if (!super.equals(o)) return false;
+
+        return codigoSecreto.equals(that.codigoSecreto);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        result = 31 * result + codigoSecreto.hashCode();
+        return result;
+    }
+
+    @Override
     public String toString() {
-        return "AdministradorDelSistema{" +
-                "dni='" + dni + '\'' +
-                ", contrasenia='" + contrasenia + '\'' +
-                ", codigoSecreto='" + codigoSecreto + '\'' +
-                '}';
+        return  super.toString();
     }
 }

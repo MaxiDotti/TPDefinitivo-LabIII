@@ -3,10 +3,13 @@ package tpFinal.Menues;
 import tpFinal.Exceptions.ObjetoNoEncontradoException;
 import tpFinal.Menues.Directivo.MenuPrincipalDirectivo;
 import tpFinal.Menues.Socio.MenuPrincipalSocio;
+import tpFinal.Models.AdministradorDelSistema;
 import tpFinal.Models.Directivo;
 import tpFinal.Models.Socio;
+import tpFinal.Repositorios.AdministradorRepository;
 import tpFinal.Repositorios.DirectivoRepository;
 import tpFinal.Repositorios.SociosRepository;
+import tpFinal.Services.AdministradorService;
 import tpFinal.Services.DirectivoService;
 import tpFinal.Services.SocioService;
 
@@ -29,8 +32,12 @@ public class LogIn {
         SocioService socioService = new SocioService();
         SociosRepository sociosRepository = new SociosRepository();
 
+        AdministradorService administradorService = new AdministradorService();
+        AdministradorRepository administradorRepository = new AdministradorRepository();
+
         MenuPrincipalSocio menuPrincipalSocio = new MenuPrincipalSocio();
         MenuPrincipalDirectivo menuPrincipalDirectivo = new MenuPrincipalDirectivo();
+        MenuPrincipalAdministrador menuPrinciparAdministrador = new MenuPrincipalAdministrador();
 
         while (!salir) {
             System.out.println("BIENVENIDO AL CLUB SOCIAL Y DEPORTIVO\n");
@@ -55,15 +62,21 @@ public class LogIn {
                         menuPrincipalSocio.menuPrincipalSocio(socioLogueado);
                     }
                     //Nos fijamos si los datos de logeo corresponden a un Directivo
-                    if(directivoRepository.buscarDirectivo(dni) != null && directivoRepository.buscar(dni).getContrasenia().equals(contrasenia)){
+                    if(directivoRepository.buscarDirectivo(dni) != null && directivoRepository.buscarDirectivo(dni).getContrasenia().equals(contrasenia)){
                         Directivo directivo = directivoRepository.buscarDirectivo(dni);
                         menuPrincipalDirectivo.menuPrincipalDirectivo(directivo);
-                        //Nos fijamos si los datos de logeo corresponden a un ADMIN
-                    }if(directivoRepository.buscarDirectivo(dni) != null && directivoRepository.buscar(dni).getContrasenia().equals(contrasenia)) {
-                    Directivo directivo = directivoRepository.buscarDirectivo(dni);
-                    menuPrincipalDirectivo.menuPrincipalDirectivo(directivo);
+                    //Nos fijamos si los datos de logeo corresponden a un ADMIN
+                    }if(administradorRepository.buscarAdministrador(dni) != null && administradorRepository.buscarAdministrador(dni).getContrasenia().equals(contrasenia)) {
+                        AdministradorDelSistema admin = administradorRepository.buscarAdministrador(dni);
+                        System.out.print("Ingrese el CODIGO SECRETO: ");
+                        String codigo = sn.nextLine();
+                            if(admin.getCodigoSecreto().equals(codigo)){
+                                menuPrinciparAdministrador.menuPrincipalAdministrador(admin);
+                            }else{
+                                System.out.println("EL CODIGO SECRETO INGRESADO ES INCORRECTO.");
+                            }
                     }else{
-                        System.out.println("Los datos ingresados son incorrectos.");
+                                System.out.println("Los datos ingresados son incorrectos.");
                     }
                     break;
                 case 2:

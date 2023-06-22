@@ -1,6 +1,8 @@
 package tpFinal.Models;
 
-public final class Beneficio {
+import java.io.Serializable;
+
+public final class Beneficio implements Serializable{
 
     private String id;
     //Empresa que provee el tipoDeDescuento

@@ -1,0 +1,9 @@
+[ {
+  "nombre" : "GRUPO",
+  "apellido" : "ADMINISTRADOR",
+  "dni" : "178",
+  "contrasenia" : "admin1234",
+  "telefono" : "2235775432",
+  "direccion" : "Av Colon 1479",
+  "codigoSecreto" : "club"
+} ]
