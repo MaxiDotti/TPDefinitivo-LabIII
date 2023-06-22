@@ -9,4 +9,15 @@
   "plantel" : "River Plate",
   "deporte" : "Futbol",
   "categoria" : "Primera"
+}, {
+  "nombre" : "asd",
+  "apellido" : "asd",
+  "dni" : "321",
+  "contrasenia" : "probando",
+  "telefono" : "444444",
+  "direccion" : "probando",
+  "estadoContable" : true,
+  "plantel" : null,
+  "deporte" : "probando",
+  "categoria" : "probando"
 } ]

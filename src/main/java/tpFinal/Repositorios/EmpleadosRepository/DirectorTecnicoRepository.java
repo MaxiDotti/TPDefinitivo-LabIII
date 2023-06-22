@@ -1,6 +1,7 @@
 package tpFinal.Repositorios.EmpleadosRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
+import tpFinal.Models.Empleado.AyudanteDeCampo;
 import tpFinal.Models.Empleado.DirectorTecnico;
 import tpFinal.Repositorios.IRepository;
 import java.io.File;
@@ -68,6 +69,17 @@ public class DirectorTecnicoRepository implements IRepository<DirectorTecnico> {
 
     @Override
     public DirectorTecnico buscar(String dni) {
+        for(DirectorTecnico directorTecnico : this.tecnicoList){
+            if(directorTecnico.getDni().equals(dni)){
+                return directorTecnico;
+            }
+        }
+        return null;
+    }
+
+    // SOLO LO UTILIZAMOS PARA EL MENU
+    public DirectorTecnico buscarDirectorTecnico(String dni) {
+        cargar();
         for(DirectorTecnico directorTecnico : this.tecnicoList){
             if(directorTecnico.getDni().equals(dni)){
                 return directorTecnico;

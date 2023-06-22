@@ -16,4 +16,13 @@
   "direccion" : "MEDICO 2",
   "especialidad" : "TRAUMATOLOGO",
   "estadoContable" : true
+}, {
+  "nombre" : "prueba",
+  "apellido" : "prueba",
+  "dni" : "10",
+  "contrasenia" : "modificando",
+  "telefono" : "123",
+  "direccion" : "modificando",
+  "especialidad" : "modificando",
+  "estadoContable" : true
 } ]

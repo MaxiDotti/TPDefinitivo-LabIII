@@ -79,4 +79,15 @@ public class MedicoRepository implements IRepository<Medico> {
         return null;
     }
 
+    // SOLO LO UTILIZAMOS PARA EL MENU
+    public Medico buscarMedico(String dni) {
+        cargar();
+        for(Medico medico : this.listMedico){
+            if(medico.getDni().equals(dni)){
+                return medico;
+            }
+        }
+        return null;
+    }
+
 }

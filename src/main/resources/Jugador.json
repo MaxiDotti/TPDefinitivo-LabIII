@@ -22,4 +22,16 @@
   "deporte" : "Natacion",
   "posicion" : "Nadador",
   "estadoContable" : true
+}, {
+  "nombre" : "prueba",
+  "apellido" : "prueba",
+  "dni" : "4",
+  "contrasenia" : "mate",
+  "telefono" : "123",
+  "direccion" : "mate",
+  "equipo" : "prueba",
+  "categoria" : "mate",
+  "deporte" : "mate",
+  "posicion" : "prueba",
+  "estadoContable" : true
 } ]

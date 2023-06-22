@@ -9,4 +9,26 @@
   "plantel" : "AYUDANTEUNO",
   "deporte" : "Futbol",
   "categoria" : "Cuarta"
+}, {
+  "nombre" : "prueba",
+  "apellido" : "prueba",
+  "dni" : "12345",
+  "contrasenia" : "prueba",
+  "telefono" : "12345",
+  "direccion" : "prueba",
+  "estadoContable" : true,
+  "plantel" : null,
+  "deporte" : null,
+  "categoria" : null
+}, {
+  "nombre" : "asd",
+  "apellido" : "asd",
+  "dni" : "45352",
+  "contrasenia" : "asd",
+  "telefono" : "1111",
+  "direccion" : "polo",
+  "estadoContable" : true,
+  "plantel" : "asd",
+  "deporte" : "asd",
+  "categoria" : "asd"
 } ]

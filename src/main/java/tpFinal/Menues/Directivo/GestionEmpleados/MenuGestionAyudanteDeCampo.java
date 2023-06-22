@@ -40,6 +40,12 @@ public class MenuGestionAyudanteDeCampo {
                     ayudanteDeCampoAModificar.setTelefono(sn.nextLine());
                     System.out.println("Direccion: \n");
                     ayudanteDeCampoAModificar.setDireccion(sn.nextLine());
+                    System.out.println("Plantel: \n");
+                    ayudanteDeCampoAModificar.setPlantel(sn.nextLine());
+                    System.out.println("Deporte: \n");
+                    ayudanteDeCampoAModificar.setDeporte(sn.nextLine());
+                    System.out.println("Categoria: \n");
+                    ayudanteDeCampoAModificar.setCategoria(sn.nextLine());
                     ayudanteDeCampoAModificar.setEstadoContable(true);
 
                     ayudanteDeCampoService.agregar(ayudanteDeCampoAModificar);

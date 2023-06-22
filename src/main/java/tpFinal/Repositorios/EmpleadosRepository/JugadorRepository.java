@@ -1,6 +1,7 @@
 package tpFinal.Repositorios.EmpleadosRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
+import tpFinal.Models.Empleado.DirectorTecnico;
 import tpFinal.Models.Empleado.Jugador;
 import tpFinal.Repositorios.IRepository;
 import java.io.File;
@@ -70,6 +71,17 @@ public class JugadorRepository implements IRepository<Jugador> {
 
     @Override
     public Jugador buscar(String dni) {
+        for(Jugador jugador : this.listJugador){
+            if(jugador.getDni().equals(dni)){
+                return jugador;
+            }
+        }
+        return null;
+    }
+
+    // SOLO LO UTILIZAMOS PARA EL MENU
+    public Jugador buscarJugador(String dni) {
+        cargar();
         for(Jugador jugador : this.listJugador){
             if(jugador.getDni().equals(dni)){
                 return jugador;
