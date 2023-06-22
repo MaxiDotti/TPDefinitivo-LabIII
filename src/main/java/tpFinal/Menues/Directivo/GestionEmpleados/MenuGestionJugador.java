@@ -15,9 +15,9 @@ public class MenuGestionJugador {
         boolean salir = false;
         int opcion;
 
-        Jugador JugadorAModificar = new Jugador();
-        JugadorService JugadorService = new JugadorService();
-        JugadorRepository JugadorRepository = new JugadorRepository();
+        Jugador jugadorAModificar = new Jugador();
+        JugadorService jugadorService = new JugadorService();
+        JugadorRepository jugadorRepository = new JugadorRepository();
 
         MenuPrincipalDirectivo menuPrincipalDirectivo = new MenuPrincipalDirectivo();
 
@@ -31,34 +31,34 @@ public class MenuGestionJugador {
                     System.out.println("***ALTA DE JUGADOR***\n\n");
                     System.out.println("Ingrese los siguientes datos para dar de alta un jugador: \n\n");
                     System.out.println("Nombre: \n");
-                    JugadorAModificar.setNombre(sn.nextLine());
+                    jugadorAModificar.setNombre(sn.nextLine());
                     System.out.println("Apellido: \n");
-                    JugadorAModificar.setApellido(sn.nextLine());
+                    jugadorAModificar.setApellido(sn.nextLine());
                     System.out.println("DNI: \n");
-                    JugadorAModificar.setDni(sn.nextLine());
+                    jugadorAModificar.setDni(sn.nextLine());
                     System.out.println("Contrasenia: \n");
-                    JugadorAModificar.setContrasenia(sn.nextLine());
+                    jugadorAModificar.setContrasenia(sn.nextLine());
                     System.out.println("Telefono: \n");
-                    JugadorAModificar.setTelefono(sn.nextLine());
+                    jugadorAModificar.setTelefono(sn.nextLine());
                     System.out.println("Direccion: \n");
-                    JugadorAModificar.setDireccion(sn.nextLine());
+                    jugadorAModificar.setDireccion(sn.nextLine());
                     System.out.println("Deporte: \n");
-                    JugadorAModificar.setDeporte(sn.nextLine());
+                    jugadorAModificar.setDeporte(sn.nextLine());
                     System.out.println("Categoria: \n");
-                    JugadorAModificar.setCategoria(sn.nextLine());
+                    jugadorAModificar.setCategoria(sn.nextLine());
                     System.out.println("Posicion: \n");
-                    JugadorAModificar.setPosicion(sn.nextLine());
+                    jugadorAModificar.setPosicion(sn.nextLine());
                     System.out.println("Equipo: \n");
-                    JugadorAModificar.setEquipo(sn.nextLine());
-                    JugadorAModificar.setEstadoContable(true);
+                    jugadorAModificar.setEquipo(sn.nextLine());
+                    jugadorAModificar.setEstadoContable(true);
 
-                    JugadorService.agregar(JugadorAModificar);
+                    jugadorService.agregar(jugadorAModificar);
                     break;
                 case 2:
                     System.out.println("***BAJA***\n");
                     System.out.println("Ingrese el DNI: \n");
-                    if (JugadorRepository.buscarJugador(sn.nextLine()) != null){
-                        JugadorService.eliminar(sn.nextLine());
+                    if (jugadorRepository.buscarJugador(sn.nextLine()) != null){
+                        jugadorService.eliminar(sn.nextLine());
                         System.out.println("Jugador eliminado.");
                     }else{
                         System.out.println("El DNI ingresado no existe en la base de datos.");
@@ -70,27 +70,27 @@ public class MenuGestionJugador {
                     System.out.print("Ingrese el DNI del jugador: ");
                     String dni = sn.nextLine();
                     if(JugadorRepository.buscarJugador(dni) != null){
-                        JugadorAModificar = JugadorRepository.buscarJugador(dni);
+                        jugadorAModificar = JugadorRepository.buscarJugador(dni);
 
                         System.out.println("Ingrese los siguientes datos para dar modificar el socio: \n\n");
                         System.out.println("Contrasenia: ");
-                        JugadorAModificar.setContrasenia(sn.nextLine());
+                        jugadorAModificar.setContrasenia(sn.nextLine());
                         System.out.println("Telefono: ");
-                        JugadorAModificar.setTelefono(sn.nextLine());
+                        jugadorAModificar.setTelefono(sn.nextLine());
                         System.out.println("Direccion: ");
-                        JugadorAModificar.setDireccion(sn.nextLine());
+                        jugadorAModificar.setDireccion(sn.nextLine());
                         System.out.println("Deporte: ");
-                        JugadorAModificar.setDeporte(sn.nextLine());
+                        jugadorAModificar.setDeporte(sn.nextLine());
                         System.out.println("Categoria: ");
-                        JugadorAModificar.setCategoria(sn.nextLine());
+                        jugadorAModificar.setCategoria(sn.nextLine());
 
-                        JugadorService.modificar(JugadorAModificar);
+                        jugadorService.modificar(JugadorAModificar);
                     }else{
                         System.out.println("El DNI ingresado no se encuentra en la base de datos.");
                     }
                     break;
                 case 4:
-                    System.out.println(JugadorService.listar());
+                    System.out.println(jugadorService.listar());
                     break;
                 case 5:
                     menuPrincipalDirectivo.menuPrincipalDirectivo(directivoLogeado);
