@@ -1,10 +1,33 @@
-[ {
-  "nombre" : "PersonalUNO",
-  "apellido" : "PersonalUNO",
+[
+  {
+  "nombre" : "Esteban",
+  "apellido" : "Quito",
   "dni" : "1",
   "contrasenia" : "ModificarUNO",
   "telefono" : "1414",
-  "direccion" : "Modificar 123",
+  "direccion" : "Madera 54",
   "sector" : "Duchas",
   "estadoContable" : true
-} ]
+},
+
+  {
+    "nombre" : "Armando",
+    "apellido" : "Paredes",
+    "dni" : "2",
+    "contrasenia" : "ModificarUNO",
+    "telefono" : "1414",
+    "direccion" : "Colon y Luro",
+    "sector" : "Entrada",
+    "estadoContable" : true
+  },
+  {
+    "nombre" : "Pablito",
+    "apellido" : "Clavito",
+    "dni" : "4",
+    "contrasenia" : "ModificarUNO",
+    "telefono" : "1414",
+    "direccion" : "Clavel 404",
+    "sector" : "Duchas",
+    "estadoContable" : true
+  }
+]

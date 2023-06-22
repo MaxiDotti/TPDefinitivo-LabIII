@@ -1,13 +1,21 @@
 [ {
   "codProducto" : "1",
   "nombre" : "REMERA",
-  "descripcion" : "REMERA",
+  "descripcion" : "REMERA ENTALLADA DRYFIT",
   "valor" : 6000.0,
   "categoria" : "INDUMENTARIA"
 }, {
   "codProducto" : "2",
   "nombre" : "MEDIA",
-  "descripcion" : "MEDIA",
+  "descripcion" : "MEDIA DEPORTIVA LARGA",
   "valor" : 1600.0,
   "categoria" : "INDUMENTARIA"
-} ]
+},
+  {
+    "codProducto" : "3",
+    "nombre" : "CONJUNTO",
+    "descripcion" : "CONJUNTO DEPORTIVO CLUB SOCIAL",
+    "valor" : 20000.0,
+    "categoria" : "INDUMENTARIA"
+  }
+]

@@ -23,7 +23,6 @@ public class MenuPrincipalDirectivo {
             System.out.println("1- Ver información de usuario\n" +
                     "2- Gestion de Socios\n" +
                     "3- Gestión de Empleados\n" +
-                    "4- Gestion de Beneficios\n" +
                     "0- Salir\n");
             opcion = sn.nextInt();
             switch (opcion) {
@@ -40,9 +39,6 @@ public class MenuPrincipalDirectivo {
                     System.out.println("***GESTION DE EMPLEADOS***\n\n");
                     MenuGestionEmpleados menuGestionEmpleados = new MenuGestionEmpleados();
                     menuGestionEmpleados.menuGestionDeEmpleados(directivoLogeado);
-                    break;
-                case 4:
-                    System.out.println("GESTION DE BENEFICIOS\n\n");
                     break;
                 case 0:
                     salir = true;

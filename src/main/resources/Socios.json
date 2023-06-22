@@ -1,25 +1,33 @@
 [ {
-  "nombre" : "Nombre2",
-  "apellido" : "Apellido2",
+  "nombre" : "Pedro",
+  "apellido" : "Perez",
+  "dni" : "1",
+  "contrasenia" : "pedroperez",
+  "telefono" : "321345",
+  "direccion" : "Guido 1432",
+  "estadoContable" : true
+}, {
+  "nombre" : "Juan",
+  "apellido" : "Gomez",
   "dni" : "2",
-  "contrasenia" : "Contrasenia2",
-  "telefono" : "Telefono2",
-  "direccion" : "Direccion2",
+  "contrasenia" : "juangomez",
+  "telefono" : "45325",
+  "direccion" : "Luro 5432",
   "estadoContable" : true
 }, {
-  "nombre" : "Nombre3",
-  "apellido" : "Apellido3",
-  "dni" : "3",
-  "contrasenia" : "ASD",
-  "telefono" : "1234",
-  "direccion" : "PPPPPP 123",
-  "estadoContable" : true
-}, {
-  "nombre" : "Maximo",
-  "apellido" : "Dotti",
+  "nombre" : "Gonazalo",
+  "apellido" : "Gonzalez",
   "dni" : "38210372",
-  "contrasenia" : "EEEEEEEE",
-  "telefono" : "3333",
-  "direccion" : "EEEEE 123",
+  "contrasenia" : "gonzalo",
+  "telefono" : "543625",
+  "direccion" : "Luro 8327",
+  "estadoContable" : true
+}, {
+  "nombre" : "Luke",
+  "apellido" : "Skywalker",
+  "dni" : "543525",
+  "contrasenia" : "luke",
+  "telefono" : "75635",
+  "direccion" : "Chaco 453",
   "estadoContable" : true
 } ]

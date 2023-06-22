@@ -4,7 +4,7 @@
   "dni" : "1",
   "contrasenia" : "1414",
   "telefono" : "1414",
-  "direccion" : "MODI 1",
+  "direccion" : "Avenida Siempre Viva 40",
   "especialidad" : "Psicologo",
   "estadoContable" : true
 }, {
@@ -13,16 +13,16 @@
   "dni" : "2",
   "contrasenia" : "2",
   "telefono" : "2",
-  "direccion" : "MEDICO 2",
+  "direccion" : "MEDICO",
   "especialidad" : "TRAUMATOLOGO",
   "estadoContable" : true
 }, {
-  "nombre" : "prueba",
-  "apellido" : "prueba",
+  "nombre" : "ALEXANDER",
+  "apellido" : "FLEMING",
   "dni" : "10",
-  "contrasenia" : "modificando",
+  "contrasenia" : "123",
   "telefono" : "123",
-  "direccion" : "modificando",
-  "especialidad" : "modificando",
+  "direccion" : "Gran Bretaña",
+  "especialidad" : "Bacteriologo",
   "estadoContable" : true
 } ]

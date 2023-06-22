@@ -1,13 +1,22 @@
 [ {
   "id" : "2",
-  "categoria" : "205",
+  "categoria" : "97",
   "fecha" : "7/10/2023",
   "deporte" : "Tenis",
   "rival" : "Roger Federer"
 }, {
   "id" : "5",
-  "categoria" : "1234",
+  "categoria" : "09",
   "fecha" : "6/11/2023",
   "deporte" : "Basquet",
   "rival" : "Lakers"
-} ]
+
+},
+  {
+    "id" : "1",
+    "categoria" : "07",
+    "fecha" : "6/11/2023",
+    "deporte" : "Futbol",
+    "rival" : "Aldosivi"
+  }
+]
