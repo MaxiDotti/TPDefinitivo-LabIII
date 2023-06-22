@@ -34,4 +34,13 @@
   "direccion" : "Calle falsa 123",
   "deporte" : "NATACION",
   "estadoContable" : true
+}, {
+  "nombre" : "juan",
+  "apellido" : "lopez",
+  "dni" : "20134",
+  "contrasenia" : "1249921412",
+  "telefono" : "9124",
+  "direccion" : "kas 1",
+  "deporte" : "BASQUET",
+  "estadoContable" : true
 } ]
