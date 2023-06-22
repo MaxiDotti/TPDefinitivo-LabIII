@@ -1,7 +1,8 @@
 package tpFinal.Menues;
+import tpFinal.Menues.Directivo.GestionEmpleados.MenuGestionDirectivos;
 import tpFinal.Menues.Directivo.MenuGestionEmpleados;
 import tpFinal.Menues.Directivo.MenuGestionSocios;
-import tpFinal.Menues.MenuesDelAdministrador.MenuGestionSocioParaAdministrador;
+import tpFinal.Menues.Directivo.MenuPrincipalDirectivo;
 import tpFinal.Models.AdministradorDelSistema;
 import tpFinal.Models.Directivo;
 import java.util.Scanner;
@@ -9,6 +10,11 @@ import java.util.Scanner;
 public class MenuPrincipalAdministrador {
     public void menuPrincipalAdministrador(AdministradorDelSistema adminLogeado){
 
+        Directivo directivoAdmin = new Directivo();
+        MenuGestionEmpleados menuGestionEmpleados = new MenuGestionEmpleados();
+        MenuGestionSocios menuGestionSocios = new MenuGestionSocios();
+        MenuPrincipalDirectivo menuPrincipalDirectivo = new MenuPrincipalDirectivo();
+        MenuGestionDirectivos menuGestionDirectivos = new MenuGestionDirectivos();
         Scanner sn = new Scanner(System.in);
 
         boolean salir = false;
@@ -31,17 +37,15 @@ public class MenuPrincipalAdministrador {
                     break;
                 case 2:
                     System.out.println("***GESTION DE SOCIOS***\n");
-                    MenuGestionSocioParaAdministrador menuSocios = new MenuGestionSocioParaAdministrador();
-                    menuSocios.menuGestionSocioParaAdministrador(adminLogeado);
+                    menuGestionSocios.menuGestionDeSocios(directivoAdmin);
                     break;
                 case 3:
                     System.out.println("***GESTION DE EMPLEADOS***\n\n");
-                    MenuGestionEmpleados menuGestionEmpleados = new MenuGestionEmpleados();
-                    Directivo directivoAdmin = new Directivo();
                     menuGestionEmpleados.menuGestionDeEmpleados(directivoAdmin);
                     break;
                 case 4:
-                    System.out.println("GESTION DE BENEFICIOS\n\n");
+                    System.out.println("GESTION DE DIRECTIVOS\n\n");
+                    menuGestionDirectivos.menuGestionDirectivos(adminLogeado);
                     break;
                 case 0:
                     salir = true;
