@@ -1,25 +1,28 @@
 [ {
-  "nombre" : "Nombre2",
-  "apellido" : "Apellido2",
-  "dni" : "2",
-  "contrasenia" : "Contrasenia2",
-  "telefono" : "Telefono2",
+  "nombre" : "Juan",
+  "apellido" : "Carlos",
+  "dni" : "2341",
+  "contrasenia" : "hola123",
+  "telefono" : "192837465",
   "direccion" : "Direccion2",
+  "deporte" : "FUTBOL",
   "estadoContable" : true
 }, {
-  "nombre" : "Nombre3",
-  "apellido" : "Apellido3",
-  "dni" : "3",
-  "contrasenia" : "ASD",
+  "nombre" : "Andrea",
+  "apellido" : "Apelio",
+  "dni" : "019283",
+  "contrasenia" : "chau321",
   "telefono" : "1234",
   "direccion" : "PPPPPP 123",
+  "deporte" : "BASQUET",
   "estadoContable" : true
 }, {
-  "nombre" : "Maximo",
-  "apellido" : "Dotti",
+  "nombre" : "Peter",
+  "apellido" : "Pan",
   "dni" : "38210372",
-  "contrasenia" : "EEEEEEEE",
+  "contrasenia" : "saludar987",
   "telefono" : "3333",
   "direccion" : "EEEEE 123",
+  "deporte" : "HANDBALL",
   "estadoContable" : true
 } ]

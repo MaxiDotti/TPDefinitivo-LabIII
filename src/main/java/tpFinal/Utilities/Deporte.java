@@ -4,13 +4,17 @@ public enum Deporte {
 
     FUTBOL("Futbol"),
     BASQUET("Basquet"),
-    RUGBY("Rugby"),
     VOLLEY("Volley"),
     HANDBALL("Handball"),
-    HOCKEY("Hockey"),
     NATACION("Natacion"),
     TENNIS("Tennis");
 
+    private String deporte;
+
     Deporte(String deporte) {
+        this.deporte = deporte;
+    }
+    public String getDeporte() {
+        return deporte;
     }
 }

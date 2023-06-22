@@ -20,7 +20,6 @@ public class MenuPrincipalDirectivo {
         SociosRepository sociosRepository = new SociosRepository();
 
         AyudanteDeCampoService ayudanteDeCampoService = new AyudanteDeCampoService();
-        JugadorService jugadorService = new JugadorService();
         MedicoService medicoService = new MedicoService();
         PersonalLimpiezaService personalLimpiezaService = new PersonalLimpiezaService();
         UtileroService utileroService = new UtileroService();

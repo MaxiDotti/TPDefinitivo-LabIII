@@ -1,6 +1,5 @@
 package tpFinal.Menues.Socio;
 
-import tpFinal.Exceptions.ObjetoNoEncontradoException;
 import tpFinal.Models.Socio;
 import tpFinal.Repositorios.SociosRepository;
 import tpFinal.Services.BeneficioService;

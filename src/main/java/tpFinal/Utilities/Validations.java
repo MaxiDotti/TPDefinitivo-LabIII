@@ -64,16 +64,6 @@ public class Validations extends Exception{
         return true;
     }
 
-    public boolean validarJugador(Jugador jugador) throws FormatoDNINoCompatibleException, FormatoUsuarioNoCompatibleException {
-        if(!validateDni(jugador.getDni())){
-            throw new FormatoDNINoCompatibleException();
-        }
-        if(!validateTelefono(jugador.getTelefono()) || !validateNombre(jugador.getNombre()) || !validateApellido(jugador.getApellido())){
-            throw new FormatoUsuarioNoCompatibleException();
-        }
-        return true;
-    }
-
     public boolean validarAyudanteDeCampo(AyudanteDeCampo ayudanteDeCampo) throws FormatoDNINoCompatibleException, FormatoUsuarioNoCompatibleException {
         if(!validateDni(ayudanteDeCampo.getDni())){
             throw new FormatoDNINoCompatibleException();

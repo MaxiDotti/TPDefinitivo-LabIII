@@ -1,6 +1,5 @@
 package tpFinal.Menues;
 
-import tpFinal.Models.Empleado.Jugador;
 import tpFinal.Repositorios.EmpleadosRepository.*;
 import tpFinal.Services.*;
 
@@ -11,14 +10,12 @@ public class MenuEmpleados {
     Scanner scan = new Scanner(System.in);
     AyudanteDeCampoRepository campoRepository = new AyudanteDeCampoRepository();
     DirectorTecnicoRepository tecnicoRepository = new DirectorTecnicoRepository();
-    JugadorRepository jugadorRepository = new JugadorRepository();
     MedicoRepository medicoRepository = new MedicoRepository();
     PersonalLimpiezaRepository limpiezaRepository = new PersonalLimpiezaRepository();
     UtileroRepository utileroRepository = new UtileroRepository();
 
     AyudanteDeCampoService campoService = new AyudanteDeCampoService();
     DirectorTecnicoService tecnicoService = new DirectorTecnicoService();
-    JugadorService jugadorService = new JugadorService();
     MedicoService medicoService = new MedicoService();
     PersonalLimpiezaService limpiezaService = new PersonalLimpiezaService();
     UtileroService utileroService = new UtileroService();

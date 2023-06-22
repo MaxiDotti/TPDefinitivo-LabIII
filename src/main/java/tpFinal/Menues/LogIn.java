@@ -5,10 +5,12 @@ import tpFinal.Menues.Directivo.MenuPrincipalDirectivo;
 import tpFinal.Menues.Socio.MenuPrincipalSocio;
 import tpFinal.Models.Directivo;
 import tpFinal.Models.Socio;
+import tpFinal.Models.Usuario;
 import tpFinal.Repositorios.DirectivoRepository;
 import tpFinal.Repositorios.SociosRepository;
 import tpFinal.Services.DirectivoService;
 import tpFinal.Services.SocioService;
+import tpFinal.Utilities.Deporte;
 
 import java.util.Scanner;
 
@@ -36,6 +38,7 @@ public class LogIn {
             System.out.println("BIENVENIDO AL CLUB SOCIAL Y DEPORTIVO\n\n\n");
             System.out.println("1- Loguearse\n" +
                     "2- Recuperar contraseña\n" +
+                    "3- Crear cuenta\n" +
                     "0- Salir\n");
 
             System.out.print("OPCION: ");
@@ -74,6 +77,11 @@ public class LogIn {
                         System.out.println("DNI no valido.");
                     }
                     break;
+                case 3:
+                    if(crearUsuario())
+                        System.out.println("Usuario creado con exito. Por favor logear para cotinuar");
+                    else
+                        System.out.println("Fallo al crear el usuario. Vuelva a intentar mas tarde ");
                 case 0:
                     salir = true;
                     break;
@@ -82,6 +90,72 @@ public class LogIn {
                     break;
             }
         }
+    }
+
+
+    public boolean crearUsuario() {
+        SociosRepository repository = new SociosRepository();
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Ingresar nombre: ");
+        String nombre = scan.nextLine();
+
+        System.out.println("Ingresar apellido: ");
+        String apellido = scan.nextLine();
+
+        System.out.println("Ingresar dni: ");
+        String dni = scan.nextLine();
+
+        System.out.println("Ingresar telefono: ");
+        String telefono = scan.nextLine();
+
+        System.out.println("Ingresar direccion: ");
+        String direccion = scan.nextLine();
+
+        System.out.println("Por favor, elija el deporte al que quiere registratse: \n" +
+                "1- Futbol\n" +
+                "2- Basquet\n" +
+                "3- Volley\n" +
+                "4- Handball\n" +
+                "5- Natacion\n" +
+                "6- Tennis");
+
+        int eleccion = scan.nextInt();
+        String deporte = "";
+
+        switch (eleccion) {
+            case 1:
+                deporte = Deporte.FUTBOL.getDeporte();
+            case 2:
+                deporte = Deporte.BASQUET.getDeporte();
+            case 3:
+                deporte = Deporte.VOLLEY.getDeporte();
+            case 4:
+                deporte = Deporte.HANDBALL.getDeporte();
+            case 5:
+                deporte = Deporte.NATACION.getDeporte();
+            case 6:
+                deporte = Deporte.TENNIS.getDeporte();
+        }
+
+        boolean validacion = true;
+        String contrasenia = "";
+        while (validacion) {
+            System.out.println("Ingresar contraseña de al menos 8 digitos: ");
+            contrasenia = scan.nextLine();
+            if (contrasenia.length() < 8)
+                System.out.println("Contrasenia demasiado corta");
+
+        }
+
+        Socio socio = new Socio(nombre, apellido, dni, contrasenia, telefono, direccion, Deporte.valueOf(deporte), true);
+        repository.agregar(socio);
+        boolean agregado = false;
+        for (Socio socio1 : repository.listar()) {
+            if (socio1.getDni().equals(socio.getDni())) {
+                agregado = true;
+            }
+        }
+        return agregado;
     }
 }
 

@@ -1,8 +1,6 @@
 package tpFinal.Services;
 
 import tpFinal.Models.Directivo;
-import tpFinal.Models.Empleado.Jugador;
-import tpFinal.Models.Socio;
 
 import java.util.List;
 

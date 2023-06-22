@@ -2,7 +2,6 @@ package tpFinal.Repositorios.EmpleadosRepository;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
-import tpFinal.Models.Empleado.Jugador;
 import tpFinal.Models.Empleado.Medico;
 import tpFinal.Repositorios.IRepository;
 import java.io.File;

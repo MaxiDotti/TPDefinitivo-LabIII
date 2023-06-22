@@ -14,7 +14,6 @@ public class TestRepository {
 
     AyudanteDeCampoRepository campoRepository = new AyudanteDeCampoRepository();
     DirectorTecnicoRepository tecnicoRepository = new DirectorTecnicoRepository();
-    JugadorRepository jugadorRepository = new JugadorRepository();
     MedicoRepository medicoRepository = new MedicoRepository();
     PersonalLimpiezaRepository limpiezaRepository = new PersonalLimpiezaRepository();
     UtileroRepository utileroRepository = new UtileroRepository();
@@ -23,7 +22,6 @@ public class TestRepository {
 
     List<AyudanteDeCampo> campoList = new ArrayList<>();
     List<DirectorTecnico> tecnicoList = new ArrayList<>();
-    List<Jugador> jugadorList = new ArrayList<>();
     List<Medico> medicoList = new ArrayList<>();
     List<PersonalLimpieza> limpiezaList = new ArrayList<>();
     List<Utilero> utileroList = new ArrayList<>();
@@ -89,39 +87,6 @@ public class TestRepository {
         tecnicoRepository.agregarLista(tecnicoList);
 
         System.out.println(tecnicoRepository.listar());
-    }
-
-    public void testJugador(){
-        Jugador jugador1 = new Jugador("Nombre1",
-                "Apellido1",
-                "Dni1",
-                "Contrasenia1",
-                "Telefono1",
-                "Direccion1",
-                "Equipo1",
-                "Categoria1",
-                "Deporte1",
-                "Posicion1",
-                true);
-
-        Jugador jugador2 = new Jugador("Nombre2",
-                "Apellido2",
-                "Dni2",
-                "Contrasenia2",
-                "Telefono2",
-                "Direccion2",
-                "Equipo2",
-                "Categoria2",
-                "Deporte2",
-                "Posicion2",
-                true);
-
-        jugadorList.add(jugador1);
-        jugadorRepository.agregar(jugador2);
-        jugadorRepository.agregarLista(jugadorList);
-
-        System.out.println(jugadorRepository.listar());
-
     }
 
     public void testMedico(){
@@ -231,14 +196,16 @@ public class TestRepository {
                 "Contrasenia1",
                 "Telefono1",
                 "Direccion1",
-                true);
+                Deporte.FUTBOL,
+                false);
         Socio socio2 = new Socio("Nombre2",
                 "Apellido2",
                 "Dni2",
                 "Contrasenia2",
                 "Telefono2",
                 "Direccion2",
-                false);
+                Deporte.BASQUET,
+                true);
 
         socioList.add(socio1);
         sociosRepository.agregar(socio2);
