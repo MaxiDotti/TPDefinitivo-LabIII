@@ -92,12 +92,11 @@ public abstract class Usuario {
     @Override
     public String toString() {
         return  "\n" + "------------------------------------" + "\n" +
-                "         Nombre: " + nombre + "\n" +
-                "       Apellido: " + apellido + "\n" +
-                "            DNI: " + dni + "\n" +
-
-                "       Telefono: " + telefono + "\n" +
-                "      Direccion: " + direccion + "\n";
+                "Nombre: " + nombre + "\n" +
+                "Apellido: " + apellido + "\n" +
+                "DNI: " + dni + "\n" +
+                "Telefono: " + telefono + "\n" +
+                "Direccion: " + direccion + "\n";
     }
     //endregion
 }

@@ -69,12 +69,11 @@ public final class Beneficio {
 
     @Override
     public String toString() {
-        return "tipoDeDescuento{" +
-                "id='" + id + '\'' +
-                ", proveedor='" + proveedor + '\'' +
-                ", categoria='" + categoria + '\'' +
-                ", tipoDeDescuento='" + tipoDeDescuento + '\'' +
-                ", fechaDeUtilidad='" + fechaDeUtilidad + '\'' +
-                '}';
+        return "\nBeneficio: " + id + "\n" +
+                "Proveedor: " + proveedor + "\n" +
+                "Categoria: " + categoria + "\n" +
+                "Tipo de descuento='" + tipoDeDescuento + "\n" +
+                "Fecha de utilidad='" + fechaDeUtilidad + "\n" +
+                "-------------------------------------------------\n";
     }
 }

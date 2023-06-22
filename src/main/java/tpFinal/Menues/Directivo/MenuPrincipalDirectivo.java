@@ -1,5 +1,6 @@
 package tpFinal.Menues.Directivo;
 
+import tpFinal.Menues.Directivo.GestionEmpleados.MenuGestionDirectorTecnico;
 import tpFinal.Models.Directivo;
 import tpFinal.Repositorios.SociosRepository;
 import tpFinal.Services.*;
@@ -23,8 +24,9 @@ public class MenuPrincipalDirectivo {
         MedicoService medicoService = new MedicoService();
         PersonalLimpiezaService personalLimpiezaService = new PersonalLimpiezaService();
         UtileroService utileroService = new UtileroService();
-
         BeneficioService beneficioService = new BeneficioService();
+
+        MenuGestionDirectorTecnico tecnicoMenu = new MenuGestionDirectorTecnico();
 
         while (!salir) {
             System.out.println("*****MENU PRINCIPAL DIRECTIVO******\n\n\n");
@@ -46,12 +48,24 @@ public class MenuPrincipalDirectivo {
                     break;
                 case 3:
                     System.out.println("***GESTION DE EMPLEADOS***\n\n");
-
-                    /*System.out.println("Listado de ayudantes de campo: "+ayudanteDeCampoService.listar()+
-                            "\nListado de Jugadores: "+jugadorService.listar()+"\n"+"Listado de Medicos: \n"+medicoService.listar()+
-                            "\nListado de personal de limpieza: \n"+personalLimpiezaService.listar()+
-                            "\nListado de utileros: "+utileroService.listar());*/
-                    //menu que va para el gestor de empleados
+                    boolean continuar = true;
+                    int eleccion = 0;
+                    while (continuar){
+                        System.out.println("Elija la opcion deseada");
+                        System.out.println("1- Gestion ayudante de campo\n" +
+                                "2- Gestion Director Tecnico\n" +
+                                "3- Gestion Jugador\n" +
+                                "4- Gestion Medico\n" +
+                                "5- Gestion Personal Limpieza\n" +
+                                "6- Gestion Utilero\n" +
+                                "0- Salir");
+                        eleccion = sn.nextInt();
+                        switch (eleccion){
+                            case 1:
+                            //tecnicoMenu.menuGestionDirectorTecnico();
+                            break;
+                        }
+                    }
                     break;
                 case 4:
                     System.out.println("GESTION DE BENEFICIOS\n\n");

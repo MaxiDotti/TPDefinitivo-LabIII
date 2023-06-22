@@ -20,7 +20,7 @@ public class Socio extends Usuario implements Serializable {
 
     @Override
     public String toString() {
-        return "Socio{" +
-                "Estado contable: " + estadoContable + super.toString();
+        return "Socio" +
+                 super.toString() + "Estado contable: " + estadoContable;
     }
 }

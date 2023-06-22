@@ -23,7 +23,13 @@ public class MenuGestionJugador {
 
         while (!salir) {
             System.out.println("*****MENU GESTION DE DIRECTOR TECNICO******\n\n");
-            System.out.println("1- Alta\n2- Baja\n3- Modificacion\n4- Listar Jugadores\n5- Atras\n0- Salir\n\nOPCION: ");
+            System.out.println("1- Alta\n" +
+                    "2- Baja\n" +
+                    "3- Modificacion\n" +
+                    "4- Listar Jugadores\n" +
+                    "5- Atras\n" +
+                    "0- Salir\n\n" +
+                    "OPCION: ");
             opcion = sn.nextInt();
             sn.nextLine();
             switch (opcion) {
@@ -57,8 +63,9 @@ public class MenuGestionJugador {
                 case 2:
                     System.out.println("***BAJA***\n");
                     System.out.println("Ingrese el DNI: \n");
-                    if (JugadorRepository.buscarJugador(sn.nextLine()) != null){
-                        JugadorService.eliminar(sn.nextLine());
+                    String dniBuscar = sn.nextLine();
+                    if (JugadorRepository.buscarJugador(dniBuscar) != null){
+                        JugadorService.eliminar(dniBuscar);
                         System.out.println("Jugador eliminado.");
                     }else{
                         System.out.println("El DNI ingresado no existe en la base de datos.");

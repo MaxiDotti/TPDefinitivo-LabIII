@@ -25,7 +25,14 @@ public class MenuGestionMedico {
 
         while (!salir) {
             System.out.println("*****MENU GESTION DE MEDICO******\n\n");
-            System.out.println("1- Alta\n2- Baja\n3- Modificacion\n4- Listar Medicos\n5- Atras\n0- Salir\n\nOPCION: ");
+            System.out.println("" +
+                    "1- Alta\n" +
+                    "2- Baja\n" +
+                    "3- Modificacion\n" +
+                    "4- Listar Medicos\n" +
+                    "5- Atras\n" +
+                    "0- Salir\n\n" +
+                    "OPCION: ");
             opcion = sn.nextInt();
             sn.nextLine();
             switch (opcion) {
@@ -53,8 +60,9 @@ public class MenuGestionMedico {
                 case 2:
                     System.out.println("***BAJA***\n");
                     System.out.println("Ingrese el DNI: \n");
-                    if (medicoRepository.buscarMedico(sn.nextLine()) != null){
-                        medicoService.eliminar(sn.nextLine());
+                    String dniBuscar = sn.nextLine();
+                    if (medicoRepository.buscarMedico(dniBuscar) != null){
+                        medicoService.eliminar(dniBuscar);
                         System.out.println("Medico eliminado.");
                     }else{
                         System.out.println("El DNI ingresado no existe en la base de datos.");

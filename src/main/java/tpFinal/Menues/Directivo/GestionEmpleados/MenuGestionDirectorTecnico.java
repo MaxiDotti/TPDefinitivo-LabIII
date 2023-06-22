@@ -58,8 +58,9 @@ public class MenuGestionDirectorTecnico {
                 case 2:
                     System.out.println("***BAJA DE DIRECTOR TECNICO***\n");
                     System.out.println("Ingrese el DNI del director tecnico: \n");
-                    if (directorTecnicoRepository.buscarDirectorTecnico(sn.nextLine()) != null){
-                        directorTecnicoService.eliminar(sn.nextLine());
+                    String dniBuscar = sn.nextLine();
+                    if (directorTecnicoRepository.buscarDirectorTecnico(dniBuscar) != null){
+                        directorTecnicoService.eliminar(dniBuscar);
                         System.out.println("Director tecnico eliminado.");
                     }else{
                         System.out.println("El DNI ingresado no existe en la base de datos.");
