@@ -50,55 +50,27 @@ public class LogIn {
                     contrasenia = sn.nextLine();
 
                     //Nos fijamos si los datos de logeo corresponden a un Socio
-                    if(sociosRepository.buscarSocio(dni) != null){
+                    if(sociosRepository.buscarSocio(dni) != null && sociosRepository.buscarSocio(dni).getContrasenia().equals(contrasenia)){
                         Socio socioLogueado = sociosRepository.buscarSocio(dni);
-                        if(socioLogueado.getContrasenia().equals(contrasenia)){
-                            menuPrincipalSocio.menuPrincipalSocio(socioLogueado);
-                        }
+                        menuPrincipalSocio.menuPrincipalSocio(socioLogueado);
                     }
                     //Nos fijamos si los datos de logeo corresponden a un Directivo
-                    if(directivoRepository.buscarDirectivo(dni) != null){
+                    if(directivoRepository.buscarDirectivo(dni) != null && directivoRepository.buscar(dni).getContrasenia().equals(contrasenia)){
                         Directivo directivo = directivoRepository.buscarDirectivo(dni);
-                        if(directivo.getContrasenia().equals(contrasenia)){
-                            menuPrincipalDirectivo.menuPrincipalDirectivo(directivo);
-                        }
-                    }else{
+                        menuPrincipalDirectivo.menuPrincipalDirectivo(directivo);
+                    }
+                    else{
                         System.out.println("Los datos ingresados son incorrectos.");
                     }
                     break;
                 case 2:
                     System.out.println("***RECUPERAR CONTRASEÑA***\n\n");
-                    System.out.println("Por favor ingrese su numero de DNI \n\n");
+                    System.out.print("Ingrese DNI: ");
                     dni = sn.nextLine();
-                    System.out.println("Por favor ingrese contrasenia\n\n");
-                    contrasenia = sn.nextLine();
+
                     if(sociosRepository.buscarSocio(dni) != null){
-                        Socio socio = sociosRepository.buscarSocio(dni);
-                        if(socio.getContrasenia().equals(contrasenia)){
-                            System.out.println("Ingresar nueva contrasenia");
-                            String nuevaContrasenia = sn.nextLine();
-                            System.out.println("Repita la contrasenia");
-                            String validarContrasenia = sn.nextLine();
-                            if(nuevaContrasenia.equals(validarContrasenia)){
-                                if (socioService.cambiarContrasenia(nuevaContrasenia,dni))
-                                    System.out.println("Contrasenia cambiada correctamente.");
-                            }
-                        }
-                    } else if (directivoRepository.buscar(dni) != null) {
-                        if(directivoRepository.buscar(dni) != null){
-                            Directivo directivo = directivoRepository.buscar(dni);
-                            if(directivo.getContrasenia().equals(contrasenia)){
-                                System.out.println("Ingresar nueva contrasenia");
-                                String nuevaContrasenia = sn.nextLine();
-                                System.out.println("Repita la contrasenia");
-                                String validarContrasenia = sn.nextLine();
-                                if(nuevaContrasenia.equals(validarContrasenia)){
-                                    if (directivoService.cambiarContrasenia(nuevaContrasenia,dni))
-                                        System.out.println("Contrasenia cambiada correctamente.");
-                                }
-                            }
-                        }
-                    } else{
+                        System.out.println("Un administrador se contactara con usted.");
+                    }else{
                         System.out.println("DNI no valido.");
                     }
                     break;

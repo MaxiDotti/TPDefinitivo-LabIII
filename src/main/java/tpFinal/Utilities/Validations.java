@@ -6,6 +6,7 @@ import tpFinal.Exceptions.FormatoUsuarioNoCompatibleException;
 import tpFinal.Models.Beneficio;
 import tpFinal.Models.Directivo;
 import tpFinal.Models.Empleado.*;
+import tpFinal.Models.Producto;
 import tpFinal.Models.Socio;
 import tpFinal.Services.UtileroService;
 
@@ -98,6 +99,13 @@ public class Validations extends Exception{
             throw new FormatoDNINoCompatibleException();
         }
         if(!validateTelefono(medico.getTelefono()) || !validateNombre(medico.getNombre()) || !validateApellido(medico.getApellido())){
+            throw new FormatoUsuarioNoCompatibleException();
+        }
+        return true;
+    }
+
+    public boolean validarProducto(Producto producto) throws FormatoUsuarioNoCompatibleException {
+        if(!validateTelefono(producto.getCodProducto()) || !validateNombre(producto.getNombre()) || !validateApellido(producto.getDescripcion())){
             throw new FormatoUsuarioNoCompatibleException();
         }
         return true;

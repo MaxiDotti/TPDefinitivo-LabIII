@@ -2,6 +2,7 @@ package tpFinal.Repositorios.EmpleadosRepository;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
+import tpFinal.Models.Empleado.AyudanteDeCampo;
 import tpFinal.Models.Empleado.PersonalLimpieza;
 import tpFinal.Models.Empleado.Utilero;
 import tpFinal.Models.Socio;
@@ -56,10 +57,11 @@ public class UtileroRepository implements IRepository<Utilero> {
         this.guardar();
     }
 
+
     @Override
     public void eliminar(String dni) {
         this.cargar();
-        this.listUtilero.remove(buscarPersonal(dni));
+        this.listUtilero.remove(buscar(dni));
         this.guardar();
     }
 
@@ -70,6 +72,7 @@ public class UtileroRepository implements IRepository<Utilero> {
                 utilero.setContrasenia(objeto.getContrasenia());
                 utilero.setTelefono(objeto.getTelefono());
                 utilero.setDireccion(objeto.getDireccion());
+                utilero.setDeporte(objeto.getDeporte());
             }
         }
     }
@@ -93,4 +96,6 @@ public class UtileroRepository implements IRepository<Utilero> {
         }
         return null;
     }
+
+
 }

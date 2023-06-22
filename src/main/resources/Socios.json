@@ -1,12 +1,4 @@
 [ {
-  "nombre" : "Nombre1",
-  "apellido" : "Apellido1",
-  "dni" : "1",
-  "contrasenia" : "Contrasenia1",
-  "telefono" : "Telefono1",
-  "direccion" : "Direccion1",
-  "estadoContable" : true
-}, {
   "nombre" : "Nombre2",
   "apellido" : "Apellido2",
   "dni" : "2",
@@ -18,16 +10,16 @@
   "nombre" : "Nombre3",
   "apellido" : "Apellido3",
   "dni" : "3",
-  "contrasenia" : "Contrasenia3",
-  "telefono" : "Telefono3",
-  "direccion" : "Direccion3",
+  "contrasenia" : "ASD",
+  "telefono" : "1234",
+  "direccion" : "PPPPPP 123",
   "estadoContable" : true
 }, {
   "nombre" : "Maximo",
   "apellido" : "Dotti",
   "dni" : "38210372",
-  "contrasenia" : "Modi",
-  "telefono" : "Modi",
-  "direccion" : "Modi",
+  "contrasenia" : "EEEEEEEE",
+  "telefono" : "3333",
+  "direccion" : "EEEEE 123",
   "estadoContable" : true
 } ]

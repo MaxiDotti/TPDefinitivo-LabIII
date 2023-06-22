@@ -36,8 +36,8 @@ public class MenuPrincipalDirectivo {
             opcion = sn.nextInt();
             switch (opcion) {
                 case 1:
-                    System.out.println("***INFORMACION DE USUARIO***\n\n");
-                    //directivoLogeado.toString();
+                    System.out.println("***INFORMACION DE DIRECTIVO***\n");
+                    System.out.println(directivoLogeado);
                     break;
                 case 2:
                     System.out.println("***GESTION DE SOCIOS***\n");
@@ -46,6 +46,7 @@ public class MenuPrincipalDirectivo {
                     break;
                 case 3:
                     System.out.println("***GESTION DE EMPLEADOS***\n\n");
+
                     /*System.out.println("Listado de ayudantes de campo: "+ayudanteDeCampoService.listar()+
                             "\nListado de Jugadores: "+jugadorService.listar()+"\n"+"Listado de Medicos: \n"+medicoService.listar()+
                             "\nListado de personal de limpieza: \n"+personalLimpiezaService.listar()+

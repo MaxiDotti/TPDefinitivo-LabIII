@@ -77,4 +77,15 @@ public class AyudanteDeCampoRepository implements IRepository<AyudanteDeCampo> {
         return null;
     }
 
+    // SOLO LO UTILIZAMOS PARA EL MENU
+    public AyudanteDeCampo buscarAyudante(String dni) {
+        cargar();
+        for(AyudanteDeCampo ayudanteDeCampo : this.ayudanteDeCampoList){
+            if(ayudanteDeCampo.getDni().equals(dni)){
+                return ayudanteDeCampo;
+            }
+        }
+        return null;
+    }
+
 }

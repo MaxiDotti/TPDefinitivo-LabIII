@@ -5,6 +5,7 @@ import tpFinal.Models.Socio;
 import tpFinal.Repositorios.SociosRepository;
 import tpFinal.Services.BeneficioService;
 import tpFinal.Services.PartidoService;
+import tpFinal.Services.ProductoService;
 import tpFinal.Services.SocioService;
 
 import java.util.Scanner;
@@ -22,10 +23,10 @@ public class MenuPrincipalSocio {
         SociosRepository sociosRepository = new SociosRepository();
         PartidoService partidoService = new PartidoService();
         BeneficioService beneficioService = new BeneficioService();
-
+        ProductoService productoService = new ProductoService();
 
         while (!salir) {
-            System.out.println("*****MENU PRINCIPAL SOCIO******\n\n\n");
+            System.out.println("\n\n*****MENU PRINCIPAL SOCIO******\n\n");
             System.out.println("1- Ver información personal\n" +
                     "2- Visualizar próximos partidos \n" +
                     "3- Ver estado contable\n" +
@@ -51,7 +52,7 @@ public class MenuPrincipalSocio {
                     }
                     break;
                 case 4:
-                    //acá hay q armar el json de la tienda y mostrar todo
+                    System.out.println(productoService.listar());
                     break;
                 case 5:
                     System.out.println("***BENEFICIOS DEL CLUB***\n\n");
