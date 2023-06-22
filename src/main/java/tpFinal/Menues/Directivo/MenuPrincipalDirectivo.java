@@ -19,7 +19,7 @@ public class MenuPrincipalDirectivo {
         MenuGestionAyudanteDeCampo menuGestionAyudanteDeCampo = new MenuGestionAyudanteDeCampo();
 
         while (!salir) {
-            System.out.println("*****MENU PRINCIPAL DIRECTIVO******\n\n\n");
+            System.out.println("***** MENU PRINCIPAL DIRECTIVO ******\n\n");
             System.out.println("1- Ver información de usuario\n" +
                     "2- Gestion de Socios\n" +
                     "3- Gestión de Empleados\n" +

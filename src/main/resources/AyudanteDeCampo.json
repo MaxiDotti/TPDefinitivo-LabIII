@@ -1,15 +1,4 @@
 [ {
-  "nombre" : "AYUDANTEUNO",
-  "apellido" : "AYUDANTEUNO",
-  "dni" : "1",
-  "contrasenia" : "MODIFICACION",
-  "telefono" : "1414",
-  "direccion" : "MODIFICACION",
-  "estadoContable" : true,
-  "plantel" : "AYUDANTEUNO",
-  "deporte" : "Futbol",
-  "categoria" : "Cuarta"
-}, {
   "nombre" : "prueba",
   "apellido" : "prueba",
   "dni" : "12345",
@@ -31,4 +20,15 @@
   "plantel" : "asd",
   "deporte" : "asd",
   "categoria" : "asd"
+}, {
+  "nombre" : "PRUEBA",
+  "apellido" : "PRUEBA",
+  "dni" : "34",
+  "contrasenia" : "asd",
+  "telefono" : "1234",
+  "direccion" : "asd 123",
+  "estadoContable" : true,
+  "plantel" : "Futbol Masculino",
+  "deporte" : "Futbol",
+  "categoria" : "Primera"
 } ]

@@ -13,12 +13,13 @@ import java.util.Scanner;
 
 public class MenuPersonalLimpieza {
 
-    public void menuGestionMedico(Directivo directivoLogeado) {
+    public void menuGestionPersonalLimpieza(Directivo directivoLogeado) {
         Scanner sn = new Scanner(System.in);
 
 
         boolean salir = false;
         int opcion;
+        String dni;
 
         PersonalLimpieza personalLimpiezaAModificar = new PersonalLimpieza();
         PersonalLimpiezaService personalLimpiezaService = new PersonalLimpiezaService();
@@ -54,10 +55,11 @@ public class MenuPersonalLimpieza {
                     personalLimpiezaService.agregar(personalLimpiezaAModificar);
                     break;
                 case 2:
-                    System.out.println("***BAJA***\n");
+                    System.out.println("***BAJA de PERSONAL DE LIMPIEZA***\n");
                     System.out.println("Ingrese el DNI: \n");
-                    if (personalLimpiezaRepository.buscarPersonalLimpieza(sn.nextLine()) != null){
-                        personalLimpiezaService.eliminar(sn.nextLine());
+                    dni = sn.nextLine();
+                    if (personalLimpiezaRepository.buscarPersonalLimpieza(dni) != null){
+                        personalLimpiezaService.eliminar(dni);
                         System.out.println("Personal de limpieza eliminado.");
                     }else{
                         System.out.println("El DNI ingresado no existe en la base de datos.");
@@ -65,12 +67,12 @@ public class MenuPersonalLimpieza {
                     break;
                 case 3:
                     System.out.println("***MODIFICACION***\n");
-                    System.out.print("Ingrese el DNI del Medico: ");
-                    String dni = sn.nextLine();
+                    System.out.print("Ingrese el DNI del PERSONAL DE LIMPIEZA: ");
+                    dni = sn.nextLine();
                     if(personalLimpiezaRepository.buscarPersonalLimpieza(dni) != null){
                         personalLimpiezaAModificar = personalLimpiezaRepository.buscarPersonalLimpieza(dni);
 
-                        System.out.println("Ingrese los siguientes datos para dar modificar el socio: \n\n");
+                        System.out.println("Ingrese los siguientes datos a modificar: \n\n");
                         System.out.println("Contrasenia: ");
                         personalLimpiezaAModificar.setContrasenia(sn.nextLine());
                         System.out.println("Telefono: ");

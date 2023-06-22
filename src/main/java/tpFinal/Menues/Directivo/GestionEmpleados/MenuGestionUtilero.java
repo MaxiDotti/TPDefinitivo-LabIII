@@ -16,6 +16,7 @@ public class MenuGestionUtilero {
 
         boolean salir = false;
         int opcion;
+        String dni;
 
         Utilero utilero = new Utilero();
         UtileroService utileroService = new UtileroService();
@@ -51,10 +52,11 @@ public class MenuGestionUtilero {
                     utileroService.agregar(utilero);
                     break;
                 case 2:
-                    System.out.println("***BAJA***\n");
-                    System.out.println("Ingrese el DNI: \n");
-                    if (utileroRepository.buscarUtilero(sn.nextLine()) != null){
-                        utileroService.eliminar(sn.nextLine());
+                    System.out.println("***BAJA de UTILERO***\n");
+                    System.out.println("Ingrese el DNI: ");
+                    dni = sn.nextLine();
+                    if (utileroRepository.buscarUtilero(dni) != null){
+                        utileroService.eliminar(dni);
                         System.out.println("Personal de limpieza eliminado.");
                     }else{
                         System.out.println("El DNI ingresado no existe en la base de datos.");
@@ -62,12 +64,12 @@ public class MenuGestionUtilero {
                     break;
                 case 3:
                     System.out.println("***MODIFICACION***\n");
-                    System.out.print("Ingrese el DNI del Medico: ");
-                    String dni = sn.nextLine();
+                    System.out.print("Ingrese el DNI del UTILERO: ");
+                    dni = sn.nextLine();
                     if(utileroRepository.buscarUtilero(dni) != null){
                         utilero = utileroRepository.buscarUtilero(dni);
 
-                        System.out.println("Ingrese los siguientes datos para dar modificar el socio: \n\n");
+                        System.out.println("Ingrese los siguientes datos a modificar: \n\n");
                         System.out.println("Contrasenia: ");
                         utilero.setContrasenia(sn.nextLine());
                         System.out.println("Telefono: ");

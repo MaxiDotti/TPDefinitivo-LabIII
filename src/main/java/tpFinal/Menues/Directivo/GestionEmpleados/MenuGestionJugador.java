@@ -56,7 +56,7 @@ public class MenuGestionJugador {
                     jugadorService.agregar(jugadorAModificar);
                     break;
                 case 2:
-                    System.out.println("***BAJA***\n");
+                    System.out.println("***BAJA de JUGADOR***\n");
                     System.out.print("Ingrese el DNI: ");
                     dni = sn.nextLine();
                     if (jugadorRepository.buscarJugador(dni) != null){
@@ -74,7 +74,7 @@ public class MenuGestionJugador {
                     if(jugadorRepository.buscarJugador(dni) != null){
                         jugadorAModificar = jugadorRepository.buscarJugador(dni);
 
-                        System.out.println("Ingrese los siguientes datos para dar modificar el socio: \n\n");
+                        System.out.println("Ingrese los siguientes datos para a modificar: \n\n");
                         System.out.println("Contrasenia: ");
                         jugadorAModificar.setContrasenia(sn.nextLine());
                         System.out.println("Telefono: ");

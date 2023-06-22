@@ -74,7 +74,7 @@ public class MenuGestionDirectorTecnico {
                     if(directorTecnicoRepository.buscarDirectorTecnico(dni) != null){
                         directorTecnicoAModificar = directorTecnicoRepository.buscarDirectorTecnico(dni);
 
-                        System.out.println("Ingrese los siguientes datos para dar modificar el socio: \n\n");
+                        System.out.println("Ingrese los siguientes datos a modificar: \n\n");
                         System.out.println("Contrasenia: ");
                         directorTecnicoAModificar.setContrasenia(sn.nextLine());
                         System.out.println("Telefono: ");

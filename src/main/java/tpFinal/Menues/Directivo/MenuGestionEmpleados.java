@@ -1,8 +1,7 @@
 package tpFinal.Menues.Directivo;
 
 import tpFinal.Exceptions.ObjetoNoEncontradoException;
-import tpFinal.Menues.Directivo.GestionEmpleados.MenuGestionAyudanteDeCampo;
-import tpFinal.Menues.Directivo.GestionEmpleados.MenuGestionJugador;
+import tpFinal.Menues.Directivo.GestionEmpleados.*;
 import tpFinal.Models.Directivo;
 import tpFinal.Models.Socio;
 import tpFinal.Repositorios.SociosRepository;
@@ -37,20 +36,24 @@ public class MenuGestionEmpleados {
                     menuAyudanteDeCampo.menuGestionAyudanteDeCampo(directivoLogeado);
                     break;
                 case 2:
-
+                    MenuGestionDirectorTecnico menuGestionDirectorTecnico = new MenuGestionDirectorTecnico();
+                    menuGestionDirectorTecnico.menuGestionDirectorTecnico(directivoLogeado);
                     break;
                 case 3:
                     MenuGestionJugador menuGestionJugador = new MenuGestionJugador();
                     menuGestionJugador.menuGestionJugador(directivoLogeado);
                     break;
                 case 4:
-
+                    MenuGestionMedico menuGestionMedico = new MenuGestionMedico();
+                    menuGestionMedico.menuGestionMedico(directivoLogeado);
                     break;
                 case 5:
-
+                    MenuPersonalLimpieza menuPersonalLimpieza = new MenuPersonalLimpieza();
+                    menuPersonalLimpieza.menuGestionPersonalLimpieza(directivoLogeado);
                     break;
                 case 6:
-
+                    MenuGestionUtilero menuGestionUtilero = new MenuGestionUtilero();
+                    menuGestionUtilero.menuGestionUtilero(directivoLogeado);
                     break;
                 case 7:
                     menuPrincipalDirectivo.menuPrincipalDirectivo(directivoLogeado);

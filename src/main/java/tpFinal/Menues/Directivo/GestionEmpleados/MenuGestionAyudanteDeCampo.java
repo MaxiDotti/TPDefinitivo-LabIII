@@ -13,6 +13,7 @@ public class MenuGestionAyudanteDeCampo {
 
         boolean salir = false;
         int opcion;
+        String dni;
 
         AyudanteDeCampo ayudanteDeCampoAModificar = new AyudanteDeCampo();
         AyudanteDeCampoService ayudanteDeCampoService = new AyudanteDeCampoService();
@@ -51,10 +52,11 @@ public class MenuGestionAyudanteDeCampo {
                     ayudanteDeCampoService.agregar(ayudanteDeCampoAModificar);
                     break;
                 case 2:
-                    System.out.println("***BAJA DE AYUDANTE DE CAMPO***\n");
-                    System.out.println("Ingrese el DNI del ayudante de campo: \n");
-                    if (ayudanteDeCampoRepository.buscarAyudante(sn.nextLine()) != null){
-                        ayudanteDeCampoService.eliminar(sn.nextLine());
+                    System.out.println("***BAJA de AYUDANTE DE CAMPO***\n");
+                    System.out.println("Ingrese el DNI del ayudante de campo: ");
+                    dni = sn.nextLine();
+                    if (ayudanteDeCampoRepository.buscarAyudante(dni) != null){
+                        ayudanteDeCampoService.eliminar(dni);
                         System.out.println("Ayudante de campo eliminado.");
                     }else{
                         System.out.println("El DNI ingresado no existe en la base de datos.");
@@ -64,11 +66,11 @@ public class MenuGestionAyudanteDeCampo {
                     System.out.println("***MODIFICACION DE AYUDANTE DE CAMPO***\n");
 
                     System.out.print("Ingrese el DNI del ayudante de campo a modificar: ");
-                    String dni = sn.nextLine();
+                    dni = sn.nextLine();
                     if(ayudanteDeCampoRepository.buscarAyudante(dni) != null){
                         ayudanteDeCampoAModificar = ayudanteDeCampoRepository.buscarAyudante(dni);
 
-                        System.out.println("Ingrese los siguientes datos para dar modificar el socio: \n\n");
+                        System.out.println("Ingrese los siguientes datos para a modificar: \n\n");
                         System.out.println("Contrasenia: ");
                         ayudanteDeCampoAModificar.setContrasenia(sn.nextLine());
                         System.out.println("Telefono: ");

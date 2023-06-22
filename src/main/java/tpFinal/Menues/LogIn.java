@@ -33,7 +33,7 @@ public class LogIn {
         MenuPrincipalDirectivo menuPrincipalDirectivo = new MenuPrincipalDirectivo();
 
         while (!salir) {
-            System.out.println("BIENVENIDO AL CLUB SOCIAL Y DEPORTIVO\n\n\n");
+            System.out.println("BIENVENIDO AL CLUB SOCIAL Y DEPORTIVO\n");
             System.out.println("1- Loguearse\n" +
                     "2- Recuperar contraseña\n" +
                     "0- Salir\n");
@@ -58,8 +58,11 @@ public class LogIn {
                     if(directivoRepository.buscarDirectivo(dni) != null && directivoRepository.buscar(dni).getContrasenia().equals(contrasenia)){
                         Directivo directivo = directivoRepository.buscarDirectivo(dni);
                         menuPrincipalDirectivo.menuPrincipalDirectivo(directivo);
-                    }
-                    else{
+                        //Nos fijamos si los datos de logeo corresponden a un ADMIN
+                    }if(directivoRepository.buscarDirectivo(dni) != null && directivoRepository.buscar(dni).getContrasenia().equals(contrasenia)) {
+                    Directivo directivo = directivoRepository.buscarDirectivo(dni);
+                    menuPrincipalDirectivo.menuPrincipalDirectivo(directivo);
+                    }else{
                         System.out.println("Los datos ingresados son incorrectos.");
                     }
                     break;
