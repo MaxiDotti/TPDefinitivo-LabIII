@@ -15,6 +15,7 @@ public class MenuGestionSocios {
 
         boolean salir = false;
         int opcion;
+        String dni;
 
         Socio socioAModificar = new Socio();
         SocioService socioService = new SocioService();
@@ -49,8 +50,9 @@ public class MenuGestionSocios {
                 case 2:
                     System.out.println("***BAJA DE SOCIO***\n");
                     System.out.println("Ingrese el DNI del socio: \n");
-                    if (sociosRepository.buscarSocio(sn.nextLine()) != null){
-                        socioService.eliminar(sn.nextLine());
+                    dni = sn.nextLine();
+                    if (sociosRepository.buscarSocio(dni) != null){
+                        socioService.eliminar(dni);
                         System.out.println("Socio eliminado.");
                     }else{
                         System.out.println("El DNI ingresado no existe en la base de datos.");
@@ -61,7 +63,7 @@ public class MenuGestionSocios {
                     System.out.println("***MODIFICACION DE SOCIO***\n");
 
                     System.out.print("Ingrese el DNI del socio a modificar: ");
-                    String dni = sn.nextLine();
+                    dni = sn.nextLine();
                         if(sociosRepository.buscarSocio(dni) != null){
                             socioAModificar = sociosRepository.buscarSocio(dni);
 

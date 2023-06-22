@@ -15,14 +15,6 @@
   "direccion" : "Luro 5432",
   "estadoContable" : true
 }, {
-  "nombre" : "Gonazalo",
-  "apellido" : "Gonzalez",
-  "dni" : "38210372",
-  "contrasenia" : "gonzalo",
-  "telefono" : "543625",
-  "direccion" : "Luro 8327",
-  "estadoContable" : true
-}, {
   "nombre" : "Luke",
   "apellido" : "Skywalker",
   "dni" : "543525",
