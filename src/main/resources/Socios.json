@@ -25,4 +25,13 @@
   "direccion" : "EEEEE 123",
   "deporte" : "HANDBALL",
   "estadoContable" : true
+}, {
+  "nombre" : "Tomas",
+  "apellido" : "Onetto",
+  "dni" : "44843043",
+  "contrasenia" : "armadillo123",
+  "telefono" : "123456",
+  "direccion" : "Calle falsa 123",
+  "deporte" : "NATACION",
+  "estadoContable" : true
 } ]

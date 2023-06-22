@@ -44,10 +44,11 @@ public class SociosRepository implements IRepository<Socio> {
 
     @Override
     public void agregar(Socio objeto) {
+        cargar();
         this.listaSocios.add(objeto);
+        guardar();
     }
 
-    // CUAL ES EL SENTIDO?
     @Override
     public void agregarLista(List<Socio> lista) {
         cargar();
@@ -81,7 +82,6 @@ public class SociosRepository implements IRepository<Socio> {
         return null;
     }
 
-    // SOLO LO UTILIZAMOS PARA EL MENU
     public Socio buscarSocio(String dni) {
         cargar();
         for(Socio socio : this.listaSocios){

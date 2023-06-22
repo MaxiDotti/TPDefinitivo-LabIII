@@ -12,6 +12,8 @@ import tpFinal.Services.DirectivoService;
 import tpFinal.Services.SocioService;
 import tpFinal.Utilities.Deporte;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class LogIn {
@@ -82,6 +84,7 @@ public class LogIn {
                         System.out.println("Usuario creado con exito. Por favor logear para cotinuar");
                     else
                         System.out.println("Fallo al crear el usuario. Vuelva a intentar mas tarde ");
+                    break;
                 case 0:
                     salir = true;
                     break;
@@ -121,20 +124,33 @@ public class LogIn {
 
         int eleccion = scan.nextInt();
         String deporte = "";
+        Deporte deporteElegido = Deporte.VOLLEY;
 
         switch (eleccion) {
             case 1:
-                deporte = Deporte.FUTBOL.getDeporte();
+                deporteElegido = Deporte.FUTBOL;
+                deporte = deporteElegido.name();
+
             case 2:
-                deporte = Deporte.BASQUET.getDeporte();
+                deporteElegido = Deporte.BASQUET;
+                deporte = deporteElegido.name();
+                break;
             case 3:
-                deporte = Deporte.VOLLEY.getDeporte();
+                deporteElegido = Deporte.VOLLEY;
+                deporte = deporteElegido.name();
+                break;
             case 4:
-                deporte = Deporte.HANDBALL.getDeporte();
+                deporteElegido = Deporte.HANDBALL;
+                deporte = deporteElegido.name();
+                break;
             case 5:
-                deporte = Deporte.NATACION.getDeporte();
+                deporteElegido = Deporte.NATACION;
+                deporte = deporteElegido.name();
+                break;
             case 6:
-                deporte = Deporte.TENNIS.getDeporte();
+                deporteElegido = Deporte.TENNIS;
+                deporte = deporteElegido.name();
+                break;
         }
 
         boolean validacion = true;
@@ -142,12 +158,15 @@ public class LogIn {
         while (validacion) {
             System.out.println("Ingresar contraseña de al menos 8 digitos: ");
             contrasenia = scan.nextLine();
+
             if (contrasenia.length() < 8)
-                System.out.println("Contrasenia demasiado corta");
+                System.out.println("Contraseña demasiado corta");
+            else
+                validacion = false;
 
         }
 
-        Socio socio = new Socio(nombre, apellido, dni, contrasenia, telefono, direccion, Deporte.valueOf(deporte), true);
+        Socio socio = new Socio(nombre, apellido, dni, contrasenia, telefono, direccion, deporteElegido, true);
         repository.agregar(socio);
         boolean agregado = false;
         for (Socio socio1 : repository.listar()) {
