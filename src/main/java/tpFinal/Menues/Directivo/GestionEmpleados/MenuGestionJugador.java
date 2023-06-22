@@ -69,8 +69,8 @@ public class MenuGestionJugador {
                     //SE PUEDE MODIFICAR CONTRASEÑA, TELEFONO, DIRECCION, DEPORTE y CATEGORIA
                     System.out.print("Ingrese el DNI del jugador: ");
                     String dni = sn.nextLine();
-                    if(JugadorRepository.buscarJugador(dni) != null){
-                        jugadorAModificar = JugadorRepository.buscarJugador(dni);
+                    if(jugadorRepository.buscarJugador(dni) != null){
+                        jugadorAModificar = jugadorRepository.buscarJugador(dni);
 
                         System.out.println("Ingrese los siguientes datos para dar modificar el socio: \n\n");
                         System.out.println("Contrasenia: ");
@@ -84,7 +84,7 @@ public class MenuGestionJugador {
                         System.out.println("Categoria: ");
                         jugadorAModificar.setCategoria(sn.nextLine());
 
-                        jugadorService.modificar(JugadorAModificar);
+                        jugadorService.modificar(jugadorAModificar);
                     }else{
                         System.out.println("El DNI ingresado no se encuentra en la base de datos.");
                     }
