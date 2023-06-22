@@ -24,5 +24,16 @@ public class Main {
 
 
 
+
+
+        MenuGestionDirectorTecnico menuGestionDirectorTecnico = new MenuGestionDirectorTecnico();
+        menuGestionDirectorTecnico.menuGestionDirectorTecnico(directivo);
+
+        //MenuGestionJugador menuGestionJugador = new MenuGestionJugador();
+        //menuGestionJugador.menuGestionJugador(directivo);
+
+        //MenuGestionMedico menuGestionMedico = new MenuGestionMedico();
+        //menuGestionMedico.menuGestionMedico(directivo);
+
     }
 }
